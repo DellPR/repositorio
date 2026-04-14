@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Repositório · Austin Press Tour 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue: #0076CE;
+    --bg: #EDEEF2;
+    --surface: #FFFFFF;
+    --surface2: #F5F6F9;
+    --border: rgba(0,0,0,0.09);
+    --text: #1C1C1E;
+    --muted: #6E6E73;
+    --mono: 'IBM Plex Mono', monospace;
+    --sans: 'IBM Plex Sans', sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--bg); color: var(--text); min-height: 100vh; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(237,238,242,0.94);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 clamp(16px,4vw,64px);
+    height: 62px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .header-brand { display: flex; align-items: center; gap: 14px; }
+  .header-sep { width: 1px; height: 22px; background: var(--border); }
+  .header-title { font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+  .lang-toggle { display: flex; gap: 2px; background: var(--surface); border-radius: 8px; padding: 3px; border: 1px solid var(--border); }
+  .lang-btn { font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: 0.08em; padding: 5px 12px; border-radius: 6px; border: none; cursor: pointer; background: transparent; color: var(--muted); transition: all 0.18s; }
+  .lang-btn.active { background: var(--blue); color: #fff; }
+
+  /* HERO */
+  .hero { padding: clamp(36px,6vw,72px) clamp(16px,4vw,64px) clamp(20px,3vw,40px); max-width: 1200px; margin: 0 auto; }
+  .hero-eyebrow { font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--blue); margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+  .hero-eyebrow::before { content: ''; display: block; width: 28px; height: 2px; background: var(--blue); border-radius: 2px; }
+  .hero-title { font-size: clamp(26px,3.8vw,52px); font-weight: 300; line-height: 1.1; letter-spacing: -0.02em; color: var(--text); margin-bottom: 12px; }
+  .hero-title strong { font-weight: 700; color: var(--blue); }
+  .hero-sub { font-size: clamp(13px,1.3vw,15px); color: var(--muted); font-weight: 300; max-width: 480px; }
+
+  /* CATEGORY NAV */
+  .category-nav { padding: 0 clamp(16px,4vw,64px) 28px; max-width: 1200px; margin: 0 auto; display: flex; gap: 8px; flex-wrap: wrap; }
+  .cat-pill { font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 7px 16px; border-radius: 100px; border: 1px solid var(--border); background: var(--surface); color: var(--muted); cursor: pointer; text-decoration: none; transition: all 0.18s; }
+  .cat-pill:hover { border-color: var(--blue); color: var(--blue); background: rgba(0,118,206,0.05); }
+
+  /* MAIN */
+  main { max-width: 1200px; margin: 0 auto; padding: 0 clamp(16px,4vw,64px) 80px; }
+
+  /* CATEGORY SECTION */
+  .cat-section { margin-bottom: 56px; }
+  .cat-header { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; padding-bottom: 14px; border-bottom: 2px solid var(--border); }
+  .cat-icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+  .cat-icon.blue   { background: rgba(0,118,206,0.1); }
+  .cat-icon.green  { background: rgba(0,160,80,0.1); }
+  .cat-icon.purple { background: rgba(120,60,200,0.1); }
+  .cat-icon.orange { background: rgba(220,120,0,0.1); }
+  .cat-icon.red    { background: rgba(200,40,40,0.1); }
+  .cat-label { font-family: var(--mono); font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue); margin-bottom: 3px; }
+  .cat-name { font-size: clamp(16px,2vw,21px); font-weight: 700; color: var(--text); }
+
+  /* CARDS GRID */
+  .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 295px), 1fr)); gap: 14px; }
+
+  /* CARD */
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; cursor: pointer; text-decoration: none; color: inherit; display: block; transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s; }
+  .card:hover { transform: translateY(-3px); border-color: rgba(0,118,206,0.3); box-shadow: 0 8px 28px rgba(0,0,0,0.1); }
+  .card-img-wrap { width: 100%; aspect-ratio: 16/9; overflow: hidden; background: var(--surface2); display: flex; align-items: center; justify-content: center; }
+  .card-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .card-img-label { font-family: var(--mono); font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #9E9EA7; }
+  .card-body { padding: 15px 17px 17px; }
+  .card-type { font-family: var(--mono); font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue); margin-bottom: 6px; }
+  .card-title { font-size: 14px; font-weight: 600; color: var(--text); line-height: 1.35; margin-bottom: 6px; }
+  .card-desc { font-size: 12px; color: var(--muted); line-height: 1.55; font-weight: 300; }
+  .card-footer { display: flex; align-items: center; justify-content: space-between; padding: 10px 17px; border-top: 1px solid var(--border); font-family: var(--mono); font-size: 10px; font-weight: 600; letter-spacing: 0.1em; color: var(--muted); text-transform: uppercase; }
+  .card-arrow { color: var(--blue); font-size: 14px; }
+
+  /* COMING SOON */
+  .coming-soon { background: var(--surface); border: 1px dashed rgba(0,0,0,0.12); border-radius: 14px; padding: 48px 24px; text-align: center; }
+  .coming-soon-text { font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #ADADB8; }
+
+  /* ARTICLE OVERLAY */
+  .article-overlay { display: none; position: fixed; inset: 0; z-index: 200; background: var(--bg); overflow-y: auto; }
+  .article-overlay.open { display: block; }
+  .article-topbar { position: sticky; top: 0; z-index: 10; background: rgba(237,238,242,0.96); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 0 clamp(16px,4vw,64px); height: 60px; display: flex; align-items: center; gap: 16px; }
+  .article-back { display: flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); background: none; border: none; cursor: pointer; padding: 8px 12px; border-radius: 8px; transition: all 0.15s; }
+  .article-back:hover { background: var(--surface); color: var(--blue); }
+  .article-content { max-width: 720px; margin: 0 auto; padding: clamp(28px,4vw,56px) clamp(16px,4vw,64px) 80px; }
+  .article-cat { font-family: var(--mono); font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+  .article-cat::before { content: ''; width: 20px; height: 2px; background: var(--blue); border-radius: 2px; }
+  .article-title { font-size: clamp(22px,3.2vw,36px); font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; color: var(--text); margin-bottom: 10px; }
+  .article-date { font-family: var(--mono); font-size: 11px; color: var(--muted); margin-bottom: 22px; }
+  .article-hero-img { width: 100%; border-radius: 12px; margin-bottom: 28px; aspect-ratio: 16/9; object-fit: cover; background: var(--surface2); border: 1px solid var(--border); display: block; }
+  .article-lead { font-size: clamp(14px,1.3vw,16px); font-weight: 600; color: var(--text); line-height: 1.6; margin-bottom: 22px; padding-left: 14px; border-left: 3px solid var(--blue); }
+  .article-body { font-size: clamp(13px,1.1vw,15px); font-weight: 300; color: #3A3A40; line-height: 1.78; }
+  .article-body p { margin-bottom: 16px; }
+  .article-body h3 { font-size: 11px; font-weight: 700; color: var(--blue); margin: 26px 0 10px; font-family: var(--mono); letter-spacing: 0.1em; text-transform: uppercase; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+  .article-body blockquote { margin: 22px 0; padding: 14px 17px; background: var(--surface2); border-radius: 10px; border-left: 3px solid var(--blue); font-style: italic; color: #3A3A40; font-size: 14px; line-height: 1.65; }
+  .article-body blockquote cite { display: block; margin-top: 10px; font-style: normal; font-size: 11px; font-family: var(--mono); color: var(--blue); font-weight: 600; letter-spacing: 0.08em; }
+  .stats-row { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 8px; margin: 22px 0; }
+  .stat-box { background: var(--surface); border-radius: 10px; padding: 13px 15px; border: 1px solid var(--border); }
+  .stat-num { font-family: var(--mono); font-size: clamp(18px,2vw,24px); font-weight: 600; color: var(--blue); line-height: 1; margin-bottom: 4px; }
+  .stat-label { font-size: 11px; color: var(--muted); font-weight: 300; line-height: 1.3; }
+  .highlight-box { background: rgba(0,118,206,0.05); border: 1px solid rgba(0,118,206,0.18); border-radius: 12px; padding: 16px 18px; margin: 18px 0; }
+  .highlight-box .hb-label { font-family: var(--mono); font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue); margin-bottom: 7px; }
+  .highlight-box p { font-size: 13px; color: #3A3A40; line-height: 1.65; margin: 0 !important; }
+  .article-source-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 28px; padding: 11px 18px; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: 0.08em; color: var(--blue); text-decoration: none; transition: all 0.18s; }
+  .article-source-link:hover { border-color: var(--blue); background: rgba(0,118,206,0.05); }
+
+  /* ANIM */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+  .hero { animation: fadeUp 0.4s ease both; }
+  .cat-section { animation: fadeUp 0.4s ease both; }
+  .cat-section:nth-child(2) { animation-delay: 0.05s; }
+  .cat-section:nth-child(3) { animation-delay: 0.1s; }
+  .cat-section:nth-child(4) { animation-delay: 0.15s; }
+  .cat-section:nth-child(5) { animation-delay: 0.2s; }
+
+  [data-lang]:not(.active-lang) { display: none; }
+
+  @media (max-width: 640px) {
+    .cards-grid { grid-template-columns: 1fr; }
+    .stats-row { grid-template-columns: 1fr 1fr; }
+  }
+  .src-line { font-size:11px; color:var(--muted); margin-top:-10px; margin-bottom:16px; }
+  .src-line a { color:var(--blue); text-decoration:none; }
+  .src-line a:hover { text-decoration:underline; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-brand">
+<img src="data:image/png;base64,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" alt="Dell Technologies" style="height:22px;">
+    <div class="header-sep"></div>
+    <div class="header-title" data-lang="pt">Repositório</div>
+    <div class="header-title" data-lang="es">Repositorio</div>
+  </div>
+  <div class="lang-toggle">
+    <button class="lang-btn active" onclick="setLang('pt')">🇧🇷 PT</button>
+    <button class="lang-btn" onclick="setLang('es')">🇲🇽 ES</button>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-eyebrow" data-lang="pt">Austin Press Tour · Abril 2026</div>
+  <div class="hero-eyebrow" data-lang="es">Austin Press Tour · Abril 2026</div>
+  <h1 class="hero-title">
+    <span data-lang="pt">Repositório de<br><strong>Informações</strong></span>
+    <span data-lang="es">Repositorio de<br><strong>Información</strong></span>
+  </h1>
+  <p class="hero-sub" data-lang="pt">Conteúdos, press releases e recursos organizados por categoria para os jornalistas participantes do tour.</p>
+  <p class="hero-sub" data-lang="es">Contenidos, comunicados de prensa y recursos organizados por categoría para los periodistas participantes del tour.</p>
+</div>
+
+<div class="category-nav">
+  <a href="#dell-ai"   class="cat-pill">🤖 Dell + IA</a>
+  <a href="#tacc"      class="cat-pill">🖥️ TACC</a>
+  <a href="#alienware" class="cat-pill">🎮 Alienware</a>
+  <a href="#aisc"      class="cat-pill">🤖 AI Solutions</a>
+  <a href="#ebc"       class="cat-pill">🏢 EBC</a>
+  <a href="#rugged"    class="cat-pill">🛡️ Rugged Lab</a>
+</div>
+
+<main>
+
+  <!-- DELL + AI -->
+  <section class="cat-section" id="dell-ai">
+    <div class="cat-header">
+      <div class="cat-icon green">🤖</div>
+      <div><div class="cat-label">Categoria</div><div class="cat-name">Dell + IA</div></div>
+    </div>
+    <div class="cards-grid">
+
+      <a class="card" onclick="openArticle('dell-ai'); return false;" href="#">
+        <div class="card-img-wrap">
+          <img src="https://assets.bizclikmedia.net/412/50411100af3a670bfc88ebb33c98c553:2d3b4ec918fd48475c8f01d2e1727332/dtw-msd-on-stage-may-20-2024-1002-michael-dell.jpg"
+            onerror="this.parentElement.innerHTML='<span class=card-img-label>Dell AI Factory</span>'">
+        </div>
+        <div class="card-body">
+          <div class="card-type" data-lang="pt">🤖 Posicionamento de IA</div>
+          <div class="card-type" data-lang="es">🤖 Posicionamiento de IA</div>
+          <div class="card-title" data-lang="pt">Dell + IA — Por que a Dell é central na transformação da IA</div>
+          <div class="card-title" data-lang="es">Dell + IA — Por qué Dell es central en la transformación de la IA</div>
+          <div class="card-desc" data-lang="pt">Do PC ao data center: como a Dell se posiciona como a maior fornecedora de infraestrutura de IA do mundo.</div>
+          <div class="card-desc" data-lang="es">Del PC al data center: cómo Dell se posiciona como la mayor proveedora de infraestructura de IA del mundo.</div>
+        </div>
+        <div class="card-footer">
+          <span data-lang="pt">Ler</span><span data-lang="es">Leer</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+
+  <!-- TACC -->
+  <section class="cat-section" id="tacc">
+    <div class="cat-header">
+      <div class="cat-icon blue">🖥️</div>
+      <div><div class="cat-label">Categoria</div><div class="cat-name">Texas Advanced Computing Center (TACC)</div></div>
+    </div>
+    <div class="cards-grid">
+
+      <a class="card" onclick="openArticle('sobre-tacc'); return false;" href="#">
+        <div class="card-img-wrap">
+          <img src="https://raw.githubusercontent.com/DellPR/repositorio/main/tacc.jpg"
+            onerror="this.parentElement.innerHTML='<span class=card-img-label>TACC Data Center</span>'">
+        </div>
+        <div class="card-body">
+          <div class="card-type" data-lang="pt">📖 Contexto Essencial</div>
+          <div class="card-type" data-lang="es">📖 Contexto Esencial</div>
+          <div class="card-title" data-lang="pt">O que é o TACC — e por que a Dell mora lá dentro</div>
+          <div class="card-title" data-lang="es">Qué es el TACC — y por qué Dell vive ahí adentro</div>
+          <div class="card-desc" data-lang="pt">O maior centro de supercomputação acadêmica dos EUA, o projeto Horizon e décadas de parceria Dell-TACC.</div>
+          <div class="card-desc" data-lang="es">El mayor centro de supercomputación académica de EE.UU., el proyecto Horizon y décadas de alianza Dell-TACC.</div>
+        </div>
+        <div class="card-footer">
+          <span data-lang="pt">Ler</span><span data-lang="es">Leer</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+
+      <a class="card" onclick="openArticle('horizon'); return false;" href="#">
+        <div class="card-img-wrap">
+          <img src="https://raw.githubusercontent.com/DellPR/repositorio/main/tacc%20new%20horizon.jpg"
+            onerror="this.parentElement.innerHTML='<span class=card-img-label>Horizon Supercomputer</span>'">
+        </div>
+        <div class="card-body">
+          <div class="card-type" data-lang="pt">📄 Press Release · Nov 2025</div>
+          <div class="card-type" data-lang="es">📄 Comunicado · Nov 2025</div>
+          <div class="card-title" data-lang="pt">Dell viabiliza o Horizon, novo supercomputador do TACC</div>
+          <div class="card-title" data-lang="es">Dell impulsa Horizon, el nuevo supercomputador del TACC</div>
+          <div class="card-desc" data-lang="pt">300 petaflops — 10× mais rápido que o Frontera (supercomputador atual). O maior supercomputador acadêmico dos EUA, alimentado por Dell PowerEdge com NVIDIA Grace Blackwell.</div>
+          <div class="card-desc" data-lang="es">300 petaflops — 10× más rápido que Frontera (supercomputador actual). El mayor supercomputador académico de EE.UU., con Dell PowerEdge y NVIDIA Grace Blackwell.</div>
+        </div>
+        <div class="card-footer">
+          <span data-lang="pt">Ler artigo</span><span data-lang="es">Leer artículo</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+
+      <a class="card" href="https://tacc.utexas.edu" target="_blank" style="display:flex;align-items:center;gap:14px;padding:14px 16px;">
+        <div style="width:36px;height:36px;border-radius:8px;background:rgba(0,118,206,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px">🌐</div>
+        <div style="flex:1;min-width:0">
+          <div class="card-type" style="margin-bottom:2px" data-lang="pt">🔗 Site Oficial</div>
+          <div class="card-type" style="margin-bottom:2px" data-lang="es">🔗 Sitio Oficial</div>
+          <div style="font-size:13px;font-weight:600;color:var(--text)">tacc.utexas.edu ↗</div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ALIENWARE -->
+  <section class="cat-section" id="alienware">
+    <div class="cat-header">
+      <div class="cat-icon purple">🎮</div>
+      <div><div class="cat-label">Categoria</div><div class="cat-name">Alienware Experience Tour</div></div>
+    </div>
+    <div class="coming-soon">
+      <div class="coming-soon-text" data-lang="pt">Mais conteúdo em breve</div>
+      <div class="coming-soon-text" data-lang="es">Más contenido próximamente</div>
+    </div>
+  </section>
+
+  <!-- AI SOLUTIONS -->
+  <section class="cat-section" id="aisc">
+    <div class="cat-header">
+      <div class="cat-icon green">🤖</div>
+      <div><div class="cat-label">Categoria</div><div class="cat-name">AI Solutions Center</div></div>
+    </div>
+    <div class="coming-soon">
+      <div class="coming-soon-text" data-lang="pt">Mais conteúdo em breve</div>
+      <div class="coming-soon-text" data-lang="es">Más contenido próximamente</div>
+    </div>
+  </section>
+
+
+  <!-- EBC -->
+  <section class="cat-section" id="ebc">
+    <div class="cat-header">
+      <div class="cat-icon orange">🏢</div>
+      <div><div class="cat-label">Categoria</div><div class="cat-name">Executive Briefing Center (EBC)</div></div>
+    </div>
+    <div class="coming-soon">
+      <div class="coming-soon-text" data-lang="pt">Mais conteúdo em breve</div>
+      <div class="coming-soon-text" data-lang="es">Más contenido próximamente</div>
+    </div>
+  </section>
+
+  <!-- RUGGED -->
+  <section class="cat-section" id="rugged">
+    <div class="cat-header">
+      <div class="cat-icon red">🛡️</div>
+      <div><div class="cat-label">Categoria</div><div class="cat-name">Rugged Lab Tour</div></div>
+    </div>
+    <div class="coming-soon">
+      <div class="coming-soon-text" data-lang="pt">Mais conteúdo em breve</div>
+      <div class="coming-soon-text" data-lang="es">Más contenido próximamente</div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ARTICLE: SOBRE O TACC -->
+<div class="article-overlay" id="article-sobre-tacc">
+  <div class="article-topbar">
+    <button class="article-back" onclick="closeArticle('sobre-tacc')">← <span data-lang="pt">Voltar</span><span data-lang="es">Volver</span></button>
+    <div class="header-sep"></div>
+    <div class="header-title">TACC · Contexto</div>
+  </div>
+  <div class="article-content">
+    <div class="article-cat" data-lang="pt">📖 Contexto Essencial · TACC</div>
+    <div class="article-cat" data-lang="es">📖 Contexto Esencial · TACC</div>
+
+    <h1 class="article-title" data-lang="pt">O que é o TACC — e por que a Dell mora lá dentro</h1>
+    <h1 class="article-title" data-lang="es">Qué es el TACC — y por qué Dell vive ahí adentro</h1>
+
+    <img class="article-hero-img"
+      src="https://raw.githubusercontent.com/DellPR/repositorio/main/tacc.jpg"
+      onerror="this.style.display='none'" alt="TACC Data Center">
+
+    <!-- PT -->
+            <div data-lang="pt">
+      <p class="article-lead">O Texas Advanced Computing Center (TACC), ligado à Universidade do Texas em Austin, é o principal centro de supercomputação acadêmica dos Estados Unidos — e um dos palcos mais relevantes da parceria entre Dell e ciência ao longo de décadas.</p>
+
+      <div class="article-body">
+
+        <h3>O que é o TACC</h3>
+        <p>Fundado em 2001, o TACC fornece poder computacional para pesquisadores de todo o país. É uma estrutura governamental aberta: qualquer pesquisador acadêmico americano pode solicitar acesso via processo de alocação competitivo.</p>
+        <div class="highlight-box">
+          <div class="hb-label">Analogia</div>
+          <p>Pense no TACC como a NASA da computação científica aberta: não é uma empresa, não vende produto, mas é onde a ciência americana vai quando precisa de músculo computacional de verdade.</p>
+        </div>
+
+        <img src="https://raw.githubusercontent.com/DellPR/repositorio/main/tacc.jpg" style="width:100%;border-radius:10px;margin:16px 0;aspect-ratio:16/9;object-fit:cover" onerror="this.style.display='none'" alt="TACC Campus">
+
+        <h3>Frontera — o sistema que vocês vão ver</h3>
+        <p>O Frontera é o supercomputador que vocês vão encontrar em operação durante a visita. Lançado em junho de 2019 com um investimento de $60 milhões da NSF, ele estreou no TOP500 como o <strong>5º supercomputador mais rápido do mundo</strong> e o <strong>nº 1 em qualquer universidade</strong> — fazendo da Universidade do Texas sede dos dois supercomputadores acadêmicos mais rápidos dos EUA à época (Frontera #5, Stampede2 #19).</p>
+        <p>O sistema foi fornecido pela Dell EMC e opera com processadores Intel Xeon de 2ª geração e interconexão Mellanox InfiniBand. Disponibiliza mais de 55 milhões de horas de nó por ano para a comunidade de pesquisa, com até 80% das horas disponíveis via o programa NSF de alocação de recursos de computação petascale.</p>
+        <p class="src-line">Fontes: <a href="https://tacc.utexas.edu/systems/frontera/" target="_blank">TACC · Frontera System ↗</a> · <a href="https://frontera-portal.tacc.utexas.edu/about/" target="_blank">Frontera Portal · About ↗</a></p>
+
+        <p>O Frontera vai continuar em operação até ser substituído pelo Horizon. Vocês estão visitando o TACC exatamente nessa transição.</p>
+
+        <h3>O projeto do momento — Horizon</h3>
+        <p>O NSF está instalando o Horizon, o maior supercomputador acadêmico do país, no TACC. Quando entrar em operação em 2026, será um recurso nacional comparável ao Telescópio Espacial James Webb e ao Observatório de Neutrinos IceCube.</p>
+
+        <img src="https://raw.githubusercontent.com/DellPR/repositorio/main/tacc%20new%20horizon.jpg" style="width:100%;border-radius:10px;margin:16px 0;aspect-ratio:16/9;object-fit:cover" onerror="this.style.display='none'" alt="Novo Data Center TACC — Horizon">
+
+        <div class="stats-row">
+          <div class="stat-box"><div class="stat-num">300</div><div class="stat-label">petaflops de performance</div></div>
+          <div class="stat-box"><div class="stat-num">10×</div><div class="stat-label">mais rápido que o Frontera (supercomputador atual)</div></div>
+          <div class="stat-box"><div class="stat-num">4.000</div><div class="stat-label">GPUs NVIDIA</div></div>
+          <div class="stat-box"><div class="stat-num">1M</div><div class="stat-label">núcleos de CPU</div></div>
+        </div>
+
+        <p>No núcleo do sistema estão servidores Dell PowerEdge com a plataforma NVIDIA Grace Blackwell e CPUs NVIDIA Vera, interconectados com rede NVIDIA InfiniBand. Além dos 300 petaflops de simulação, o Horizon entregará <strong>20 exaflops para IA em bf16/fp16</strong> e <strong>80 exaflops em FP4</strong> — mais de 100× mais potência de IA do que os sistemas atuais.</p>
+
+        <img src="https://raw.githubusercontent.com/DellPR/repositorio/main/horizon%20server.png" style="width:100%;border-radius:10px;margin:16px 0;aspect-ratio:16/9;object-fit:cover" onerror="this.style.display='none'" alt="Servidores Dell PowerEdge — Horizon">
+        <p class="src-line">Fontes: <a href="https://investors.delltechnologies.com/news-releases/news-release-details/dell-technologies-powers-taccs-new-supercomputer-horizon" target="_blank">Dell Technologies · Press Release Nov 2025 ↗</a> · <a href="https://tacc.utexas.edu/news/latest-news/2025/11/17/nsf-lccf-horizon-supercomputer-to-power-breakthroughs-for-the-nations-leading-scientists/" target="_blank">TACC News · Nov 2025 ↗</a></p>
+
+        <h3>Onde a Dell entra — e por que é relevante</h3>
+        <p>A relação Dell-TACC não é nova nem superficial — Dell e TACC têm décadas de colaboração, incluindo os supercomputadores Stampede e Frontera. O Horizon, alimentado por infraestrutura Dell AI, dará aos pesquisadores as ferramentas para enfrentar alguns dos desafios mais complexos do mundo.</p>
+        <div class="highlight-box">
+          <div class="hb-label">Detalhe geográfico</div>
+          <p>A Dell está projetando os racks integrados, a montagem final acontece em Georgetown (Texas) e o sistema será hospedado em um data center em Round Rock — a mesma cidade onde fica o QG global da Dell. Literalmente construído no quintal de casa.</p>
+        </div>
+        <p class="src-line">Fonte: <a href="https://cbsaustin.com/news/local/horizon-supercomputer-will-make-austin-the-center-of-us-research-power" target="_blank">CBS Austin · Nov 2025 ↗</a></p>
+
+        <h3>O que vai rodar lá, na prática?</h3>
+        <p>Os trabalhos iniciais devem incluir dinâmica molecular e simulações aprimoradas por IA para estudar vírus, modelos astrofísicos de formação de estrelas e galáxias, pesquisa de materiais focada em estruturas cristalinas e comportamento quântico, e simulações sísmicas para melhorar mapas de risco e modelar rupturas de falhas geológicas. A UT Austin também usará o Horizon para expandir capacidades em IA generativa e agêntica, com mais de mil GPUs reservadas para o Centro de IA Generativa da universidade.
+        </p>
+        <p class="src-line">Fonte: <a href="https://tacc.utexas.edu/news/latest-news/2025/11/17/nsf-lccf-horizon-supercomputer-to-power-breakthroughs-for-the-nations-leading-scientists/" target="_blank">TACC News · Nov 2025 ↗</a></p>
+
+        <h3>Por que isso é importante?</h3>
+        <p>O Horizon não é um data center de empresa treinando o próximo GPT-5. É a aposta do governo americano — via NSF, com <strong>$457 milhões de investimento</strong> — de que a ciência aberta precisa de uma infraestrutura de IA tão poderosa quanto a do setor privado, mas acessível a qualquer pesquisador do país via processo de alocação aberto.</p>
+        <div class="highlight-box">
+          <div class="hb-label">Citação — Dan Stanzione, Diretor do TACC</div>
+          <p>"Com a ascensão da IA, o papel da computação no processo de descoberta científica se expandiu ainda mais. Esta nova instalação representa uma mudança de paradigma na forma como o NSF investe em computação em larga escala."</p>
+        </div>
+        <p class="src-line">Fonte: <a href="https://tacc.utexas.edu/news/latest-news/2025/11/17/nsf-lccf-horizon-supercomputer-to-power-breakthroughs-for-the-nations-leading-scientists/" target="_blank">TACC News · Nov 2025 ↗</a></p>
+
+        <h3>Como funciona o acesso</h3>
+        <p>É um sistema de "alocações" — você submete uma proposta justificando sua pesquisa e um comitê aprova uma cota de horas computacionais. Não se paga por hora de GPU como na AWS. As alocações são gerenciadas por projeto, sob responsabilidade de um pesquisador principal (PI).</p>
+        <p><strong>1. Pesquisadores do sistema UT / Texas</strong> — via TxRAS, para UT Austin, Sistema UT e instituições parceiras.</p>
+        <p><strong>2. Pesquisadores dos EUA em geral</strong> — via ACCESS, o portal nacional do NSF.</p>
+        <div class="highlight-box">
+          <div class="hb-label">Para pesquisadores brasileiros</div>
+          <p>Projetos colaborativos com pesquisadores não-americanos são bem-vindos, desde que haja participação intelectual substantiva de um PI americano. Um pesquisador brasileiro em colaboração com uma universidade americana pode ter acesso ao Horizon.</p>
+        </div>
+        <p>A expectativa é que o sistema atenda entre <strong>10.000 e 15.000 pesquisadores por ano</strong>.</p>
+        <p class="src-line">Fonte: <a href="https://tacc.utexas.edu/systems/frontera/" target="_blank">TACC · Frontera System ↗</a></p>
+
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-top:28px;">
+        <a class="article-source-link" href="https://tacc.utexas.edu/news/latest-news/2025/11/17/nsf-lccf-horizon-supercomputer-to-power-breakthroughs-for-the-nations-leading-scientists/" target="_blank">🔗 Mais informações sobre o projeto Horizon ↗</a>
+        <a class="article-source-link" href="https://tacc.utexas.edu/systems/frontera/" target="_blank">🔗 Sobre o Frontera — sistema em operação ↗</a>
+        <a class="article-source-link" href="https://tacc.utexas.edu" target="_blank">🔗 Site oficial do TACC ↗</a>
+      </div>
+    </div>
+
+    <!-- ES -->
+            <div data-lang="es">
+      <p class="article-lead">El Texas Advanced Computing Center (TACC), vinculado a la Universidad de Texas en Austin, es el principal centro de supercomputación académica de los Estados Unidos — y uno de los escenarios más relevantes de la alianza entre Dell y la ciencia a lo largo de décadas.</p>
+
+      <div class="article-body">
+
+        <h3>Qué es el TACC</h3>
+        <p>Fundado en 2001, el TACC proporciona poder computacional a investigadores de todo el país. Es una estructura gubernamental abierta: cualquier investigador académico americano puede solicitar acceso mediante un proceso de asignación competitivo.</p>
+        <div class="highlight-box">
+          <div class="hb-label">Analogía</div>
+          <p>Piense en el TACC como la NASA de la computación científica abierta: no es una empresa, no vende productos, pero es donde la ciencia americana va cuando necesita músculo computacional de verdad.</p>
+        </div>
+
+        <img src="https://raw.githubusercontent.com/DellPR/repositorio/main/tacc.jpg" style="width:100%;border-radius:10px;margin:16px 0;aspect-ratio:16/9;object-fit:cover" onerror="this.style.display='none'" alt="TACC Campus">
+
+        <h3>Frontera — el sistema que van a ver</h3>
+        <p>Frontera es el supercomputador que van a encontrar en operación durante la visita. Lanzado en junio de 2019 con una inversión de $60 millones de la NSF, debutó en el TOP500 como el <strong>5º supercomputador más rápido del mundo</strong> y el <strong>nº 1 en cualquier universidad</strong> — convirtiendo a la Universidad de Texas en sede de los dos supercomputadores académicos más rápidos de EE.UU. (Frontera #5, Stampede2 #19).</p>
+        <p>El sistema fue suministrado por Dell EMC y opera con procesadores Intel Xeon de 2ª generación e interconexión Mellanox InfiniBand. Pone a disposición más de 55 millones de horas de nodo por año para la comunidad investigadora, con hasta el 80% de las horas disponibles a través del programa NSF de asignación de recursos de computación petascale.</p>
+        <p class="src-line">Fuentes: <a href="https://tacc.utexas.edu/systems/frontera/" target="_blank">TACC · Frontera System ↗</a> · <a href="https://frontera-portal.tacc.utexas.edu/about/" target="_blank">Frontera Portal · About ↗</a></p>
+
+        <p>Frontera continuará en operación hasta ser reemplazado por Horizon. Están visitando el TACC exactamente en esta transición.</p>
+
+        <h3>El proyecto del momento — Horizon</h3>
+        <p>La NSF está instalando Horizon, el mayor supercomputador académico del país, en el TACC. Cuando entre en operación en 2026, será comparable al Telescopio Espacial James Webb y al Observatorio de Neutrinos IceCube.</p>
+
+        <img src="https://raw.githubusercontent.com/DellPR/repositorio/main/tacc%20new%20horizon.jpg" style="width:100%;border-radius:10px;margin:16px 0;aspect-ratio:16/9;object-fit:cover" onerror="this.style.display='none'" alt="Nuevo Data Center TACC — Horizon">
+
+        <div class="stats-row">
+          <div class="stat-box"><div class="stat-num">300</div><div class="stat-label">petaflops de rendimiento</div></div>
+          <div class="stat-box"><div class="stat-num">10×</div><div class="stat-label">más rápido que Frontera (supercomputador actual)</div></div>
+          <div class="stat-box"><div class="stat-num">4.000</div><div class="stat-label">GPUs NVIDIA</div></div>
+          <div class="stat-box"><div class="stat-num">1M</div><div class="stat-label">núcleos de CPU</div></div>
+        </div>
+
+        <p>En el núcleo del sistema están los servidores Dell PowerEdge con la plataforma NVIDIA Grace Blackwell y CPUs NVIDIA Vera, interconectados con la red NVIDIA InfiniBand. Además de los 300 petaflops de simulación, Horizon entregará <strong>20 exaflops para IA en bf16/fp16</strong> y <strong>80 exaflops en FP4</strong> — más de 100× más potencia de IA que los sistemas actuales.</p>
+
+        <img src="https://raw.githubusercontent.com/DellPR/repositorio/main/horizon%20server.png" style="width:100%;border-radius:10px;margin:16px 0;aspect-ratio:16/9;object-fit:cover" onerror="this.style.display='none'" alt="Servidores Dell PowerEdge — Horizon">
+        <p class="src-line">Fuentes: <a href="https://investors.delltechnologies.com/news-releases/news-release-details/dell-technologies-powers-taccs-new-supercomputer-horizon" target="_blank">Dell Technologies · Press Release Nov 2025 ↗</a> · <a href="https://tacc.utexas.edu/news/latest-news/2025/11/17/nsf-lccf-horizon-supercomputer-to-power-breakthroughs-for-the-nations-leading-scientists/" target="_blank">TACC News · Nov 2025 ↗</a></p>
+
+        <h3>Dónde entra Dell — y por qué es relevante</h3>
+        <p>La relación Dell-TACC no es nueva ni superficial — Dell y el TACC tienen décadas de colaboración, incluyendo los supercomputadores Stampede y Frontera. Horizon, impulsado por la infraestructura Dell AI, dará a los investigadores las herramientas para enfrentar algunos de los desafíos más complejos del mundo.</p>
+        <div class="highlight-box">
+          <div class="hb-label">Detalle geográfico</div>
+          <p>Dell está diseñando los racks integrados, el ensamblaje final ocurre en Georgetown (Texas) y el sistema será alojado en un data center en Round Rock — la misma ciudad donde está la sede global de Dell. Literalmente construido en el patio de casa.</p>
+        </div>
+        <p class="src-line">Fuente: <a href="https://cbsaustin.com/news/local/horizon-supercomputer-will-make-austin-the-center-of-us-research-power" target="_blank">CBS Austin · Nov 2025 ↗</a></p>
+
+        <h3>¿Qué se ejecutará ahí en la práctica?</h3>
+        <p>Los trabajos iniciales deben incluir dinámica molecular y simulaciones mejoradas por IA para estudiar virus, modelos astrofísicos de formación de estrellas y galaxias, investigación de materiales enfocada en estructuras cristalinas y comportamiento cuántico, y simulaciones sísmicas para mejorar mapas de riesgo. UT Austin también utilizará Horizon para ampliar capacidades en IA generativa y agéntica, con más de mil GPUs reservadas para el Centro de IA Generativa de la universidad.</p>
+        <p class="src-line">Fuente: <a href="https://tacc.utexas.edu/news/latest-news/2025/11/17/nsf-lccf-horizon-supercomputer-to-power-breakthroughs-for-the-nations-leading-scientists/" target="_blank">TACC News · Nov 2025 ↗</a></p>
+
+        <h3>¿Por qué esto es importante?</h3>
+        <p>Horizon no es un data center de empresa entrenando el próximo GPT-5. Es la apuesta del gobierno americano — vía NSF, con <strong>$457 millones de inversión</strong> — de que la ciencia abierta necesita una infraestructura de IA tan poderosa como la del sector privado, pero accesible para cualquier investigador del país.</p>
+        <div class="highlight-box">
+          <div class="hb-label">Cita — Dan Stanzione, Director del TACC</div>
+          <p>"Con el auge de la IA, el papel de la computación en el proceso de descubrimiento científico se ha expandido aún más. Esta nueva instalación representa un cambio de paradigma en cómo la NSF invierte en computación a gran escala."</p>
+        </div>
+        <p class="src-line">Fuente: <a href="https://tacc.utexas.edu/news/latest-news/2025/11/17/nsf-lccf-horizon-supercomputer-to-power-breakthroughs-for-the-nations-leading-scientists/" target="_blank">TACC News · Nov 2025 ↗</a></p>
+
+        <h3>Cómo funciona el acceso</h3>
+        <p>Es un sistema de "asignaciones" — presentas una propuesta justificando tu investigación y un comité aprueba una cuota de horas computacionales. No se paga por hora de GPU como en AWS. Las asignaciones son gestionadas por proyecto, bajo la responsabilidad de un investigador principal (PI).</p>
+        <p><strong>1. Investigadores del sistema UT / Texas</strong> — vía TxRAS, para UT Austin, Sistema UT e instituciones asociadas.</p>
+        <p><strong>2. Investigadores de EE.UU. en general</strong> — vía ACCESS, el portal nacional de la NSF.</p>
+        <div class="highlight-box">
+          <div class="hb-label">Para investigadores latinoamericanos</div>
+          <p>Los proyectos colaborativos con investigadores no estadounidenses son bienvenidos, siempre que haya participación sustantiva de un PI americano. Un investigador mexicano o latinoamericano en colaboración con una universidad americana puede acceder a Horizon.</p>
+        </div>
+        <p>Se espera que el sistema atienda entre <strong>10.000 y 15.000 investigadores por año</strong>.</p>
+        <p class="src-line">Fuente: <a href="https://tacc.utexas.edu/systems/frontera/" target="_blank">TACC · Frontera System ↗</a></p>
+
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-top:28px;">
+        <a class="article-source-link" href="https://tacc.utexas.edu/news/latest-news/2025/11/17/nsf-lccf-horizon-supercomputer-to-power-breakthroughs-for-the-nations-leading-scientists/" target="_blank">🔗 Más información sobre el proyecto Horizon ↗</a>
+        <a class="article-source-link" href="https://tacc.utexas.edu/systems/frontera/" target="_blank">🔗 Sobre Frontera — sistema en operación ↗</a>
+        <a class="article-source-link" href="https://tacc.utexas.edu" target="_blank">🔗 Sitio oficial del TACC ↗</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ARTICLE: HORIZON PRESS RELEASE -->
+<div class="article-overlay" id="article-horizon">
+  <div class="article-topbar">
+    <button class="article-back" onclick="closeArticle('horizon')">← <span data-lang="pt">Voltar</span><span data-lang="es">Volver</span></button>
+    <div class="header-sep"></div>
+    <div class="header-title">TACC · Horizon</div>
+  </div>
+  <div class="article-content">
+    <div class="article-cat" data-lang="pt">📄 Press Release · 17 Nov 2025</div>
+    <div class="article-cat" data-lang="es">📄 Comunicado · 17 Nov 2025</div>
+    <h1 class="article-title" data-lang="pt">Dell Technologies viabiliza o Horizon, novo supercomputador do TACC</h1>
+    <h1 class="article-title" data-lang="es">Dell Technologies impulsa Horizon, el nuevo supercomputador del TACC</h1>
+    <div class="article-date">ROUND ROCK, Texas — Nov. 17, 2025</div>
+    <img class="article-hero-img"
+      src="https://raw.githubusercontent.com/DellPR/repositorio/main/tacc%20new%20horizon.jpg"
+      onerror="this.style.display='none'" alt="Horizon Supercomputer">
+    <div class="stats-row">
+      <div class="stat-box"><div class="stat-num">300</div><div class="stat-label" data-lang="pt">petaflops</div><div class="stat-label" data-lang="es">petaflops</div></div>
+      <div class="stat-box"><div class="stat-num">10×</div><div class="stat-label" data-lang="pt">vs. Frontera (atual)</div><div class="stat-label" data-lang="es">vs. Frontera (atual)</div></div>
+      <div class="stat-box"><div class="stat-num">4K</div><div class="stat-label">GPUs NVIDIA</div></div>
+      <div class="stat-box"><div class="stat-num">1M</div><div class="stat-label" data-lang="pt">núcleos CPU</div><div class="stat-label" data-lang="es">núcleos CPU</div></div>
+    </div>
+
+    <div data-lang="pt">
+      <p class="article-lead">A Dell Technologies está trabalhando com o TACC da Universidade do Texas em Austin e com a NVIDIA para construir o Horizon — o maior supercomputador acadêmico dos Estados Unidos.</p>
+      <div class="article-body">
+        <p>O Horizon servirá como plataforma para a ciência aberta e a pesquisa científica, impulsionando o progresso e a descoberta para a próxima geração de pesquisadores em áreas como segurança nacional, saúde e ciências climáticas.</p>
+
+        <h3>Destaques</h3>
+        <p>O Texas Advanced Computing Center (TACC) está trabalhando com a Dell Technologies para lançar o Horizon, o maior supercomputador acadêmico do país.</p>
+        <p>Este cluster de computação de alta performance (HPC) financiado pela NSF e alimentado pela Dell enfrentará desafios importantes, incluindo o avanço da ciência aberta — tornando a pesquisa e os dados acessíveis a todos — e impulsionando descobertas em saúde, clima e energia.</p>
+        <p>Servidores Dell PowerEdge com computação acelerada NVIDIA servirão como o motor de HPC do Horizon para ajudar os pesquisadores a impulsionar descobertas científicas.</p>
+        <p>O Horizon entrega 300 petaflops — 10 vezes mais rápido que o Frontera (supercomputador atual, nº 1 nas universidades americanasUA.</p>
+
+        <h3>Construindo as bases da descoberta com Dell Technologies e NVIDIA</h3>
+        <p>Construído com base na Dell AI Factory com NVIDIA, o Horizon oferecerá aos pesquisadores capacidades de HPC e IA sem precedentes para enfrentar problemas complexos — desde as mudanças climáticas até os avanços médicos e a física fundamental. O supercomputador fornecerá a performance e a confiabilidade que os pesquisadores precisam para expandir as fronteiras da descoberta em diversas disciplinas.</p>
+
+        <p>Na base do Horizon estão os Dell Integrated Rack Scalable Systems (IRSS), equipados com servidores Dell PowerEdge com resfriamento líquido direto, contendo a plataforma NVIDIA Grace Blackwell e CPUs NVIDIA Vera com 1 milhão de núcleos de CPU e 4.000 GPUs NVIDIA interconectadas pela rede NVIDIA Quantum-X800 InfiniBand de alta performance. O Dell IRSS foi projetado para os workloads de IA mais intensivos, maximizando espaço e eficiência para atender às necessidades de computação de alta densidade do TACC.</p>
+
+        <p>Este sistema de alta performance contará com 300 petaflops — uma melhoria de 10× na velocidade de simulação em comparação com o sistema Frontera do TACC, atualmente o supercomputador acadêmico nº 1 dos EUA. Quando entrar em operação em 2026, o Horizon ajudará cientistas a enfrentarem problemas que antes estavam fora de alcance e impulsionará pesquisas que fortalecem a liderança dos EUA em ciência, IA e inovação.</p>
+
+        <blockquote>
+          "Nossa colaboração de longa data com o TACC reflete o compromisso da Dell Technologies com o avanço da pesquisa e da inovação. A Dell e o TACC têm impulsionado descobertas há décadas, incluindo os supercomputadores Stampede e Frontera. O Horizon, o cluster HPC de próxima geração do TACC alimentado pela infraestrutura de IA da Dell, fornecerá aos pesquisadores as ferramentas necessárias para enfrentar alguns dos desafios mais complexos do mundo."
+          <cite>Arun Narayanan — SVP, Compute and Networking, Dell Technologies</cite>
+        </blockquote>
+
+        <blockquote>
+          "Nossa colaboração com a Dell e a NVIDIA confere ao Horizon capacidades revolucionárias, particularmente no uso de IA para inovação científica. Definimos o Horizon como uma infraestrutura de computação de classe de liderança — e isso exige que seja o melhor disponível. O Horizon representa o maior investimento que a National Science Foundation já fez em infraestrutura de computação."
+          <cite>Dan Stanzione — Diretor Executivo do TACC e Vice-Presidente Associado de Pesquisa da Universidade do Texas em Austin</cite>
+        </blockquote>
+
+        <h3>Sobre a Dell Technologies</h3>
+        <p>A Dell Technologies (NYSE: DELL) ajuda organizações e indivíduos a construírem seu futuro digital e a transformar a forma como trabalham, vivem e se divertem. A empresa oferece um portfólio abrangente e inovador de hardware, software e serviços que atende a uma variedade de necessidades do cliente, do escritório para casa até os data centers mais complexos do mundo.</p>
+
+        <h3>Sobre o TACC</h3>
+        <p>O Texas Advanced Computing Center da Universidade do Texas em Austin é o principal centro acadêmico de supercomputação do país. Desde 2001, o TACC tem avançado descobertas em diversas disciplinas científicas, fornecendo sistemas, software e expertise de classe mundial para pesquisadores que enfrentam os maiores desafios da sociedade. O TACC oferece computação de alta performance, IA em escala, armazenamento, visualização, treinamento e desenvolvimento de força de trabalho, fomentando a inovação que transforma a ciência e melhora vidas. Como sede do NSF Leadership-Class Computing Facility, o TACC impulsionará a próxima década de avanços na pesquisa e descoberta computacional.</p>
+      </div>
+      <a class="article-source-link" href="https://investors.delltechnologies.com/news-releases/news-release-details/dell-technologies-powers-taccs-new-supercomputer-horizon" target="_blank">🔗 Press release original em Dell.com ↗</a>
+    </div>
+
+    <div data-lang="es">
+      <p class="article-lead">Dell Technologies está trabajando con el TACC de la Universidad de Texas en Austin y con NVIDIA para construir Horizon — el mayor supercomputador académico de los Estados Unidos.</p>
+      <div class="article-body">
+        <p>Horizon servirá como plataforma para la ciencia abierta y la investigación científica, impulsando el progreso y el descubrimiento para la próxima generación de investigadores en áreas como seguridad nacional, salud y ciencias del clima.</p>
+
+        <h3>Aspectos destacados</h3>
+        <p>El Texas Advanced Computing Center (TACC) está trabajando con Dell Technologies para lanzar Horizon, el mayor supercomputador académico del país.</p>
+        <p>Este clúster de computación de alto rendimiento (HPC) financiado por la NSF y alimentado por Dell abordará desafíos importantes, incluyendo el avance de la ciencia abierta — haciendo la investigación y los datos accesibles para todos — e impulsando avances en salud, clima y energía.</p>
+        <p>Los servidores Dell PowerEdge con computación acelerada NVIDIA servirán como el motor HPC de Horizon para ayudar a los investigadores a impulsar descubrimientos científicos.</p>
+        <p>Horizon entrega 300 petaflops — 10 veces más rápido que Frontera (supercomputador actual, nº 1 en las universidades de EE.UU EE.UU.</p>
+
+        <h3>Construyendo las bases del descubrimiento con Dell Technologies y NVIDIA</h3>
+        <p>Construido sobre la base de Dell AI Factory con NVIDIA, Horizon ofrecerá a los investigadores capacidades de HPC e IA sin precedentes para abordar problemas complejos — desde el cambio climático hasta los avances médicos y la física fundamental. El supercomputador proporcionará el rendimiento y la confiabilidad que los investigadores necesitan para ampliar las fronteras del descubrimiento en diversas disciplinas.</p>
+
+        <p>En la base de Horizon están los Dell Integrated Rack Scalable Systems (IRSS), equipados con servidores Dell PowerEdge con refrigeración líquida directa, que incluyen la plataforma NVIDIA Grace Blackwell y CPUs NVIDIA Vera con 1 millón de núcleos de CPU y 4.000 GPUs NVIDIA interconectadas por la red NVIDIA Quantum-X800 InfiniBand de alto rendimiento. El Dell IRSS fue diseñado para las cargas de trabajo de IA más intensivas, maximizando el espacio y la eficiencia para satisfacer las necesidades de cómputo de alta densidad del TACC.</p>
+
+        <p>Este sistema de alto rendimiento contará con 300 petaflops — una mejora de 10× en la velocidad de simulación en comparación con el sistema Frontera del TACC, actualmente el supercomputador académico nº 1 de EE.UU. Cuando entre en operación en 2026, Horizon ayudará a los científicos a abordar problemas que antes estaban fuera de alcance e impulsará investigaciones que fortalezcan el liderazgo de EE.UU. en ciencia, IA e innovación.</p>
+
+        <blockquote>
+          "Nuestra colaboración de larga data con el TACC refleja el compromiso de Dell Technologies con el avance de la investigación y la innovación. Dell y el TACC han impulsado descubrimientos durante décadas, incluyendo los supercomputadores Stampede y Frontera. Horizon, el clúster HPC de próxima generación del TACC impulsado por la infraestructura de IA de Dell, proporcionará a los investigadores las herramientas necesarias para abordar algunos de los desafíos más complejos del mundo."
+          <cite>Arun Narayanan — SVP, Compute and Networking, Dell Technologies</cite>
+        </blockquote>
+
+        <blockquote>
+          "Nuestra colaboración con Dell y NVIDIA le otorga a Horizon capacidades revolucionarias, particularmente en el uso de IA para la innovación científica. Definimos Horizon como una infraestructura de computación de clase de liderazgo — y eso exige que sea lo mejor disponible. Horizon representa la mayor inversión que la National Science Foundation ha realizado en infraestructura de cómputo."
+          <cite>Dan Stanzione — Director Ejecutivo del TACC y Vicepresidente Asociado de Investigación de la Universidad de Texas en Austin</cite>
+        </blockquote>
+
+        <h3>Sobre Dell Technologies</h3>
+        <p>Dell Technologies (NYSE: DELL) ayuda a organizaciones e individuos a construir su futuro digital y a transformar cómo trabajan, viven y se divierten. La empresa ofrece un portafolio integral e innovador de hardware, software y servicios que satisface una variedad de necesidades del cliente, desde la oficina en casa hasta los centros de datos más complejos del mundo.</p>
+
+        <h3>Sobre el TACC</h3>
+        <p>El Texas Advanced Computing Center de la Universidad de Texas en Austin es el principal centro académico de supercomputación del país. Desde 2001, el TACC ha avanzado descubrimientos en diversas disciplinas científicas, proporcionando sistemas, software y experiencia de clase mundial a investigadores que enfrentan los mayores desafíos de la sociedad. El TACC ofrece computación de alto rendimiento, IA a escala, almacenamiento, visualización, capacitación y desarrollo de fuerza laboral, fomentando la innovación que transforma la ciencia y mejora vidas. Como sede del NSF Leadership-Class Computing Facility, el TACC impulsará la próxima década de avances en investigación y descubrimiento computacional.</p>
+      </div>
+      <a class="article-source-link" href="https://investors.delltechnologies.com/news-releases/news-release-details/dell-technologies-powers-taccs-new-supercomputer-horizon" target="_blank">🔗 Comunicado original en Dell.com ↗</a>
+    </div>
+  </div>
+</div>
+
+<script>
+var currentLang = localStorage.getItem('repo_lang') || 'pt';
+
+function setLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('repo_lang', lang);
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-lang]').forEach(function(el) {
+    el.classList.toggle('active-lang', el.dataset.lang === lang);
+  });
+  document.querySelectorAll('.lang-btn').forEach(function(btn) {
+    btn.classList.toggle('active', btn.textContent.includes(lang === 'pt' ? 'PT' : 'ES'));
+  });
+}
+
+function openArticle(id) {
+  var el = document.getElementById('article-' + id);
+  if (!el) return;
+  el.classList.add('open');
+  el.scrollTop = 0;
+  document.body.style.overflow = 'hidden';
+}
+
+function closeArticle(id) {
+  var el = document.getElementById('article-' + id);
+  if (!el) return;
+  el.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key !== 'Escape') return;
+  document.querySelectorAll('.article-overlay.open').forEach(function(el) {
+    el.classList.remove('open');
+  });
+  document.body.style.overflow = '';
+});
+
+document.addEventListener('DOMContentLoaded', function() { setLang(currentLang); });
+</script>
+<div class="article-overlay" id="article-dell-ai">
+  <div class="article-topbar">
+    <button class="article-back" onclick="closeArticle('dell-ai')">← <span data-lang="pt">Voltar</span><span data-lang="es">Volver</span></button>
+    <div class="header-sep"></div>
+    <div class="header-title">Dell + IA</div>
+  </div>
+  <div class="article-content">
+    <div class="article-cat" data-lang="pt">🤖 Posicionamento · Dell Technologies</div>
+    <div class="article-cat" data-lang="es">🤖 Posicionamiento · Dell Technologies</div>
+
+    <h1 class="article-title" data-lang="pt">Dell + IA — Por que a Dell é central na transformação da inteligência artificial</h1>
+    <h1 class="article-title" data-lang="es">Dell + IA — Por qué Dell es central en la transformación de la inteligencia artificial</h1>
+
+    <!-- PT -->
+    <div data-lang="pt">
+      <p class="article-lead">A Dell Technologies se define como a maior fornecedora de infraestrutura de IA do mundo — e a visita ao campus de Austin é uma janela direta para o que isso significa na prática.</p>
+      <div class="article-body">
+
+        <h3>O posicionamento central: Dell AI Factory</h3>
+        <p>O conceito que organiza toda a estratégia de IA da Dell é o <strong>Dell AI Factory</strong> — uma plataforma integrada que cobre toda a jornada de IA de uma organização, desde o PC na mesa do usuário até os maiores data centers do planeta.</p>
+        <p>Em março de 2026, ao celebrar dois anos do Dell AI Factory com NVIDIA no GTC 2026, a Dell anunciou que a plataforma já conta com <strong>mais de 4.000 clientes</strong> — de startups a grandes empresas e hyperscalers. Adotantes iniciais reportam até <strong>2,6× de ROI no primeiro ano</strong>, segundo estudo da Enterprise Strategy Group.</p>
+        <p class="src-line">Fonte: <a href="https://www.dell.com/en-us/dt/corporate/newsroom/announcements/detailpage.press-releases~usa~2026~03~dell-ai-factory-with-nvidia-delivers-proven-path-to-enterprise-ai-roi.htm" target="_blank">Dell · Press Release GTC 2026 · Mar 2026 ↗</a></p>
+
+
+        <h3>Do PC ao data center — uma abordagem única</h3>
+        <p>O que diferencia a Dell de fornecedores de nuvem ou de chips é a amplitude: a empresa é a única que cobre toda a cadeia, do dispositivo pessoal à infraestrutura de missão crítica:</p>
+        <p><strong>AI PCs</strong> — A Dell oferece um portfólio amplo de PCs com IA integrada para diferentes perfis de usuário, do consumidor geral ao profissional. O CEO Michael Dell afirmou: "O PC é o dispositivo de produtividade pessoal mais importante de nossas vidas e está sendo transformado pela IA."</p>
+        <p><strong>Workstations e AI Accelerators — Dell Pro Max com GB10 e GB300</strong></p>
+        <p>A Dell é a líder global em workstations com GPUs profissionais NVIDIA e introduziu dois sistemas revolucionários que trazem performance de data center para a mesa do desenvolvedor:</p>
+        <p>O <strong>Dell Pro Max com GB10</strong> é equipado com o NVIDIA GB10 Grace Blackwell Superchip, 128GB de memória unificada, suporta modelos de até <strong>200 bilhões de parâmetros</strong> e entrega <strong>1.000 TOPS em FP4</strong>. É um dispositivo compacto (150×150×51mm, 1,3kg) com DGX OS pré-instalado. Dois sistemas GB10 conectados funcionam como um único nó, suportando modelos de até <strong>400 bilhões de parâmetros</strong>.</p>
+        <p>O <strong>Dell Pro Max com GB300</strong> usa o NVIDIA GB300 Grace Blackwell Ultra Superchip — a Dell foi a <strong>primeira OEM do mundo a lançar um desktop com esse chip</strong>. Oferece 784GB de memória unificada, suporta modelos de até <strong>1 trilhão de parâmetros</strong> e entrega <strong>20.000 TOPS em FP4</strong>. O sistema conta com o MaxCool, uma solução de resfriamento proprietária da Dell com até 5× mais eficiência térmica que soluções de referência. Ambos os sistemas suportam NVIDIA NemoClaw e NVIDIA OpenShell para agentes de IA autônomos rodando localmente.</p>
+        <p class="src-line">Fonte: <a href="https://www.dell.com/en-us/blog/dell-pro-max-with-gb10-purpose-built-for-ai-developers/" target="_blank">Dell · Pro Max GB10 Blog ↗</a></p> <p class="src-line">Fonte: <a href="https://www.dell.com/en-us/dt/corporate/newsroom/announcements/detailpage.press-releases~usa~2026~03~dell-technologies-first-to-ship-nvidia-gb300-desktop-for-autonomous-ai-agents-with-nvidia-openshell.htm" target="_blank">Dell · GB300 Press Release · Mar 2026 ↗</a></p> <p class="src-line">Fonte: <a href="https://www.dell.com/en-us/lp/dell-pro-max-nvidia-ai-dev" target="_blank">Dell · Pro Max Portfolio ↗</a></p>
+        <p><strong>Servidores e infraestrutura</strong> — Os Dell PowerEdge servers com NVIDIA acelerada formam o núcleo do AI Factory, projetados para os workloads de IA mais intensivos.</p>
+        <p><strong>Storage e dados</strong> — A Dell AI Data Platform integra as soluções PowerScale e ObjectScale, agora integradas com a biblioteca NIXL da NVIDIA para acelerar workloads de IA. Resultados internos da Dell mostram uma melhoria de <strong>19× no Time to First Token</strong> comparado a configurações padrão.</p>
+        <p><strong>Edge</strong> — O Dell NativeEdge automatiza a implantação de soluções de IA na borda da rede, com integrações para frameworks da NVIDIA e Intel.</p>
+        <p class="src-line">Fonte: <a href="https://www.dell.com/en-us/dt/corporate/newsroom/announcements/detailpage.press-releases~usa~2025~05~dell-technologies-fuels-enterprise-ai-innovation-with-infrastructure-solutions-and-services.htm" target="_blank">Dell · DTW 2025 Press Release · Mai 2025 ↗</a></p>
+
+        <h3>A parceria com NVIDIA</h3>
+        <p>O Dell AI Factory com NVIDIA é descrito pelas duas empresas como a única solução end-to-end de IA empresarial do mercado. Jensen Huang, CEO da NVIDIA, declarou: "Todas as indústrias estão correndo para construir fábricas de IA para produzir inteligência. Dell e NVIDIA estão em parceria para entregar a infraestrutura de IA mais abrangente e end-to-end do setor. De workstations na mesa do usuário a fábricas de IA em escala de data center, esta plataforma vai impulsionar a próxima onda de avanços movidos por IA."</p>
+        <p class="src-line">Fonte: <a href="https://www.dell.com/en-uk/blog/let-s-dive-into-the-dell-ai-factory-announcements-from-dell-technologies-world/" target="_blank">Dell Blog · AI Factory Announcements DTW ↗</a></p>
+
+        <h3>IA empresarial — automação e serviços</h3>
+        <p>Além do hardware, a Dell oferece uma camada de automação via <strong>Dell Automation Platform</strong> — integrada ao AI Factory — que permite implantar soluções validadas com um framework seguro, eliminando a necessidade de configurações manuais complexas. A plataforma inclui ferramentas como um assistente de código IA com Tabnine e uma plataforma de IA agêntica com Cohere North.</p>
+        <p>Os <strong>Dell Professional Services</strong> oferecem pilotos interativos turnkey de casos de uso de IA usando dados reais do cliente, com métricas de ROI definidas antes de escalar os investimentos.</p>
+        <p class="src-line">Fonte: <a href="https://www.dell.com/en-us/dt/corporate/newsroom/announcements/detailpage.press-releases~usa~2025~11~dell-technologies-accelerates-enterprise-ai-with-powerful-automated-solutions.htm" target="_blank">Dell · SC25 Press Release · Nov 2025 ↗</a></p>
+
+
+
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-top:28px;">
+        <a class="article-source-link" href="https://www.dell.com/en-us/shop/scc/sc/artificial-intelligence" target="_blank">🔗 Dell AI Solutions — página oficial ↗</a>
+        <a class="article-source-link" href="https://www.dell.com/en-us/dt/corporate/newsroom/announcements/detailpage.press-releases~usa~2025~11~dell-technologies-accelerates-enterprise-ai-with-powerful-automated-solutions.htm" target="_blank">🔗 Dell AI Factory · SC25 Press Release ↗</a>
+        <a class="article-source-link" href="https://www.dell.com/en-us/dt/corporate/newsroom/announcements/detailpage.press-releases~usa~2025~03~corp.htm" target="_blank">🔗 Dell AI Factory with NVIDIA · GTC 2025 ↗</a>
+      </div>
+    </div>
+
+    <!-- ES -->
+    <div data-lang="es">
+      <p class="article-lead">Dell Technologies se define como la mayor proveedora de infraestructura de IA del mundo — y la visita al campus de Austin es una ventana directa a lo que eso significa en la práctica.</p>
+      <div class="article-body">
+
+        <h3>El posicionamiento central: Dell AI Factory</h3>
+        <p>El concepto que organiza toda la estrategia de IA de Dell es el <strong>Dell AI Factory</strong> — una plataforma integrada que cubre todo el recorrido de IA de una organización, desde el PC en el escritorio del usuario hasta los mayores data centers del planeta.</p>
+        <p>En marzo de 2026, al celebrar dos años del Dell AI Factory con NVIDIA en GTC 2026, Dell anunció que la plataforma ya cuenta con <strong>más de 4.000 clientes</strong> — desde startups hasta grandes empresas e hyperscalers. Los primeros adoptantes reportan hasta <strong>2,6× de ROI en el primer año</strong>, según un estudio de Enterprise Strategy Group.</p>
+        <p class="src-line">Fuente: <a href="https://www.dell.com/en-us/dt/corporate/newsroom/announcements/detailpage.press-releases~usa~2026~03~dell-ai-factory-with-nvidia-delivers-proven-path-to-enterprise-ai-roi.htm" target="_blank">Dell · Press Release GTC 2026 · Mar 2026 ↗</a></p>
+
+        <h3>Del PC al data center — un enfoque único</h3>
+        <p>Lo que diferencia a Dell de proveedores de nube o de chips es la amplitud: es la única empresa que cubre toda la cadena, del dispositivo personal a la infraestructura de misión crítica:</p>
+        <p><strong>AI PCs</strong> — Dell ofrece un amplio portafolio de PCs con IA integrada para diferentes perfiles de usuario, desde el consumidor general hasta el profesional. El CEO Michael Dell afirmó: "El PC es el dispositivo de productividad personal más importante de nuestras vidas y está siendo transformado por la IA."</p>
+        <p><strong>Workstations y AI Accelerators — Dell Pro Max con GB10 y GB300</strong></p>
+        <p>Dell es líder global en workstations con GPUs profesionales NVIDIA e introdujo dos sistemas que llevan el rendimiento del data center al escritorio del desarrollador:</p>
+        <p>El <strong>Dell Pro Max con GB10</strong> está equipado con el NVIDIA GB10 Grace Blackwell Superchip, 128GB de memoria unificada, soporta modelos de hasta <strong>200 mil millones de parámetros</strong> y entrega <strong>1.000 TOPS en FP4</strong>. Es un dispositivo compacto (150×150×51mm, 1,3kg) con DGX OS preinstalado. Dos sistemas GB10 conectados funcionan como un único nodo, soportando modelos de hasta <strong>400 mil millones de parámetros</strong>.</p>
+        <p>El <strong>Dell Pro Max con GB300</strong> usa el NVIDIA GB300 Grace Blackwell Ultra Superchip — Dell fue la <strong>primera OEM del mundo en lanzar un desktop con este chip</strong>. Ofrece 784GB de memoria unificada, soporta modelos de hasta <strong>1 billón de parámetros</strong> y entrega <strong>20.000 TOPS en FP4</strong>. El sistema cuenta con MaxCool, una solución de refrigeración propietaria de Dell con hasta 5× mayor eficiencia térmica. Ambos sistemas soportan NVIDIA NemoClaw y NVIDIA OpenShell para agentes de IA autónomos ejecutándose localmente.</p>
+        <p class="src-line">Fuente: <a href="https://www.dell.com/en-us/blog/dell-pro-max-with-gb10-purpose-built-for-ai-developers/" target="_blank">Dell · Pro Max GB10 Blog ↗</a></p> <p class="src-line">Fuente: <a href="https://www.dell.com/en-us/dt/corporate/newsroom/announcements/detailpage.press-releases~usa~2026~03~dell-technologies-first-to-ship-nvidia-gb300-desktop-for-autonomous-ai-agents-with-nvidia-openshell.htm" target="_blank">Dell · GB300 Press Release · Mar 2026 ↗</a></p> <p class="src-line">Fuente: <a href="https://www.dell.com/en-us/lp/dell-pro-max-nvidia-ai-dev" target="_blank">Dell · Pro Max Portfolio ↗</a></p>
+        <p><strong>Servidores e infraestructura</strong> — Los servidores Dell PowerEdge con aceleración NVIDIA forman el núcleo del AI Factory, diseñados para las cargas de trabajo de IA más intensivas.</p>
+        <p><strong>Storage y datos</strong> — La Dell AI Data Platform integra las soluciones PowerScale y ObjectScale, ahora integradas con la biblioteca NIXL de NVIDIA. Resultados internos de Dell muestran una mejora de <strong>19× en el Time to First Token</strong> frente a configuraciones estándar.</p>
+        <p><strong>Edge</strong> — Dell NativeEdge automatiza el despliegue de soluciones de IA en el borde de la red, con integraciones para frameworks de NVIDIA e Intel.</p>
+        <p class="src-line">Fuente: <a href="https://www.dell.com/en-us/dt/corporate/newsroom/announcements/detailpage.press-releases~usa~2025~05~dell-technologies-fuels-enterprise-ai-innovation-with-infrastructure-solutions-and-services.htm" target="_blank">Dell · DTW 2025 Press Release · Mai 2025 ↗</a></p>
+
+        <h3>La alianza con NVIDIA</h3>
+        <p>El Dell AI Factory con NVIDIA se describe como la única solución end-to-end de IA empresarial del mercado. Jensen Huang, CEO de NVIDIA, declaró: "Todas las industrias están corriendo para construir fábricas de IA para producir inteligencia. Dell y NVIDIA se están asociando para ofrecer la infraestructura de IA más amplia y end-to-end del sector. Desde workstations en el escritorio hasta fábricas de IA a escala de data center, esta plataforma impulsará la próxima ola de avances impulsados por IA."</p>
+        <p class="src-line">Fuente: <a href="https://www.dell.com/en-uk/blog/let-s-dive-into-the-dell-ai-factory-announcements-from-dell-technologies-world/" target="_blank">Dell Blog · AI Factory Announcements DTW ↗</a></p>
+
+        <h3>IA empresarial — automatización y servicios</h3>
+        <p>Además del hardware, Dell ofrece una capa de automatización vía <strong>Dell Automation Platform</strong> — integrada al AI Factory — que permite desplegar soluciones validadas con un framework seguro. La plataforma incluye herramientas como un asistente de código IA con Tabnine y una plataforma de IA agéntica con Cohere North.</p>
+        <p>Los <strong>Dell Professional Services</strong> ofrecen pilotos interactivos turnkey de casos de uso de IA usando datos reales del cliente, con métricas de ROI definidas antes de escalar las inversiones.</p>
+        <p class="src-line">Fuente: <a href="https://www.dell.com/en-us/dt/corporate/newsroom/announcements/detailpage.press-releases~usa~2025~11~dell-technologies-accelerates-enterprise-ai-with-powerful-automated-solutions.htm" target="_blank">Dell · SC25 Press Release · Nov 2025 ↗</a></p>
+
+
+
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-top:28px;">
+        <a class="article-source-link" href="https://www.dell.com/en-us/shop/scc/sc/artificial-intelligence" target="_blank">🔗 Dell AI Solutions — página oficial ↗</a>
+        <a class="article-source-link" href="https://www.dell.com/en-us/dt/corporate/newsroom/announcements/detailpage.press-releases~usa~2025~11~dell-technologies-accelerates-enterprise-ai-with-powerful-automated-solutions.htm" target="_blank">🔗 Dell AI Factory · SC25 Press Release ↗</a>
+        <a class="article-source-link" href="https://www.dell.com/en-us/dt/corporate/newsroom/announcements/detailpage.press-releases~usa~2025~03~corp.htm" target="_blank">🔗 Dell AI Factory with NVIDIA · GTC 2025 ↗</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
