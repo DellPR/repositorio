@@ -2,6 +2,9 @@
 <html lang="pt">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Repositório · Austin Press Tour 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300&display=swap" rel="stylesheet">
@@ -133,6 +136,17 @@
   .src-line a { color:var(--blue); text-decoration:none; }
   .src-line a:hover { text-decoration:underline; }
 </style>
+
+<script>
+(function(){
+  var VERSION = "20260415181042";
+  var stored = localStorage.getItem("repo_version");
+  if (stored !== VERSION) {
+    localStorage.setItem("repo_version", VERSION);
+    if (stored !== null) window.location.reload(true);
+  }
+})();
+</script>
 </head>
 <body>
 
@@ -163,9 +177,9 @@
 <div class="category-nav">
   <a href="#dell-ai"   class="cat-pill">🤖 Dell + IA</a>
   <a href="#tacc"      class="cat-pill">🖥️ TACC</a>
+  <a href="#ebc"       class="cat-pill">🏢 EBC</a>
   <a href="#alienware" class="cat-pill">🎮 Alienware</a>
   <a href="#aisc"      class="cat-pill">🤖 AI Solutions</a>
-  <a href="#ebc"       class="cat-pill">🏢 EBC</a>
   <a href="#rugged"    class="cat-pill">🛡️ Rugged Lab</a>
 </div>
 
@@ -267,6 +281,25 @@
         </div>
       </a>
 
+      
+      <a class="card" onclick="openArticle('tacc-impacto'); return false;" href="#">
+        <div class="card-img-wrap">
+          <img src="https://raw.githubusercontent.com/DellPR/repositorio/main/tacc.jpg" onerror="this.parentElement.innerHTML='<span class=card-img-label>TACC Impact</span>'">
+        </div>
+        <div class="card-body">
+          <div class="card-type" data-lang="pt">🏆 Impacto Científico · 25 anos</div>
+          <div class="card-type" data-lang="es">🏆 Impacto Científico · 25 años</div>
+          <div class="card-title" data-lang="pt">O legado do TACC — Prêmios Nobel, pandemias e ondas gravitacionais</div>
+          <div class="card-title" data-lang="es">El legado del TACC — Premios Nobel, pandemias y ondas gravitacionales</div>
+          <div class="card-desc" data-lang="pt">25 anos de descobertas que mudaram a ciência: do bóson de Higgs ao COVID-19, passando por 3 Prêmios Nobel.</div>
+          <div class="card-desc" data-lang="es">25 años de descubrimientos que cambiaron la ciencia: del bosón de Higgs al COVID-19, pasando por 3 Premios Nobel.</div>
+        </div>
+        <div class="card-footer">
+          <span data-lang="pt">Ler</span><span data-lang="es">Leer</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+
       <a class="card" href="https://tacc.utexas.edu" target="_blank" style="display:flex;align-items:center;gap:14px;padding:14px 16px;">
         <div style="width:36px;height:36px;border-radius:8px;background:rgba(0,118,206,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px">🌐</div>
         <div style="flex:1;min-width:0">
@@ -277,6 +310,53 @@
       </a>
 
     </div>
+  </section>
+
+  <!-- EBC -->
+  <section class="cat-section" id="ebc">
+    <div class="cat-header">
+      <div class="cat-icon orange">🏢</div>
+      <div><div class="cat-label">Categoria</div><div class="cat-name">Executive Briefing Center (EBC)</div></div>
+    </div>
+    <div class="cards-grid">
+
+      <a class="card" href="https://raw.githubusercontent.com/DellPR/repositorio/main/Dell%20Advantage%20presentation.pdf" target="_blank" style="display:flex;align-items:center;gap:14px;padding:14px 16px;">
+        <div style="width:36px;height:36px;border-radius:8px;background:rgba(0,118,206,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px">📑</div>
+        <div style="flex:1;min-width:0">
+          <div class="card-type" style="margin-bottom:2px">PDF · Dell Technologies</div>
+          <div style="font-size:13px;font-weight:600;color:var(--text)">Apresentação Dell Advantage ↗</div>
+        </div>
+      </a>
+
+      <a class="card" onclick="openArticle('dell-pcs-2026'); return false;" href="#">
+        <div class="card-img-wrap">
+          <img src="https://i.dell.com/sites/csimages/App-Merchandizing_Images/all/dell-pro-14-premium-laptop_pdp_1.png"
+            onerror="this.parentElement.innerHTML='<span class=card-img-label>Dell Pro Notebooks 2026</span>'">
+        </div>
+        <div class="card-body">
+          <div class="card-type" data-lang="pt">💻 Portfólio · Mar 2026</div>
+          <div class="card-type" data-lang="es">💻 Portafolio · Mar 2026</div>
+          <div class="card-title" data-lang="pt">Nova geração de PCs comerciais Dell — mais finos, leves e poderosos</div>
+          <div class="card-title" data-lang="es">Nueva generación de PCs comerciales Dell — más delgados, livianos y poderosos</div>
+          <div class="card-desc" data-lang="pt">Dell relança o portfólio comercial completo: notebooks Dell Pro, workstations Dell Pro Precision, desktops, monitores e periféricos.</div>
+          <div class="card-desc" data-lang="es">Dell relanza el portafolio comercial completo: notebooks Dell Pro, workstations Dell Pro Precision, desktops, monitores y periféricos.</div>
+        </div>
+        <div class="card-footer">
+          <span data-lang="pt">Ler press release</span><span data-lang="es">Leer comunicado</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+      <a class="card" href="https://investors.delltechnologies.com/static-files/cbb4c668-2613-4d5c-a7dc-98fe4592b5a5" target="_blank" style="display:flex;align-items:center;gap:14px;padding:14px 16px;">
+        <div style="width:36px;height:36px;border-radius:8px;background:rgba(0,118,206,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px">📊</div>
+        <div style="flex:1;min-width:0">
+          <div class="card-type" style="margin-bottom:2px">Dell Technologies · Investor Relations</div>
+          <div style="font-size:13px;font-weight:600;color:var(--text)" data-lang="pt">Resultados Financeiros Mais Recentes ↗</div>
+          <div style="font-size:13px;font-weight:600;color:var(--text)" data-lang="es">Resultados Financieros Más Recientes ↗</div>
+        </div>
+      </a>
+      </div>
+
+
   </section>
 
   <!-- ALIENWARE -->
@@ -303,18 +383,6 @@
     </div>
   </section>
 
-
-  <!-- EBC -->
-  <section class="cat-section" id="ebc">
-    <div class="cat-header">
-      <div class="cat-icon orange">🏢</div>
-      <div><div class="cat-label">Categoria</div><div class="cat-name">Executive Briefing Center (EBC)</div></div>
-    </div>
-    <div class="coming-soon">
-      <div class="coming-soon-text" data-lang="pt">Mais conteúdo em breve</div>
-      <div class="coming-soon-text" data-lang="es">Más contenido próximamente</div>
-    </div>
-  </section>
 
   <!-- RUGGED -->
   <section class="cat-section" id="rugged">
@@ -750,6 +818,239 @@ document.addEventListener('DOMContentLoaded', function() { setLang(currentLang);
         <a class="article-source-link" href="https://www.dell.com/en-us/shop/scc/sc/artificial-intelligence" target="_blank">🔗 Dell AI Solutions — página oficial ↗</a>
         <a class="article-source-link" href="https://www.dell.com/en-us/dt/corporate/newsroom/announcements/detailpage.press-releases~usa~2026~03~dell-ai-factory-with-nvidia-delivers-proven-path-to-enterprise-ai-roi.htm" target="_blank">🔗 Dell AI Factory · GTC 2026 Press Release ↗</a>
         <a class="article-source-link" href="https://www.dell.com/en-us/dt/corporate/newsroom/announcements/detailpage.press-releases~usa~2025~11~dell-technologies-accelerates-enterprise-ai-with-powerful-automated-solutions.htm" target="_blank">🔗 Dell AI Factory · SC25 Press Release ↗</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ARTICLE: TACC IMPACTO -->
+<div class="article-overlay" id="article-tacc-impacto">
+  <div class="article-topbar">
+    <button class="article-back" onclick="closeArticle('tacc-impacto')">← <span data-lang="pt">Voltar</span><span data-lang="es">Volver</span></button>
+    <div class="header-sep"></div>
+    <div class="header-title">TACC · Impacto</div>
+  </div>
+  <div class="article-content">
+    <div class="article-cat" data-lang="pt">🏆 Impacto Científico · TACC · 25 anos</div>
+    <div class="article-cat" data-lang="es">🏆 Impacto Científico · TACC · 25 años</div>
+
+    <h1 class="article-title" data-lang="pt">O legado do TACC — o que 25 anos de supercomputação produziram</h1>
+    <h1 class="article-title" data-lang="es">El legado del TACC — lo que 25 años de supercomputación produjeron</h1>
+
+    <img class="article-hero-img" src="https://raw.githubusercontent.com/DellPR/repositorio/main/tacc.jpg" onerror="this.style.display='none'" alt="TACC">
+
+    <!-- PT -->
+    <div data-lang="pt">
+      <p class="article-lead">Desde 2001, o TACC colocou poder computacional nas mãos de pesquisadores de todo o país. O resultado: descobertas que mudaram a ciência, responderam a crises globais e renderam múltiplos Prêmios Nobel.</p>
+      <div class="article-body">
+
+        <h3>Prêmios Nobel com DNA computacional do TACC</h3>
+        <div style="background:linear-gradient(135deg,rgba(0,118,206,0.08),rgba(0,74,147,0.05));border:1px solid rgba(0,118,206,0.25);border-radius:10px;padding:14px 16px;margin:14px 0"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#0076CE;margin-bottom:10px">🏆 3 Nobel Prize connections</div><p style="font-size:13px;color:#3A3A40;margin:0;line-height:1.7"><strong>2024 · Química</strong> — David Baker (Universidade de Washington) ganhou o Nobel pelo trabalho em predição e design de proteínas rodado em simulações no Frontera.<br><strong>2017 · Física</strong> — O TACC ajudou a confirmar a primeira detecção de ondas gravitacionais pelo LIGO (Caltech/MIT) — a colisão de dois buracos negros. Einstein havia previsto esse fenômeno em 1916. O trabalho abriu uma nova janela para o universo.<br><strong>2013 · Física</strong> — Pesquisas de física de alta energia no TACC suportaram a descoberta do bóson de Higgs no Large Hadron Collider na Suíça.</p></div>
+        <p class="src-line">Fontes: <a href="https://tacc.utexas.edu/tacc25/" target="_blank">TACC25 · 25 anos de descobertas ↗</a> · <a href="https://news.utexas.edu/2021/09/30/leading-supercomputing-center-marks-two-decades-of-powering-discoveries/" target="_blank">UT Austin · 20 anos TACC ↗</a></p>
+
+        <h3>COVID-19 — ciência computacional em tempo real</h3>
+        <p>Durante a pandemia, o TACC dedicou <strong>mais de 30% de seus recursos computacionais</strong> a apoiar mais de <strong>50 equipes de pesquisa sobre COVID-19</strong>. O trabalho incluiu a criação do primeiro modelo atomístico do SARS-CoV-2 e previsões diárias da pandemia que continuaram a orientar decisões de política pública local, estadual e nacional.</p>
+        <p class="src-line">Fonte: <a href="https://news.utexas.edu/2021/09/30/leading-supercomputing-center-marks-two-decades-of-powering-discoveries/" target="_blank">UT Austin · 20 anos TACC ↗</a></p>
+
+        <h3>Emergências — computação quando mais importa</h3>
+        <p>Ao longo de 25 anos, o TACC tornou-se um contribuinte essencial em emergências nacionais. O centro produziu simulações urgentes de tempestades para furacões no Golfo do México, orientando equipes de resposta — e foi acionado após o derramamento de petróleo do Deepwater Horizon. Desde 2003, quando recursos do TACC foram usados para guiar investigadores após o desastre do Ônibus Espacial Challenger, o centro mantém capacidade de computação urgente ativa.</p>
+        <p class="src-line">Fonte: <a href="https://news.utexas.edu/2021/09/30/leading-supercomputing-center-marks-two-decades-of-powering-discoveries/" target="_blank">UT Austin · 20 anos TACC ↗</a></p>
+
+        <h3>De onde viemos — 25 anos de escala computacional</h3>
+        <p>O primeiro supercomputador do TACC entregava <strong>50 gigaflops</strong> de performance — uma fração do que os smartphones de hoje fazem. Em 2019, o Frontera chegou a <strong>40 petaflops</strong> — quase <strong>1 milhão de vezes mais poderoso</strong> que aquele primeiro sistema. Agora, com o Horizon, a meta é 300 petaflops para simulação e mais de 100× em IA.</p>
+        <p>Para colocar em perspectiva: a velocidade de computação cresce por um fator de 1.000 a cada 10–12 anos desde o fim dos anos 1980.</p>
+        <p class="src-line">Fonte: <a href="https://tacc.utexas.edu/tacc25/" target="_blank">TACC25 · 25 anos de descobertas ↗</a></p>
+
+        <h3>Escala humana — quem usa o TACC</h3>
+        <div class="stats-row" style="margin:16px 0">
+          <div class="stat-box"><div class="stat-num">125K</div><div class="stat-label">pesquisadores nas últimas duas décadas</div></div>
+          <div class="stat-box"><div class="stat-num">10K</div><div class="stat-label">pesquisadores por ano</div></div>
+          <div class="stat-box"><div class="stat-num">3.000+</div><div class="stat-label">projetos de pesquisa por ano</div></div>
+          <div class="stat-box"><div class="stat-num">450+</div><div class="stat-label">instituições no país</div></div>
+          <div class="stat-box"><div class="stat-num">200</div><div class="stat-label">funcionários em tempo integral</div></div>
+        </div>
+        <p>A comunidade atendida abrange todo o espectro da ciência — de astronomia a zoologia, do nível nano ao cósmico — e inclui pesquisadores federais (Departamento de Defesa, NIH, NOAA, DARPA), universidades do Texas e parceiros industriais. Ao todo, o TACC opera mais de uma dúzia de sistemas avançados de computação.</p>
+        <p class="src-line">Fontes: <a href="https://alcalde.texasexes.org/2024/12/world-renowned-supercomputers-inside-ut-texas-advanced-computing-center" target="_blank">The Alcalde · UT Austin ↗</a> · <a href="https://tacc.utexas.edu/about/about-tacc/" target="_blank">TACC About ↗</a></p>
+
+        <h3>Outros marcos científicos</h3>
+        <p>Além dos Nobeis, pesquisadores usando sistemas do TACC calcularam o comportamento do <em>grafeno bicamada torcido em ângulo mágico</em>, propondo uma teoria que uma década depois levou ao desenvolvimento de materiais supercondutores capazes de viabilizar computação quântica e transmissão elétrica mais eficiente.</p>
+        <p>Em 2024, pesquisas de DNA antigo rodadas no TACC expandiram o mapa genético da Eurásia, revelando como populações humanas migraram nos últimos 10.000 anos.</p>
+        <p class="src-line">Fonte: <a href="https://tacc.utexas.edu/news/latest-news/2025/10/08/a-bright-future-in-texas-computational-science/" target="_blank">TACC · TACCSTER 2025 ↗</a></p>
+
+        <h3>Dell como parceiro de longa data</h3>
+        <p>A Dell Technologies é descrita pelo próprio TACC como seu parceiro "mais longo e mais consistente". A parceria inclui o Stampede, o Frontera e agora o Horizon. Em 2021, Michael Dell participou das comemorações dos 20 anos do TACC, afirmando: "Na Dell Technologies, temos muito orgulho em estar ao lado da UT e do TACC enquanto continuamos a definir o padrão para computação de alta performance."</p>
+        <p class="src-line">Fonte: <a href="https://news.utexas.edu/2021/09/30/leading-supercomputing-center-marks-two-decades-of-powering-discoveries/" target="_blank">UT Austin · 20 anos TACC ↗</a></p>
+
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-top:28px;">
+        <a class="article-source-link" href="https://tacc.utexas.edu/tacc25/" target="_blank">🔗 TACC25 — 25 anos de descobertas ↗</a>
+        <a class="article-source-link" href="https://tacc.utexas.edu/about/about-tacc/" target="_blank">🔗 Sobre o TACC ↗</a>
+      </div>
+    </div>
+
+    <!-- ES -->
+    <div data-lang="es">
+      <p class="article-lead">Desde 2001, el TACC ha puesto poder computacional en manos de investigadores de todo el país. El resultado: descubrimientos que cambiaron la ciencia, respondieron a crisis globales y obtuvieron múltiples Premios Nobel.</p>
+      <div class="article-body">
+
+        <h3>Premios Nobel con ADN computacional del TACC</h3>
+        <div style="background:linear-gradient(135deg,rgba(0,118,206,0.08),rgba(0,74,147,0.05));border:1px solid rgba(0,118,206,0.25);border-radius:10px;padding:14px 16px;margin:14px 0"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#0076CE;margin-bottom:10px">🏆 3 conexiones con el Premio Nobel</div><p style="font-size:13px;color:#3A3A40;margin:0;line-height:1.7"><strong>2024 · Química</strong> — David Baker (Universidad de Washington) ganó el Nobel por su trabajo en predicción y diseño de proteínas, ejecutado en simulaciones del Frontera.<br><strong>2017 · Física</strong> — El TACC ayudó a confirmar la primera detección de ondas gravitacionales por LIGO (Caltech/MIT) — la colisión de dos agujeros negros. Einstein había predicho este fenómeno en 1916. El trabajo abrió una nueva ventana al universo.<br><strong>2013 · Física</strong> — Investigaciones de física de alta energía en el TACC respaldaron el descubrimiento del bosón de Higgs en el Gran Colisionador de Hadrones en Suiza.</p></div>
+        <p class="src-line">Fuentes: <a href="https://tacc.utexas.edu/tacc25/" target="_blank">TACC25 · 25 años de descubrimientos ↗</a> · <a href="https://news.utexas.edu/2021/09/30/leading-supercomputing-center-marks-two-decades-of-powering-discoveries/" target="_blank">UT Austin · 20 años TACC ↗</a></p>
+
+        <h3>COVID-19 — ciencia computacional en tiempo real</h3>
+        <p>Durante la pandemia, el TACC dedicó <strong>más del 30% de sus recursos computacionales</strong> a apoyar a más de <strong>50 equipos de investigación sobre COVID-19</strong>. El trabajo incluyó la creación del primer modelo atomístico del SARS-CoV-2 y predicciones diarias de la pandemia que continuaron orientando decisiones de política pública local, estatal y nacional.</p>
+        <p class="src-line">Fuente: <a href="https://news.utexas.edu/2021/09/30/leading-supercomputing-center-marks-two-decades-of-powering-discoveries/" target="_blank">UT Austin · 20 años TACC ↗</a></p>
+
+        <h3>Emergencias — computación cuando más importa</h3>
+        <p>A lo largo de 25 años, el TACC se convirtió en un contribuyente esencial en emergencias nacionales. El centro produjo simulaciones urgentes de tormentas para huracanes en el Golfo de México, orientando equipos de respuesta — y fue activado tras el derrame de petróleo del Deepwater Horizon. Desde 2003, cuando recursos del TACC se usaron para guiar investigadores tras el desastre del transbordador espacial Columbia, el centro mantiene capacidad de computación urgente activa.</p>
+        <p class="src-line">Fuente: <a href="https://news.utexas.edu/2021/09/30/leading-supercomputing-center-marks-two-decades-of-powering-discoveries/" target="_blank">UT Austin · 20 años TACC ↗</a></p>
+
+        <h3>De dónde venimos — 25 años de escala computacional</h3>
+        <p>El primer supercomputador del TACC entregaba <strong>50 gigaflops</strong> de rendimiento — una fracción de lo que hacen los smartphones actuales. En 2019, Frontera llegó a <strong>40 petaflops</strong> — casi <strong>1 millón de veces más poderoso</strong> que aquel primer sistema. Ahora, con Horizon, la meta es 300 petaflops para simulación y más de 100× en IA.</p>
+        <p>Para ponerlo en perspectiva: la velocidad de computación crece por un factor de 1.000 cada 10–12 años desde fines de los años 80.</p>
+        <p class="src-line">Fuente: <a href="https://tacc.utexas.edu/tacc25/" target="_blank">TACC25 · 25 años de descubrimientos ↗</a></p>
+
+        <h3>Escala humana — quién usa el TACC</h3>
+        <div class="stats-row" style="margin:16px 0">
+          <div class="stat-box"><div class="stat-num">125K</div><div class="stat-label">investigadores en las últimas dos décadas</div></div>
+          <div class="stat-box"><div class="stat-num">10K</div><div class="stat-label">investigadores por año</div></div>
+          <div class="stat-box"><div class="stat-num">3.000+</div><div class="stat-label">proyectos de investigación por año</div></div>
+          <div class="stat-box"><div class="stat-num">450+</div><div class="stat-label">instituciones en el país</div></div>
+          <div class="stat-box"><div class="stat-num">200</div><div class="stat-label">empleados a tiempo completo</div></div>
+        </div>
+        <p>La comunidad atendida abarca todo el espectro de la ciencia — de astronomía a zoología, del nivel nano al cósmico — e incluye investigadores federales (Departamento de Defensa, NIH, NOAA, DARPA), universidades de Texas y socios industriales. En total, el TACC opera más de una docena de sistemas avanzados de computación.</p>
+        <p class="src-line">Fuentes: <a href="https://alcalde.texasexes.org/2024/12/world-renowned-supercomputers-inside-ut-texas-advanced-computing-center" target="_blank">The Alcalde · UT Austin ↗</a> · <a href="https://tacc.utexas.edu/about/about-tacc/" target="_blank">TACC About ↗</a></p>
+
+        <h3>Otros hitos científicos</h3>
+        <p>Además de los Nobeles, investigadores usando sistemas del TACC calcularon el comportamiento del <em>grafeno bicapa retorcido en ángulo mágico</em>, proponiendo una teoría que una década después condujo al desarrollo de materiales superconductores capaces de viabilizar la computación cuántica. En 2024, investigaciones de ADN antiguo ejecutadas en el TACC expandieron el mapa genético de Eurasia, revelando cómo las poblaciones humanas migraron en los últimos 10.000 años.</p>
+        <p class="src-line">Fuente: <a href="https://tacc.utexas.edu/news/latest-news/2025/10/08/a-bright-future-in-texas-computational-science/" target="_blank">TACC · TACCSTER 2025 ↗</a></p>
+
+        <h3>Dell como socio de larga data</h3>
+        <p>Dell Technologies es descrita por el propio TACC como su socio "más largo y más consistente". La alianza incluye Stampede, Frontera y ahora Horizon. En 2021, Michael Dell participó en las celebraciones de los 20 años del TACC: "En Dell Technologies, estamos increíblemente orgullosos de estar junto a UT y TACC mientras continuamos definiendo el estándar para la computación de alto rendimiento."</p>
+        <p class="src-line">Fuente: <a href="https://news.utexas.edu/2021/09/30/leading-supercomputing-center-marks-two-decades-of-powering-discoveries/" target="_blank">UT Austin · 20 años TACC ↗</a></p>
+
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-top:28px;">
+        <a class="article-source-link" href="https://tacc.utexas.edu/tacc25/" target="_blank">🔗 TACC25 — 25 años de descubrimientos ↗</a>
+        <a class="article-source-link" href="https://tacc.utexas.edu/about/about-tacc/" target="_blank">🔗 Sobre el TACC ↗</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ARTICLE: DELL PCS 2026 -->
+<div class="article-overlay" id="article-dell-pcs-2026">
+  <div class="article-topbar">
+    <button class="article-back" onclick="closeArticle('dell-pcs-2026')">← <span data-lang="pt">Voltar</span><span data-lang="es">Volver</span></button>
+    <div class="header-sep"></div>
+    <div class="header-title">Dell Pro · Portfólio 2026</div>
+  </div>
+  <div class="article-content">
+    <div class="article-cat" data-lang="pt">💻 Press Release · 25 de Março de 2026</div>
+    <div class="article-cat" data-lang="es">💻 Comunicado de Prensa · 25 de marzo de 2026</div>
+    <h1 class="article-title" data-lang="pt">Dell reinventa os PCs comerciais com designs elegantes e poderosos</h1>
+    <h1 class="article-title" data-lang="es">Dell reinventa los PCs comerciales con diseños elegantes y poderosos</h1>
+    <div class="article-date">ROUND ROCK, Texas — 25 de março de 2026</div>
+
+    <!-- PT -->
+    <div data-lang="pt">
+      <p class="article-lead">A Dell Technologies apresenta um portfólio comercial transformado, abrangendo notebooks Dell Pro, workstations Dell Pro Precision, desktops, monitores e periféricos. Mais finos, leves e poderosos, o novo lineup traz uma linguagem de design arrojada e refinada — priorizando silhuetas mais elegantes, materiais premium e detalhes modernos que elevam a produtividade diária.</p>
+      <div class="article-body">
+
+        <p>Com avanços em resfriamento, eficiência energética e suporte a IA on-device, o portfólio oferece melhor performance e maior duração de bateria em formatos mais portáteis — proporcionando uma experiência consistente e elevada para todos, de trabalhadores de linha de frente a altos executivos.</p>
+
+        <p>Usuários querem dispositivos elegantes e poderosos. O TI precisa de segurança, gerenciabilidade e disciplina orçamentária. O portfólio comercial reinventado da Dell entrega ambos. Engenharia avançada — arquitetura modular, melhor gestão térmica, silício pronto para IA — permite designs mais finos e leves que mantêm performance e controle de nível empresarial.</p>
+
+        <h3>Dell Pro Notebooks — Mais finos. Mais leves. Mais poderosos.</h3>
+        <img src="https://i.dell.com/sites/csimages/App-Merchandizing_Images/all/dell-pro-14-premium-laptop_pdp_1.png" style="width:100%;border-radius:10px;margin:16px 0 4px;background:var(--surface2);border:1px solid var(--border)" onerror="this.style.display='none'" alt="Dell Pro 14 Premium"><p style="font-size:11px;color:var(--muted);text-align:center;margin:-8px 0 16px">Dell Pro 14 Premium</p>
+        <p>O novo lineup de notebooks Dell Pro oferece a performance que os usuários de negócios precisam para produtividade no dia a dia: rodar múltiplos aplicativos simultaneamente, colaboração em tempo real em videochamadas ou whiteboards, manipulação de grandes datasets e uso de assistentes de IA. Disponível com as últimas opções de processador Intel Core Ultra Série 3 e AMD Ryzen AI 400, os usuários têm IA poderosa on-device, longa duração de bateria e experiências Copilot+.</p>
+
+        <p>O novo design modular de motherboard da Dell encolhe a placa para criar espaço para fans maiores e melhor gestão térmica, compacta mais energia em baterias menores e suporta uma gama mais ampla de opções de silício no mesmo chassis. Essa flexibilidade dá às organizações mais opções de configuração e maior velocidade de resposta num mercado de silício dinâmico.</p>
+
+        <p><strong>Dell Pro Premium</strong> — Projetado para executivos e gerentes que interagem com clientes e estão frequentemente em movimento. Até 7% mais fino que a geração anterior em um formato elegante, o laptop de 14 polegadas apresenta um chassis de liga de magnésio leve com acabamento magnetite. A opção de display Tandem OLED oferece cor e contraste excepcionais, e a câmera HDR de 8MP proporciona qualidade notável em videochamadas. Como o laptop Dell Pro mais leve, o Dell Pro Premium define um novo padrão para notebooks de classe executiva.</p>
+
+        <img src="https://i.dell.com/sites/csimages/App-Merchandizing_Images/all/dell-pro-7-14-laptop_pdp_1.png" style="width:100%;border-radius:10px;margin:16px 0 4px;background:var(--surface2);border:1px solid var(--border)" onerror="this.style.display='none'" alt="Dell Pro 7"><p style="font-size:11px;color:var(--muted);text-align:center;margin:-8px 0 16px">Dell Pro 7 — o mais fino da categoria em 13 e 14 polegadas</p>
+        <p><strong>Dell Pro 7</strong> — Para consultores e profissionais de vendas que recusam escolher entre portabilidade e capacidade. São os laptops comerciais e 2-em-1s mais finos em 13 e 14 polegadas de sua categoria. Até 18% mais fino que a geração anterior, o Dell Pro 7 apresenta um chassis de alumínio elegante. A tela touchscreen Gorilla Glass de borda a borda com até 500 nits oferece uma experiência visual premium. Com opções como displays OLED, câmeras de até 8MP e tecnologia de teclado com backlight mini-LED para economia de bateria, os clientes podem personalizar a experiência para suas necessidades.</p>
+
+        <img src="https://i.dell.com/sites/csimages/App-Merchandizing_Images/all/dell-pro-5-14-laptop_pdp_1.png" style="width:100%;border-radius:10px;margin:16px 0 4px;background:var(--surface2);border:1px solid var(--border)" onerror="this.style.display='none'" alt="Dell Pro 5"><p style="font-size:11px;color:var(--muted);text-align:center;margin:-8px 0 16px">Dell Pro 5 — até 21% mais fino que a geração anterior</p>
+        <p><strong>Dell Pro 5</strong> — Oferece a performance mais escalável de sua categoria. As organizações podem configurar esses sistemas entre uma seleção de processadores Intel e AMD, opções de display, memória e armazenamento para atender às necessidades específicas de workflow. Disponível em tamanhos de 14 e 16 polegadas, o Dell Pro 5 é até 12% mais fino que a geração anterior e até 21% mais fino que designs concorrentes.</p>
+
+        <p><strong>Dell Pro 3</strong> — Computação de negócios confiável para assistentes administrativos ou especialistas de suporte que lidam com tarefas de produtividade básicas. A partir de apenas 2,89 libras em formatos de 14 e 16 polegadas, o novo revestimento metálico oferece acabamento suave e resistente a arranhões.</p>
+
+        <h3>Dell Pro Precision Workstations — Poder com refinamento</h3>
+        <img src="https://i.dell.com/sites/csimages/App-Merchandizing_Images/all/dell-pro-precision-5s-14-laptop_pdp_1.png" style="width:100%;border-radius:10px;margin:16px 0 4px;background:var(--surface2);border:1px solid var(--border)" onerror="this.style.display='none'" alt="Dell Pro Precision 5S"><p style="font-size:11px;color:var(--muted);text-align:center;margin:-8px 0 16px">Dell Pro Precision 5S — a workstation mais fina e leve da Dell</p>
+        <p>A Dell relança a linha Precision — agora Dell Pro Precision — com workstations líderes do setor projetadas para profissionais que exigem performance excepcional. Como líder global em workstations, a Dell Pro Precision mantém o mesmo pensamento voltado ao design, entregando maiores capacidades para workloads de IA, simulações complexas e renderização avançada.</p>
+
+        <p>O <strong>Dell Pro Precision 5S</strong> estreia como ponto de entrada da família, construído para power users que precisam de mais do que um notebook de negócios pode oferecer — engenheiros com modelagem CAD leve, criadores de conteúdo em edição de vídeo e designers em aplicações gráficas. Com 3,1 libras como ponto de partida, é a workstation mais fina e leve da Dell já fabricada, e a mais fina entre as workstations mobile de entrada com processadores H-class. Apresenta um design de alumínio de três lados elegante.</p>
+
+        <p>As workstations mobile <strong>Dell Pro Precision 5 e 7 Series</strong> com GPUs NVIDIA RTX Pro Blackwell Generation entregam performance de workstation em designs mais finos e elegantes para criação avançada, renderização e aceleração de workflows de IA. As novas workstations desktop <strong>Dell Pro Precision 9 T2/T4/T6</strong> alimentam os workloads mais exigentes — CAD 3D, desenvolvimento complexo de IA e simulações — com até 15 slots PCIe acomodando até cinco GPUs NVIDIA RTX Pro Blackwell Generation de 300W.</p>
+
+        <h3>Segurança e gerenciabilidade — os mais seguros e gerenciáveis do setor</h3>
+        <p>Novos upgrades resistentes a quantum ajudam a proteger BIOS e a raiz de confiança contra ameaças criptográficas futuras, enquanto o <strong>Halcyon on-the-box</strong> torna a Dell o único fabricante de PCs comerciais equipado para resiliência contra ransomware. O BIOS padronizado da Dell entre parceiros de silício permite que as equipes de TI implantem múltiplos tipos de processador sob uma única imagem, enquanto a solução de provisionamento Intel vPro baseada em nuvem — a primeira do setor — oferece implantação remota de frota sem intervenção humana.</p>
+
+        <h3>Sustentabilidade e modularidade</h3>
+        <p>Designs modulares e o uso de materiais reciclados, renováveis e de baixas emissões apoiam as ambições de sustentabilidade dos clientes e estendem a longevidade dos PCs. Como o primeiro fabricante de PCs a introduzir portas USB-C modulares em PCs comerciais, a Dell agora traz componentes modulares — incluindo portas USB-C, mainboards e baterias substituíveis pelo cliente — para os notebooks Dell Pro e workstations mobile Dell Pro Precision selecionadas. A Dell também tem o portfólio mais amplo de PCs comerciais com baterias de cobalto 100% reciclado.</p>
+
+        <h3>Dell Pro P Monitores e Periféricos — Projetados para como as pessoas realmente trabalham</h3>
+        <p>A maioria dos profissionais não tem mais mesas dedicadas. Eles usam hot-desking, trabalham remotamente e transitam entre salas de conferência. O lineup expandido de monitores e acessórios Dell Pro P foi projetado para isso. O <strong>Dell Pro P 34 USB-C Hub Conferencing Monitor</strong>, certificado para Microsoft Teams e Zoom, transforma qualquer espaço de trabalho em um setup pronto para reuniões virtuais, com câmera Sony Starvis de 5MP HDR, enquadramento automático com IA, microfones com cancelamento de ruído e login Windows Hello. Todos os monitores Dell Pro P são certificados TÜV Rheinland 4 estrelas para conforto visual.</p>
+
+      </div>
+      <p class="src-line">Fonte: <a href="https://www.dell.com/en-us/dt/corporate/newsroom/announcements/detailpage.press-releases~usa~2026~03~dell-reimagines-commercial-pcs-with-new-sleek-and-powerful-designs.htm" target="_blank">Dell · Press Release Oficial · Mar 2026 ↗</a></p>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-top:28px;">
+        <a class="article-source-link" href="https://www.dell.com/en-us/dt/corporate/newsroom/announcements/detailpage.press-releases~usa~2026~03~dell-reimagines-commercial-pcs-with-new-sleek-and-powerful-designs.htm" target="_blank">🔗 Press Release oficial ↗</a>
+        <a class="article-source-link" href="https://www.dell.com/en-us/blog/new-dell-pro-notebooks-bold-designs-for-every-business/" target="_blank">🔗 Dell Blog · Bold Designs for Every Business ↗</a>
+      </div>
+    </div>
+
+    <!-- ES -->
+    <div data-lang="es">
+      <p class="article-lead">Dell Technologies presenta un portafolio comercial transformado que abarca notebooks Dell Pro, workstations Dell Pro Precision, desktops, monitores y periféricos. Más delgados, livianos y poderosos, el nuevo lineup trae un lenguaje de diseño audaz y refinado — priorizando siluetas más elegantes, materiales premium y detalles modernos que elevan la productividad diaria.</p>
+      <div class="article-body">
+
+        <p>Con avances en refrigeración, eficiencia energética y soporte para IA on-device, el portafolio ofrece mejor rendimiento y mayor duración de batería en factores de forma más portátiles — proporcionando una experiencia consistente y elevada para todos, desde trabajadores de primera línea hasta altos ejecutivos.</p>
+
+        <p>Los usuarios quieren dispositivos elegantes y poderosos. El departamento de TI necesita seguridad, gestión y disciplina presupuestaria. El portafolio comercial reinventado de Dell entrega ambos. La ingeniería avanzada — arquitectura modular, mejor gestión térmica, silicio listo para IA — permite diseños más delgados y livianos que mantienen el rendimiento y el control empresarial.</p>
+
+        <h3>Dell Pro Notebooks — Más delgados. Más livianos. Más poderosos.</h3>
+        <img src="https://i.dell.com/sites/csimages/App-Merchandizing_Images/all/dell-pro-14-premium-laptop_pdp_1.png" style="width:100%;border-radius:10px;margin:16px 0 4px;background:var(--surface2);border:1px solid var(--border)" onerror="this.style.display='none'" alt="Dell Pro 14 Premium"><p style="font-size:11px;color:var(--muted);text-align:center;margin:-8px 0 16px">Dell Pro 14 Premium</p>
+        <p>El nuevo lineup de notebooks Dell Pro ofrece el rendimiento que los usuarios de negocios necesitan para la productividad diaria: ejecutar múltiples aplicaciones simultáneamente, colaboración en tiempo real en videollamadas o pizarrones, manipulación de grandes conjuntos de datos y uso de asistentes de IA. Disponible con las últimas opciones de procesador Intel Core Ultra Serie 3 y AMD Ryzen AI 400, los usuarios tienen IA poderosa on-device, larga duración de batería y experiencias Copilot+.</p>
+
+        <p>El nuevo diseño modular de motherboard de Dell reduce la placa para crear espacio para ventiladores más grandes y mejor gestión térmica, compacta más energía en baterías más pequeñas y soporta una gama más amplia de opciones de silicio en el mismo chassis.</p>
+
+        <p><strong>Dell Pro Premium</strong> — Diseñado para ejecutivos y gerentes que interactúan con clientes y están frecuentemente en movimiento. Hasta un 7% más delgado que la generación anterior, el laptop de 14 pulgadas presenta un chassis de aleación de magnesio liviano con acabado magnetita. La opción de pantalla Tandem OLED ofrece color y contraste excepcionales, y la cámara HDR de 8MP proporciona calidad notable en videollamadas. Como el laptop Dell Pro más liviano, el Dell Pro Premium establece un nuevo estándar para notebooks de clase ejecutiva.</p>
+
+        <img src="https://i.dell.com/sites/csimages/App-Merchandizing_Images/all/dell-pro-7-14-laptop_pdp_1.png" style="width:100%;border-radius:10px;margin:16px 0 4px;background:var(--surface2);border:1px solid var(--border)" onerror="this.style.display='none'" alt="Dell Pro 7"><p style="font-size:11px;color:var(--muted);text-align:center;margin:-8px 0 16px">Dell Pro 7 — el más delgado de su categoría en 13 y 14 pulgadas</p>
+        <p><strong>Dell Pro 7</strong> — Para consultores y profesionales de ventas que se niegan a elegir entre portabilidad y capacidad. Son los laptops comerciales y 2-en-1s más delgados en 13 y 14 pulgadas de su categoría. Hasta un 18% más delgado que la generación anterior, el Dell Pro 7 presenta un chassis de aluminio elegante. La pantalla táctil Gorilla Glass de borde a borde con hasta 500 nits ofrece una experiencia visual premium.</p>
+
+        <img src="https://i.dell.com/sites/csimages/App-Merchandizing_Images/all/dell-pro-5-14-laptop_pdp_1.png" style="width:100%;border-radius:10px;margin:16px 0 4px;background:var(--surface2);border:1px solid var(--border)" onerror="this.style.display='none'" alt="Dell Pro 5"><p style="font-size:11px;color:var(--muted);text-align:center;margin:-8px 0 16px">Dell Pro 5 — hasta 21% más delgado que la generación anterior</p>
+        <p><strong>Dell Pro 5</strong> — Ofrece el rendimiento más escalable de su categoría. Disponible en tamaños de 14 y 16 pulgadas, el Dell Pro 5 es hasta un 12% más delgado que la generación anterior y hasta un 21% más delgado que diseños de la competencia.</p>
+
+        <p><strong>Dell Pro 3</strong> — Computación de negocios confiable para asistentes administrativos o especialistas de soporte. A partir de solo 2,89 libras en formatos de 14 y 16 pulgadas, el nuevo revestimiento metálico ofrece un acabado suave y resistente a rayaduras.</p>
+
+        <h3>Dell Pro Precision Workstations — Poder con refinamiento</h3>
+        <img src="https://i.dell.com/sites/csimages/App-Merchandizing_Images/all/dell-pro-precision-5s-14-laptop_pdp_1.png" style="width:100%;border-radius:10px;margin:16px 0 4px;background:var(--surface2);border:1px solid var(--border)" onerror="this.style.display='none'" alt="Dell Pro Precision 5S"><p style="font-size:11px;color:var(--muted);text-align:center;margin:-8px 0 16px">Dell Pro Precision 5S — la workstation más delgada y liviana de Dell</p>
+        <p>Dell relanza la línea Precision — ahora Dell Pro Precision — con workstations líderes del sector diseñadas para profesionales que exigen rendimiento excepcional. El <strong>Dell Pro Precision 5S</strong> debuta como punto de entrada de la familia. Con 3,1 libras como punto de partida, es la workstation más delgada y liviana de Dell, con un diseño de aluminio de tres lados elegante.</p>
+
+        <p>Las workstations móviles <strong>Dell Pro Precision 5 y 7 Series</strong> con GPUs NVIDIA RTX Pro Blackwell Generation entregan rendimiento de workstation en diseños más delgados para creación avanzada, renderizado y aceleración de flujos de trabajo de IA. Las nuevas workstations desktop <strong>Dell Pro Precision 9 T2/T4/T6</strong> alimentan las cargas de trabajo más exigentes — CAD 3D, desarrollo complejo de IA y simulaciones — con hasta 15 ranuras PCIe que albergan hasta cinco GPUs NVIDIA RTX Pro Blackwell Generation de 300W.</p>
+
+        <h3>Seguridad y gestión — los más seguros y gestionables del sector</h3>
+        <p>Nuevas actualizaciones resistentes a quantum ayudan a proteger el BIOS y la raíz de confianza contra amenazas criptográficas futuras, mientras que <strong>Halcyon on-the-box</strong> hace de Dell el único fabricante de PCs comerciales equipado para la resiliencia frente a ransomware. El BIOS estandarizado de Dell entre socios de silicio permite a los equipos de TI desplegar múltiples tipos de procesador bajo una sola imagen, mientras que la solución de aprovisionamiento Intel vPro basada en la nube — la primera del sector — ofrece despliegue remoto de flota sin intervención humana.</p>
+
+        <h3>Sostenibilidad y modularidad</h3>
+        <p>Los diseños modulares y el uso de materiales reciclados, renovables y de bajas emisiones apoyan las ambiciones de sostenibilidad de los clientes. Como el primer fabricante de PCs en introducir puertos USB-C modulares en PCs comerciales, Dell ahora trae componentes modulares — incluyendo puertos USB-C, tarjetas madre y baterías reemplazables por el cliente — a los notebooks Dell Pro y workstations móviles Dell Pro Precision seleccionadas. Dell también tiene el portafolio más amplio de PCs comerciales con baterías de cobalto 100% reciclado.</p>
+
+        <h3>Dell Pro P Monitores y Periféricos — Diseñados para cómo las personas realmente trabajan</h3>
+        <p>La mayoría de los profesionales ya no tienen escritorios dedicados. Usan hot-desking, trabajan de forma remota y saltan entre salas de conferencia. El lineup expandido de monitores y accesorios Dell Pro P fue diseñado para eso. El <strong>Dell Pro P 34 USB-C Hub Conferencing Monitor</strong>, certificado para Microsoft Teams y Zoom, convierte cualquier espacio de trabajo en un setup listo para reuniones virtuales, con cámara Sony Starvis de 5MP HDR, encuadre automático con IA, micrófonos con cancelación de ruido y inicio de sesión Windows Hello. Todos los monitores Dell Pro P están certificados TÜV Rheinland 4 estrellas para el confort visual.</p>
+
+      </div>
+      <p class="src-line">Fuente: <a href="https://www.dell.com/en-us/dt/corporate/newsroom/announcements/detailpage.press-releases~usa~2026~03~dell-reimagines-commercial-pcs-with-new-sleek-and-powerful-designs.htm" target="_blank">Dell · Comunicado Oficial · Mar 2026 ↗</a></p>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-top:28px;">
+        <a class="article-source-link" href="https://www.dell.com/en-us/dt/corporate/newsroom/announcements/detailpage.press-releases~usa~2026~03~dell-reimagines-commercial-pcs-with-new-sleek-and-powerful-designs.htm" target="_blank">🔗 Comunicado de prensa oficial ↗</a>
+        <a class="article-source-link" href="https://www.dell.com/en-us/blog/new-dell-pro-notebooks-bold-designs-for-every-business/" target="_blank">🔗 Dell Blog · Bold Designs for Every Business ↗</a>
       </div>
     </div>
 
