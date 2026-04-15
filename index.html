@@ -139,7 +139,7 @@
 
 <script>
 (function(){
-  var VERSION = "20260415181042";
+  var VERSION = "20260415182902";
   var stored = localStorage.getItem("repo_version");
   if (stored !== VERSION) {
     localStorage.setItem("repo_version", VERSION);
@@ -320,17 +320,23 @@
     </div>
     <div class="cards-grid">
 
-      <a class="card" href="https://raw.githubusercontent.com/DellPR/repositorio/main/Dell%20Advantage%20presentation.pdf" target="_blank" style="display:flex;align-items:center;gap:14px;padding:14px 16px;">
-        <div style="width:36px;height:36px;border-radius:8px;background:rgba(0,118,206,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px">📑</div>
-        <div style="flex:1;min-width:0">
-          <div class="card-type" style="margin-bottom:2px">PDF · Dell Technologies</div>
-          <div style="font-size:13px;font-weight:600;color:var(--text)">Apresentação Dell Advantage ↗</div>
+      <a class="card" href="https://raw.githubusercontent.com/DellPR/repositorio/main/Dell%20Advantage%20presentation.pdf" target="_blank">
+        <div class="card-img-wrap">
+          <img src="https://raw.githubusercontent.com/DellPR/repositorio/main/delladvantage.jpg" onerror="this.parentElement.innerHTML='<span class=card-img-label>Dell Advantage</span>'">
+        </div>
+        <div class="card-body">
+          <div class="card-type">📑 PDF · Dell Technologies</div>
+          <div class="card-title">Apresentação Dell Advantage</div>
+        </div>
+        <div class="card-footer">
+          <span data-lang="pt">Abrir PDF ↗</span><span data-lang="es">Abrir PDF ↗</span>
+          <span class="card-arrow">↗</span>
         </div>
       </a>
 
       <a class="card" onclick="openArticle('dell-pcs-2026'); return false;" href="#">
         <div class="card-img-wrap">
-          <img src="https://i.dell.com/sites/csimages/App-Merchandizing_Images/all/dell-pro-14-premium-laptop_pdp_1.png"
+          <img src="https://raw.githubusercontent.com/DellPR/repositorio/main/dell%20pro%20premium.png"
             onerror="this.parentElement.innerHTML='<span class=card-img-label>Dell Pro Notebooks 2026</span>'">
         </div>
         <div class="card-body">
@@ -958,6 +964,20 @@ document.addEventListener('DOMContentLoaded', function() { setLang(currentLang);
 
     <!-- PT -->
     <div data-lang="pt">
+      <div data-lang="pt" style="background:#FFF7ED;border:1px solid #F97316;border-radius:10px;padding:13px 16px;margin-bottom:20px;display:flex;align-items:flex-start;gap:10px">
+        <div style="font-size:18px;flex-shrink:0">⚠️</div>
+        <div style="font-size:13px;color:#9A3412;font-weight:600;line-height:1.5"><strong>ATENÇÃO:</strong> Esses produtos ainda não estão disponíveis no Brasil. Serão lançados ao longo de 2026.</div>
+      </div>
+      <div style="background:rgba(0,118,206,0.06);border:1px solid rgba(0,118,206,0.2);border-radius:10px;padding:14px 16px;margin-bottom:20px;display:flex;align-items:flex-start;gap:12px">
+        <div style="font-size:20px;flex-shrink:0">📁</div>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--blue);margin-bottom:4px;font-family:var(--mono);letter-spacing:0.08em;text-transform:uppercase" data-lang="pt">Press Kit — Imagens e Materiais</div>
+          <div style="font-size:12px;font-weight:700;color:var(--blue);margin-bottom:4px;font-family:var(--mono);letter-spacing:0.08em;text-transform:uppercase" data-lang="es">Press Kit — Imágenes y Materiales</div>
+          <div style="font-size:12px;color:var(--muted);margin-bottom:8px" data-lang="pt">Imagens de alta resolução, assets e detalhes completos sobre o novo portfólio Dell Pro 2026.</div>
+          <div style="font-size:12px;color:var(--muted);margin-bottom:8px" data-lang="es">Imágenes de alta resolución, assets y detalles completos sobre el nuevo portafolio Dell Pro 2026.</div>
+          <a href="https://dell.egnyte.com/fl/3bpQRCvKj3c9" target="_blank" style="font-size:12px;font-weight:700;color:var(--blue);text-decoration:none">Acessar Press Kit ↗</a>
+        </div>
+      </div>
       <p class="article-lead">A Dell Technologies apresenta um portfólio comercial transformado, abrangendo notebooks Dell Pro, workstations Dell Pro Precision, desktops, monitores e periféricos. Mais finos, leves e poderosos, o novo lineup traz uma linguagem de design arrojada e refinada — priorizando silhuetas mais elegantes, materiais premium e detalhes modernos que elevam a produtividade diária.</p>
       <div class="article-body">
 
@@ -966,23 +986,23 @@ document.addEventListener('DOMContentLoaded', function() { setLang(currentLang);
         <p>Usuários querem dispositivos elegantes e poderosos. O TI precisa de segurança, gerenciabilidade e disciplina orçamentária. O portfólio comercial reinventado da Dell entrega ambos. Engenharia avançada — arquitetura modular, melhor gestão térmica, silício pronto para IA — permite designs mais finos e leves que mantêm performance e controle de nível empresarial.</p>
 
         <h3>Dell Pro Notebooks — Mais finos. Mais leves. Mais poderosos.</h3>
-        <img src="https://i.dell.com/sites/csimages/App-Merchandizing_Images/all/dell-pro-14-premium-laptop_pdp_1.png" style="width:100%;border-radius:10px;margin:16px 0 4px;background:var(--surface2);border:1px solid var(--border)" onerror="this.style.display='none'" alt="Dell Pro 14 Premium"><p style="font-size:11px;color:var(--muted);text-align:center;margin:-8px 0 16px">Dell Pro 14 Premium</p>
+        <img src="https://raw.githubusercontent.com/DellPR/repositorio/main/dell%20pro%20premium.png" style="width:100%;border-radius:10px;margin:16px 0 4px;background:var(--surface2);border:1px solid var(--border)" onerror="this.style.display='none'" alt="Dell Pro 14 Premium"><p style="font-size:11px;color:var(--muted);text-align:center;margin:-8px 0 16px">Dell Pro 14 Premium</p>
         <p>O novo lineup de notebooks Dell Pro oferece a performance que os usuários de negócios precisam para produtividade no dia a dia: rodar múltiplos aplicativos simultaneamente, colaboração em tempo real em videochamadas ou whiteboards, manipulação de grandes datasets e uso de assistentes de IA. Disponível com as últimas opções de processador Intel Core Ultra Série 3 e AMD Ryzen AI 400, os usuários têm IA poderosa on-device, longa duração de bateria e experiências Copilot+.</p>
 
         <p>O novo design modular de motherboard da Dell encolhe a placa para criar espaço para fans maiores e melhor gestão térmica, compacta mais energia em baterias menores e suporta uma gama mais ampla de opções de silício no mesmo chassis. Essa flexibilidade dá às organizações mais opções de configuração e maior velocidade de resposta num mercado de silício dinâmico.</p>
 
         <p><strong>Dell Pro Premium</strong> — Projetado para executivos e gerentes que interagem com clientes e estão frequentemente em movimento. Até 7% mais fino que a geração anterior em um formato elegante, o laptop de 14 polegadas apresenta um chassis de liga de magnésio leve com acabamento magnetite. A opção de display Tandem OLED oferece cor e contraste excepcionais, e a câmera HDR de 8MP proporciona qualidade notável em videochamadas. Como o laptop Dell Pro mais leve, o Dell Pro Premium define um novo padrão para notebooks de classe executiva.</p>
 
-        <img src="https://i.dell.com/sites/csimages/App-Merchandizing_Images/all/dell-pro-7-14-laptop_pdp_1.png" style="width:100%;border-radius:10px;margin:16px 0 4px;background:var(--surface2);border:1px solid var(--border)" onerror="this.style.display='none'" alt="Dell Pro 7"><p style="font-size:11px;color:var(--muted);text-align:center;margin:-8px 0 16px">Dell Pro 7 — o mais fino da categoria em 13 e 14 polegadas</p>
+        <img src="https://raw.githubusercontent.com/DellPR/repositorio/main/dell%20pro.jpg" style="width:100%;border-radius:10px;margin:16px 0 4px;background:var(--surface2);border:1px solid var(--border)" onerror="this.style.display='none'" alt="Dell Pro 7"><p style="font-size:11px;color:var(--muted);text-align:center;margin:-8px 0 16px">Dell Pro 7 — o mais fino da categoria em 13 e 14 polegadas</p>
         <p><strong>Dell Pro 7</strong> — Para consultores e profissionais de vendas que recusam escolher entre portabilidade e capacidade. São os laptops comerciais e 2-em-1s mais finos em 13 e 14 polegadas de sua categoria. Até 18% mais fino que a geração anterior, o Dell Pro 7 apresenta um chassis de alumínio elegante. A tela touchscreen Gorilla Glass de borda a borda com até 500 nits oferece uma experiência visual premium. Com opções como displays OLED, câmeras de até 8MP e tecnologia de teclado com backlight mini-LED para economia de bateria, os clientes podem personalizar a experiência para suas necessidades.</p>
 
-        <img src="https://i.dell.com/sites/csimages/App-Merchandizing_Images/all/dell-pro-5-14-laptop_pdp_1.png" style="width:100%;border-radius:10px;margin:16px 0 4px;background:var(--surface2);border:1px solid var(--border)" onerror="this.style.display='none'" alt="Dell Pro 5"><p style="font-size:11px;color:var(--muted);text-align:center;margin:-8px 0 16px">Dell Pro 5 — até 21% mais fino que a geração anterior</p>
+        <img src="https://raw.githubusercontent.com/DellPR/repositorio/main/dell%20pro.jpg" style="width:100%;border-radius:10px;margin:16px 0 4px;background:var(--surface2);border:1px solid var(--border)" onerror="this.style.display='none'" alt="Dell Pro 5"><p style="font-size:11px;color:var(--muted);text-align:center;margin:-8px 0 16px">Dell Pro 5 — até 21% mais fino que a geração anterior</p>
         <p><strong>Dell Pro 5</strong> — Oferece a performance mais escalável de sua categoria. As organizações podem configurar esses sistemas entre uma seleção de processadores Intel e AMD, opções de display, memória e armazenamento para atender às necessidades específicas de workflow. Disponível em tamanhos de 14 e 16 polegadas, o Dell Pro 5 é até 12% mais fino que a geração anterior e até 21% mais fino que designs concorrentes.</p>
 
         <p><strong>Dell Pro 3</strong> — Computação de negócios confiável para assistentes administrativos ou especialistas de suporte que lidam com tarefas de produtividade básicas. A partir de apenas 2,89 libras em formatos de 14 e 16 polegadas, o novo revestimento metálico oferece acabamento suave e resistente a arranhões.</p>
 
         <h3>Dell Pro Precision Workstations — Poder com refinamento</h3>
-        <img src="https://i.dell.com/sites/csimages/App-Merchandizing_Images/all/dell-pro-precision-5s-14-laptop_pdp_1.png" style="width:100%;border-radius:10px;margin:16px 0 4px;background:var(--surface2);border:1px solid var(--border)" onerror="this.style.display='none'" alt="Dell Pro Precision 5S"><p style="font-size:11px;color:var(--muted);text-align:center;margin:-8px 0 16px">Dell Pro Precision 5S — a workstation mais fina e leve da Dell</p>
+        <img src="https://raw.githubusercontent.com/DellPR/repositorio/main/dell%20pro%20premium.png" style="width:100%;border-radius:10px;margin:16px 0 4px;background:var(--surface2);border:1px solid var(--border)" onerror="this.style.display='none'" alt="Dell Pro Precision 5S"><p style="font-size:11px;color:var(--muted);text-align:center;margin:-8px 0 16px">Dell Pro Precision 5S — a workstation mais fina e leve da Dell</p>
         <p>A Dell relança a linha Precision — agora Dell Pro Precision — com workstations líderes do setor projetadas para profissionais que exigem performance excepcional. Como líder global em workstations, a Dell Pro Precision mantém o mesmo pensamento voltado ao design, entregando maiores capacidades para workloads de IA, simulações complexas e renderização avançada.</p>
 
         <p>O <strong>Dell Pro Precision 5S</strong> estreia como ponto de entrada da família, construído para power users que precisam de mais do que um notebook de negócios pode oferecer — engenheiros com modelagem CAD leve, criadores de conteúdo em edição de vídeo e designers em aplicações gráficas. Com 3,1 libras como ponto de partida, é a workstation mais fina e leve da Dell já fabricada, e a mais fina entre as workstations mobile de entrada com processadores H-class. Apresenta um design de alumínio de três lados elegante.</p>
@@ -1008,6 +1028,16 @@ document.addEventListener('DOMContentLoaded', function() { setLang(currentLang);
 
     <!-- ES -->
     <div data-lang="es">
+      <div style="background:rgba(0,118,206,0.06);border:1px solid rgba(0,118,206,0.2);border-radius:10px;padding:14px 16px;margin-bottom:20px;display:flex;align-items:flex-start;gap:12px">
+        <div style="font-size:20px;flex-shrink:0">📁</div>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--blue);margin-bottom:4px;font-family:var(--mono);letter-spacing:0.08em;text-transform:uppercase" data-lang="pt">Press Kit — Imagens e Materiais</div>
+          <div style="font-size:12px;font-weight:700;color:var(--blue);margin-bottom:4px;font-family:var(--mono);letter-spacing:0.08em;text-transform:uppercase" data-lang="es">Press Kit — Imágenes y Materiales</div>
+          <div style="font-size:12px;color:var(--muted);margin-bottom:8px" data-lang="pt">Imagens de alta resolução, assets e detalhes completos sobre o novo portfólio Dell Pro 2026.</div>
+          <div style="font-size:12px;color:var(--muted);margin-bottom:8px" data-lang="es">Imágenes de alta resolución, assets y detalles completos sobre el nuevo portafolio Dell Pro 2026.</div>
+          <a href="https://dell.egnyte.com/fl/3bpQRCvKj3c9" target="_blank" style="font-size:12px;font-weight:700;color:var(--blue);text-decoration:none">Acessar Press Kit ↗</a>
+        </div>
+      </div>
       <p class="article-lead">Dell Technologies presenta un portafolio comercial transformado que abarca notebooks Dell Pro, workstations Dell Pro Precision, desktops, monitores y periféricos. Más delgados, livianos y poderosos, el nuevo lineup trae un lenguaje de diseño audaz y refinado — priorizando siluetas más elegantes, materiales premium y detalles modernos que elevan la productividad diaria.</p>
       <div class="article-body">
 
@@ -1016,23 +1046,23 @@ document.addEventListener('DOMContentLoaded', function() { setLang(currentLang);
         <p>Los usuarios quieren dispositivos elegantes y poderosos. El departamento de TI necesita seguridad, gestión y disciplina presupuestaria. El portafolio comercial reinventado de Dell entrega ambos. La ingeniería avanzada — arquitectura modular, mejor gestión térmica, silicio listo para IA — permite diseños más delgados y livianos que mantienen el rendimiento y el control empresarial.</p>
 
         <h3>Dell Pro Notebooks — Más delgados. Más livianos. Más poderosos.</h3>
-        <img src="https://i.dell.com/sites/csimages/App-Merchandizing_Images/all/dell-pro-14-premium-laptop_pdp_1.png" style="width:100%;border-radius:10px;margin:16px 0 4px;background:var(--surface2);border:1px solid var(--border)" onerror="this.style.display='none'" alt="Dell Pro 14 Premium"><p style="font-size:11px;color:var(--muted);text-align:center;margin:-8px 0 16px">Dell Pro 14 Premium</p>
+        <img src="https://raw.githubusercontent.com/DellPR/repositorio/main/dell%20pro%20premium.png" style="width:100%;border-radius:10px;margin:16px 0 4px;background:var(--surface2);border:1px solid var(--border)" onerror="this.style.display='none'" alt="Dell Pro 14 Premium"><p style="font-size:11px;color:var(--muted);text-align:center;margin:-8px 0 16px">Dell Pro 14 Premium</p>
         <p>El nuevo lineup de notebooks Dell Pro ofrece el rendimiento que los usuarios de negocios necesitan para la productividad diaria: ejecutar múltiples aplicaciones simultáneamente, colaboración en tiempo real en videollamadas o pizarrones, manipulación de grandes conjuntos de datos y uso de asistentes de IA. Disponible con las últimas opciones de procesador Intel Core Ultra Serie 3 y AMD Ryzen AI 400, los usuarios tienen IA poderosa on-device, larga duración de batería y experiencias Copilot+.</p>
 
         <p>El nuevo diseño modular de motherboard de Dell reduce la placa para crear espacio para ventiladores más grandes y mejor gestión térmica, compacta más energía en baterías más pequeñas y soporta una gama más amplia de opciones de silicio en el mismo chassis.</p>
 
         <p><strong>Dell Pro Premium</strong> — Diseñado para ejecutivos y gerentes que interactúan con clientes y están frecuentemente en movimiento. Hasta un 7% más delgado que la generación anterior, el laptop de 14 pulgadas presenta un chassis de aleación de magnesio liviano con acabado magnetita. La opción de pantalla Tandem OLED ofrece color y contraste excepcionales, y la cámara HDR de 8MP proporciona calidad notable en videollamadas. Como el laptop Dell Pro más liviano, el Dell Pro Premium establece un nuevo estándar para notebooks de clase ejecutiva.</p>
 
-        <img src="https://i.dell.com/sites/csimages/App-Merchandizing_Images/all/dell-pro-7-14-laptop_pdp_1.png" style="width:100%;border-radius:10px;margin:16px 0 4px;background:var(--surface2);border:1px solid var(--border)" onerror="this.style.display='none'" alt="Dell Pro 7"><p style="font-size:11px;color:var(--muted);text-align:center;margin:-8px 0 16px">Dell Pro 7 — el más delgado de su categoría en 13 y 14 pulgadas</p>
+        <img src="https://raw.githubusercontent.com/DellPR/repositorio/main/dell%20pro.jpg" style="width:100%;border-radius:10px;margin:16px 0 4px;background:var(--surface2);border:1px solid var(--border)" onerror="this.style.display='none'" alt="Dell Pro 7"><p style="font-size:11px;color:var(--muted);text-align:center;margin:-8px 0 16px">Dell Pro 7 — el más delgado de su categoría en 13 y 14 pulgadas</p>
         <p><strong>Dell Pro 7</strong> — Para consultores y profesionales de ventas que se niegan a elegir entre portabilidad y capacidad. Son los laptops comerciales y 2-en-1s más delgados en 13 y 14 pulgadas de su categoría. Hasta un 18% más delgado que la generación anterior, el Dell Pro 7 presenta un chassis de aluminio elegante. La pantalla táctil Gorilla Glass de borde a borde con hasta 500 nits ofrece una experiencia visual premium.</p>
 
-        <img src="https://i.dell.com/sites/csimages/App-Merchandizing_Images/all/dell-pro-5-14-laptop_pdp_1.png" style="width:100%;border-radius:10px;margin:16px 0 4px;background:var(--surface2);border:1px solid var(--border)" onerror="this.style.display='none'" alt="Dell Pro 5"><p style="font-size:11px;color:var(--muted);text-align:center;margin:-8px 0 16px">Dell Pro 5 — hasta 21% más delgado que la generación anterior</p>
+        <img src="https://raw.githubusercontent.com/DellPR/repositorio/main/dell%20pro.jpg" style="width:100%;border-radius:10px;margin:16px 0 4px;background:var(--surface2);border:1px solid var(--border)" onerror="this.style.display='none'" alt="Dell Pro 5"><p style="font-size:11px;color:var(--muted);text-align:center;margin:-8px 0 16px">Dell Pro 5 — hasta 21% más delgado que la generación anterior</p>
         <p><strong>Dell Pro 5</strong> — Ofrece el rendimiento más escalable de su categoría. Disponible en tamaños de 14 y 16 pulgadas, el Dell Pro 5 es hasta un 12% más delgado que la generación anterior y hasta un 21% más delgado que diseños de la competencia.</p>
 
         <p><strong>Dell Pro 3</strong> — Computación de negocios confiable para asistentes administrativos o especialistas de soporte. A partir de solo 2,89 libras en formatos de 14 y 16 pulgadas, el nuevo revestimiento metálico ofrece un acabado suave y resistente a rayaduras.</p>
 
         <h3>Dell Pro Precision Workstations — Poder con refinamiento</h3>
-        <img src="https://i.dell.com/sites/csimages/App-Merchandizing_Images/all/dell-pro-precision-5s-14-laptop_pdp_1.png" style="width:100%;border-radius:10px;margin:16px 0 4px;background:var(--surface2);border:1px solid var(--border)" onerror="this.style.display='none'" alt="Dell Pro Precision 5S"><p style="font-size:11px;color:var(--muted);text-align:center;margin:-8px 0 16px">Dell Pro Precision 5S — la workstation más delgada y liviana de Dell</p>
+        <img src="https://raw.githubusercontent.com/DellPR/repositorio/main/dell%20pro%20premium.png" style="width:100%;border-radius:10px;margin:16px 0 4px;background:var(--surface2);border:1px solid var(--border)" onerror="this.style.display='none'" alt="Dell Pro Precision 5S"><p style="font-size:11px;color:var(--muted);text-align:center;margin:-8px 0 16px">Dell Pro Precision 5S — la workstation más delgada y liviana de Dell</p>
         <p>Dell relanza la línea Precision — ahora Dell Pro Precision — con workstations líderes del sector diseñadas para profesionales que exigen rendimiento excepcional. El <strong>Dell Pro Precision 5S</strong> debuta como punto de entrada de la familia. Con 3,1 libras como punto de partida, es la workstation más delgada y liviana de Dell, con un diseño de aluminio de tres lados elegante.</p>
 
         <p>Las workstations móviles <strong>Dell Pro Precision 5 y 7 Series</strong> con GPUs NVIDIA RTX Pro Blackwell Generation entregan rendimiento de workstation en diseños más delgados para creación avanzada, renderizado y aceleración de flujos de trabajo de IA. Las nuevas workstations desktop <strong>Dell Pro Precision 9 T2/T4/T6</strong> alimentan las cargas de trabajo más exigentes — CAD 3D, desarrollo complejo de IA y simulaciones — con hasta 15 ranuras PCIe que albergan hasta cinco GPUs NVIDIA RTX Pro Blackwell Generation de 300W.</p>
