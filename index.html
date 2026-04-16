@@ -139,7 +139,7 @@
 
 <script>
 (function(){
-  var VERSION = "20260416032108";
+  var VERSION = "20260416221804";
   var stored = localStorage.getItem("repo_version");
   if (stored !== VERSION) {
     localStorage.setItem("repo_version", VERSION);
@@ -179,7 +179,6 @@
   <a href="#tacc"      class="cat-pill">🖥️ TACC</a>
   <a href="#ebc"       class="cat-pill">🏢 EBC</a>
   <a href="#alienware" class="cat-pill">🎮 Alienware</a>
-  <a href="#aisc"      class="cat-pill">🤖 AI Solutions</a>
   <a href="#rugged"    class="cat-pill">🛡️ Rugged Lab</a>
 </div>
 
@@ -421,24 +420,29 @@
       <div class="cat-icon purple">🎮</div>
       <div><div class="cat-label">Categoria</div><div class="cat-name">Alienware Experience Tour</div></div>
     </div>
-    <div class="coming-soon">
-      <div class="coming-soon-text" data-lang="pt">Mais conteúdo em breve</div>
-      <div class="coming-soon-text" data-lang="es">Más contenido próximamente</div>
-    </div>
-  </section>
+    <div class="cards-grid">
 
-  <!-- AI SOLUTIONS -->
-  <section class="cat-section" id="aisc">
-    <div class="cat-header">
-      <div class="cat-icon green">🤖</div>
-      <div><div class="cat-label">Categoria</div><div class="cat-name">AI Solutions Center</div></div>
-    </div>
-    <div class="coming-soon">
-      <div class="coming-soon-text" data-lang="pt">Mais conteúdo em breve</div>
-      <div class="coming-soon-text" data-lang="es">Más contenido próximamente</div>
-    </div>
-  </section>
+      <a class="card" onclick="openArticle('alienware-new'); return false;" href="#">
+        <div class="card-img-wrap">
+          <img src="https://raw.githubusercontent.com/DellPR/repositorio/main/Alienware%20Ultra-Slim%20%26%20Entry-Level%20Laptops%20-%20Coming%20Soon.jpg" onerror="this.parentElement.innerHTML='<span class=card-img-label>Alienware 2026</span>'">
+        </div>
+        <div class="card-body">
+          <div class="card-type" data-lang="pt">🎮 Em Breve · 2026</div>
+          <div class="card-type" data-lang="es">🎮 Próximamente · 2026</div>
+          <div class="card-title" data-lang="pt">Novos Alienware — Ultra-Slim e Entry-Level chegam em 2026</div>
+          <div class="card-title" data-lang="es">Nuevos Alienware — Ultra-Slim y Entry-Level llegan en 2026</div>
+          <div class="card-desc" data-lang="pt">A Alienware expande o portfólio com dois novos laptops que vão alcançar mais gamers do que nunca.</div>
+          <div class="card-desc" data-lang="es">Alienware expande el portafolio con dos nuevos laptops que alcanzarán a más gamers que nunca.</div>
+        </div>
+        <div class="card-footer">
+          <span data-lang="pt">Ler mais</span><span data-lang="es">Leer más</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+      </div>
 
+
+  </section>
 
   <!-- RUGGED -->
   <section class="cat-section" id="rugged">
@@ -446,11 +450,28 @@
       <div class="cat-icon red">🛡️</div>
       <div><div class="cat-label">Categoria</div><div class="cat-name">Rugged Lab Tour</div></div>
     </div>
-    <div class="coming-soon">
-      <div class="coming-soon-text" data-lang="pt">Mais conteúdo em breve</div>
-      <div class="coming-soon-text" data-lang="es">Más contenido próximamente</div>
-    </div>
-  </section>
+    <div class="cards-grid">
+<a class="card" href="https://www.youtube.com/watch?v=mfnKvsWeD5U" target="_blank">
+        <div class="card-img-wrap" style="position:relative">
+          <img src="https://img.youtube.com/vi/mfnKvsWeD5U/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/mfnKvsWeD5U/hqdefault.jpg'">
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none">
+            <div style="width:52px;height:52px;background:rgba(0,0,0,0.65);border-radius:50%;display:flex;align-items:center;justify-content:center">
+              <div style="width:0;height:0;border-style:solid;border-width:10px 0 10px 20px;border-color:transparent transparent transparent #fff;margin-left:4px"></div>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-type">▶ Vídeo · YouTube</div>
+          <div class="card-title" data-lang="pt">Visita Adam Savage (MythBuster) no Rugged Lab</div>
+          <div class="card-title" data-lang="es">Visita de Adam Savage (MythBuster) al Rugged Lab</div>
+        </div>
+        <div class="card-footer">
+          <span data-lang="pt">Assistir no YouTube ↗</span><span data-lang="es">Ver en YouTube ↗</span>
+          <span class="card-arrow">↗</span>
+        </div>
+      </a>
+      </div>
+    </section>
 
 </main>
 
@@ -1398,6 +1419,104 @@ document.addEventListener('DOMContentLoaded', function() { setLang(currentLang);
 
       </div>
     </div>    </div>
+
+  </div>
+</div>
+
+
+<!-- ARTICLE: ALIENWARE NEW -->
+<div class="article-overlay" id="article-alienware-new">
+  <div class="article-topbar">
+    <button class="article-back" onclick="closeArticle('alienware-new')">← <span data-lang="pt">Voltar</span><span data-lang="es">Volver</span></button>
+    <div class="header-sep"></div>
+    <div class="header-title">Alienware · 2026</div>
+  </div>
+  <div class="article-content">
+    <div class="article-cat" data-lang="pt">🎮 Em Breve · CES 2026 · Janeiro 2026</div>
+    <div class="article-cat" data-lang="es">🎮 Próximamente · CES 2026 · Enero 2026</div>
+    <h1 class="article-title" data-lang="pt">Alienware expande o portfólio — Ultra-Slim e Entry-Level chegam em 2026</h1>
+    <h1 class="article-title" data-lang="es">Alienware expande el portafolio — Ultra-Slim y Entry-Level llegan en 2026</h1>
+    <div class="article-date">BY MATT MCGOWAN · JANUARY 5, 2026</div>
+
+    <img class="article-hero-img" src="https://raw.githubusercontent.com/DellPR/repositorio/main/Alienware%20Ultra-Slim%20%26%20Entry-Level%20Laptops%20-%20Coming%20Soon.jpg" onerror="this.style.display='none'" alt="Alienware Ultra-Slim e Entry-Level">
+    <p style="font-size:11px;color:var(--muted);text-align:center;margin:-12px 0 20px">
+      <span data-lang="pt">Alienware ultrafino (esq.) e Alienware de entrada (dir.) — em breve em 2026</span>
+      <span data-lang="es">Alienware ultradelgado (izq.) y Alienware de entrada (der.) — próximamente en 2026</span>
+    </p>
+
+    <!-- PT -->
+    <div data-lang="pt">
+      <p class="article-lead">A Alienware retorna à CES com uma missão singular: <em>superar os limites do que é possível no PC gaming.</em> Ainda em 2026, a marca vai dobrar a amplitude do seu portfólio de laptops — apresentando duas novas classes de produto para alcançar um público mais amplo de gamers, sem abrir mão da qualidade que define a Alienware.</p>
+      <div class="article-body">
+
+        <h3>Novo Laptop Ultra-Slim Alienware (~17mm)</h3>
+        <div style="background:linear-gradient(135deg,rgba(0,0,0,0.03),rgba(0,0,0,0.01));border:1px solid var(--border);border-left:4px solid #FF6D00;border-radius:0 10px 10px 0;padding:14px 16px;margin:16px 0"><div style="font-size:11px;font-weight:700;color:#FF6D00;letter-spacing:0.1em;text-transform:uppercase;font-family:var(--mono);margin-bottom:6px">EM BREVE · 2026</div><div style="font-size:13px;color:var(--text);line-height:1.65">O laptop mais fino já feito pela Alienware. Disponível em 14 e 16 polegadas.</div></div>
+
+        <p>A Alienware apresenta seu primeiro laptop ultra-slim — com <strong>~17mm de espessura</strong> — que une alta performance com mobilidade incomparável. O projeto foi guiado por dois princípios fundamentais:</p>
+
+        <p><strong>Densidade de performance</strong> — Embalar o máximo de performance no design mais compacto já engenheirado pela marca. O resultado é um laptop de 16 polegadas quase <strong>50% menor em volume</strong> que o atual Alienware 16 Area-51. Não almeja o mesmo teto de performance do Area-51, mas entrega capacidade de gaming séria com gráficos discretos NVIDIA e CPUs de alta eficiência.</p>
+
+        <p><strong>Versatilidade de design</strong> — Um laptop com qualidade de build premium, materiais de primeira linha, longa duração de bateria e uma estética atemporal que performa em qualquer ambiente. É um Alienware mais discreto do que você está acostumado a ver — mas igualmente icônico.</p>
+
+        <div style="background:var(--surface2);border-radius:10px;padding:4px 16px;margin:16px 0;border:1px solid var(--border)"><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">Espessura</span><span style="font-size:13px;font-weight:700;color:var(--text)">~17mm</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">Tamanhos</span><span style="font-size:13px;font-weight:700;color:var(--text)">14 e 16 polegadas</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">GPU</span><span style="font-size:13px;font-weight:700;color:var(--text)">NVIDIA GeForce RTX série discreta</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">Volume vs. Area-51 16"</span><span style="font-size:13px;font-weight:700;color:var(--text)">~50% menor</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">Perfil</span><span style="font-size:13px;font-weight:700;color:var(--text)">Ultra-slim, premium, versátil</span></div></div>
+
+        <p>Disponível em versões de 14 e 16 polegadas, este laptop é para quem quer o melhor equilíbrio entre performance de gaming, projetos criativos e portabilidade — um verdadeiro curinga.</p>
+
+        <h3>Novo Laptop Entry-Level Alienware</h3>
+        <div style="background:linear-gradient(135deg,rgba(0,0,0,0.03),rgba(0,0,0,0.01));border:1px solid var(--border);border-left:4px solid #FF6D00;border-radius:0 10px 10px 0;padding:14px 16px;margin:16px 0"><div style="font-size:11px;font-weight:700;color:#FF6D00;letter-spacing:0.1em;text-transform:uppercase;font-family:var(--mono);margin-bottom:6px">EM BREVE · 2026</div><div style="font-size:13px;color:var(--text);line-height:1.65">O ponto de entrada mais acessível já criado pela Alienware — sem cortar atalhos no que importa.</div></div>
+
+        <p>A Alienware também apresenta um laptop entry-level para abrir as portas para um público mais amplo. Cuidadosamente projetado sem atalhos nos elementos essenciais, este sistema entrega forte performance de gaming em um design limpo ao <strong>preço mais acessível já praticado pela Alienware</strong>.</p>
+
+        <p>Este não é um Area-51 — mas ainda é construído sob os padrões Alienware, sem cortar atalhos nas coisas que mais importam: qualidade de build, gestão térmica e performance.</p>
+
+        <p>A Alienware está expandindo para cobrir uma gama maior de performance, portabilidade e preço. Seja buscando performance pura, versatilidade estética para qualquer ambiente, ou seu primeiro verdadeiro laptop de gaming — a Alienware terá uma opção para você.</p>
+
+        
+
+      </div>
+      <p class="src-line">Fonte: <a href="https://www.dell.com/en-us/blog/alienware-ces-2026/" target="_blank">Alienware Blog · CES 2026 · Jan 2026 ↗</a></p>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-top:28px;">
+        <a class="article-source-link" href="https://www.dell.com/en-us/gaming/alienware" target="_blank">🔗 Alienware — página oficial ↗</a>
+        <a class="article-source-link" href="https://www.dell.com/en-us/blog/alienware-ces-2026/" target="_blank">🔗 Blog Alienware CES 2026 ↗</a>
+      </div>
+    </div>
+
+    <!-- ES -->
+    <div data-lang="es">
+      <p class="article-lead">Alienware regresa a la CES con una misión singular: <em>superar los límites de lo que es posible en PC gaming.</em> A lo largo de 2026, la marca doblará la amplitud de su portafolio de laptops — presentando dos nuevas clases de producto para alcanzar a una audiencia más amplia de gamers, sin sacrificar la calidad que define a Alienware.</p>
+      <div class="article-body">
+
+        <h3>Nuevo Laptop Ultra-Slim Alienware (~17mm)</h3>
+        <div style="background:linear-gradient(135deg,rgba(0,0,0,0.03),rgba(0,0,0,0.01));border:1px solid var(--border);border-left:4px solid #FF6D00;border-radius:0 10px 10px 0;padding:14px 16px;margin:16px 0"><div style="font-size:11px;font-weight:700;color:#FF6D00;letter-spacing:0.1em;text-transform:uppercase;font-family:var(--mono);margin-bottom:6px">PRÓXIMAMENTE · 2026</div><div style="font-size:13px;color:var(--text);line-height:1.65">El laptop más delgado jamás fabricado por Alienware. Disponible en 14 y 16 pulgadas.</div></div>
+
+        <p>Alienware presenta su primer laptop ultra-slim — con <strong>~17mm de grosor</strong> — que une alto rendimiento con movilidad incomparable. El proyecto fue guiado por dos principios fundamentales:</p>
+
+        <p><strong>Densidad de rendimiento</strong> — Empacar el máximo rendimiento en el diseño más compacto jamás diseñado por la marca. El resultado es un laptop de 16 pulgadas casi <strong>50% más pequeño en volumen</strong> que el actual Alienware 16 Area-51. No apunta al mismo techo de rendimiento del Area-51, pero ofrece capacidad de gaming seria con gráficos discretos NVIDIA y CPUs de alta eficiencia.</p>
+
+        <p><strong>Versatilidad de diseño</strong> — Un laptop con calidad de construcción premium, materiales de primera línea, larga duración de batería y una estética atemporal que funciona en cualquier ambiente. Es un Alienware más discreto de lo que estás acostumbrado a ver — pero igualmente icónico.</p>
+
+        <div style="background:var(--surface2);border-radius:10px;padding:4px 16px;margin:16px 0;border:1px solid var(--border)"><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">Grosor</span><span style="font-size:13px;font-weight:700;color:var(--text)">~17mm</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">Tamaños</span><span style="font-size:13px;font-weight:700;color:var(--text)">14 y 16 pulgadas</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">GPU</span><span style="font-size:13px;font-weight:700;color:var(--text)">NVIDIA GeForce RTX discreta</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">Volumen vs. Area-51 16"</span><span style="font-size:13px;font-weight:700;color:var(--text)">~50% menor</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">Perfil</span><span style="font-size:13px;font-weight:700;color:var(--text)">Ultra-slim, premium, versátil</span></div></div>
+
+        <p>Disponible en versiones de 14 y 16 pulgadas, este laptop es para quienes quieren el mejor equilibrio entre rendimiento de gaming, proyectos creativos y portabilidad — un verdadero todoterreno.</p>
+
+        <h3>Nuevo Laptop Entry-Level Alienware</h3>
+        <div style="background:linear-gradient(135deg,rgba(0,0,0,0.03),rgba(0,0,0,0.01));border:1px solid var(--border);border-left:4px solid #FF6D00;border-radius:0 10px 10px 0;padding:14px 16px;margin:16px 0"><div style="font-size:11px;font-weight:700;color:#FF6D00;letter-spacing:0.1em;text-transform:uppercase;font-family:var(--mono);margin-bottom:6px">PRÓXIMAMENTE · 2026</div><div style="font-size:13px;color:var(--text);line-height:1.65">El punto de entrada más accesible jamás creado por Alienware — sin atajos en lo que importa.</div></div>
+
+        <p>Alienware también presenta un laptop de nivel de entrada para abrir las puertas a una audiencia más amplia. Cuidadosamente diseñado sin atajos en los elementos esenciales, este sistema ofrece sólido rendimiento de gaming en un diseño limpio al <strong>precio más accesible que Alienware haya ofrecido</strong>.</p>
+
+        <p>Este no es un Area-51 — pero sigue siendo construido bajo los estándares Alienware, sin recortar atajos en las cosas que más importan: calidad de construcción, gestión térmica y rendimiento.</p>
+
+        <p>Alienware se está expandiendo para cubrir un mayor rango de rendimiento, portabilidad y precio. Ya sea que busques rendimiento puro, versatilidad estética para cualquier entorno, o tu primer verdadero laptop de gaming — Alienware tendrá una opción para ti.</p>
+
+        
+
+      </div>
+      <p class="src-line">Fuente: <a href="https://www.dell.com/en-us/blog/alienware-ces-2026/" target="_blank">Alienware Blog · CES 2026 · Ene 2026 ↗</a></p>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-top:28px;">
+        <a class="article-source-link" href="https://www.dell.com/en-us/gaming/alienware" target="_blank">🔗 Alienware — página oficial ↗</a>
+        <a class="article-source-link" href="https://www.dell.com/en-us/blog/alienware-ces-2026/" target="_blank">🔗 Blog Alienware CES 2026 ↗</a>
+      </div>
+    </div>
 
   </div>
 </div>
