@@ -139,7 +139,7 @@
 
 <script>
 (function(){
-  var VERSION = "20260415182902";
+  var VERSION = "20260416030248";
   var stored = localStorage.getItem("repo_version");
   if (stored !== VERSION) {
     localStorage.setItem("repo_version", VERSION);
@@ -282,22 +282,15 @@
       </a>
 
       
-      <a class="card" onclick="openArticle('tacc-impacto'); return false;" href="#">
-        <div class="card-img-wrap">
-          <img src="https://raw.githubusercontent.com/DellPR/repositorio/main/tacc.jpg" onerror="this.parentElement.innerHTML='<span class=card-img-label>TACC Impact</span>'">
+      <a class="card" onclick="openArticle('tacc-impacto'); return false;" href="#" style="display:flex;align-items:center;gap:14px;padding:14px 16px;">
+        <div style="width:40px;height:40px;border-radius:10px;background:rgba(0,118,206,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:20px">🏆</div>
+        <div style="flex:1;min-width:0">
+          <div class="card-type" style="margin-bottom:3px" data-lang="pt">Impacto Científico · 25 anos</div>
+          <div class="card-type" style="margin-bottom:3px" data-lang="es">Impacto Científico · 25 años</div>
+          <div style="font-size:13px;font-weight:700;color:var(--text);line-height:1.35" data-lang="pt">O legado do TACC — Prêmios Nobel, pandemias e ondas gravitacionais</div>
+          <div style="font-size:13px;font-weight:700;color:var(--text);line-height:1.35" data-lang="es">El legado del TACC — Premios Nobel, pandemias y ondas gravitacionales</div>
         </div>
-        <div class="card-body">
-          <div class="card-type" data-lang="pt">🏆 Impacto Científico · 25 anos</div>
-          <div class="card-type" data-lang="es">🏆 Impacto Científico · 25 años</div>
-          <div class="card-title" data-lang="pt">O legado do TACC — Prêmios Nobel, pandemias e ondas gravitacionais</div>
-          <div class="card-title" data-lang="es">El legado del TACC — Premios Nobel, pandemias y ondas gravitacionales</div>
-          <div class="card-desc" data-lang="pt">25 anos de descobertas que mudaram a ciência: do bóson de Higgs ao COVID-19, passando por 3 Prêmios Nobel.</div>
-          <div class="card-desc" data-lang="es">25 años de descubrimientos que cambiaron la ciencia: del bosón de Higgs al COVID-19, pasando por 3 Premios Nobel.</div>
-        </div>
-        <div class="card-footer">
-          <span data-lang="pt">Ler</span><span data-lang="es">Leer</span>
-          <span class="card-arrow">→</span>
-        </div>
+        <div style="font-size:16px;color:var(--blue);flex-shrink:0">→</div>
       </a>
 
       <a class="card" href="https://tacc.utexas.edu" target="_blank" style="display:flex;align-items:center;gap:14px;padding:14px 16px;">
@@ -334,6 +327,23 @@
         </div>
       </a>
 
+      <a class="card" onclick="openArticle('gb300-agents'); return false;" href="#">
+        <div class="card-img-wrap">
+          <img src="https://raw.githubusercontent.com/DellPR/repositorio/main/gb300.jpg" onerror="this.parentElement.innerHTML='<span class=card-img-label>Dell Pro Max GB300</span>'">
+        </div>
+        <div class="card-body">
+          <div class="card-type" data-lang="pt">🤖 Press Release · Mar 2026</div>
+          <div class="card-type" data-lang="es">🤖 Comunicado · Mar 2026</div>
+          <div class="card-title" data-lang="pt">Dell Pro Max com GB300 — o primeiro desktop do mundo para agentes de IA autônomos</div>
+          <div class="card-title" data-lang="es">Dell Pro Max con GB300 — el primer desktop del mundo para agentes de IA autónomos</div>
+          <div class="card-desc" data-lang="pt">Dell foi a primeira OEM a lançar um desktop com o chip NVIDIA GB300 Grace Blackwell Ultra, com suporte a NVIDIA NemoClaw e OpenShell.</div>
+          <div class="card-desc" data-lang="es">Dell fue la primera OEM en lanzar un desktop con el chip NVIDIA GB300 Grace Blackwell Ultra, con soporte a NVIDIA NemoClaw y OpenShell.</div>
+        </div>
+        <div class="card-footer">
+          <span data-lang="pt">Ler press release</span><span data-lang="es">Leer comunicado</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
       <a class="card" onclick="openArticle('dell-pcs-2026'); return false;" href="#">
         <div class="card-img-wrap">
           <img src="https://raw.githubusercontent.com/DellPR/repositorio/main/dell%20pro%20premium.png"
@@ -352,18 +362,40 @@
           <span class="card-arrow">→</span>
         </div>
       </a>
-      <a class="card" href="https://investors.delltechnologies.com/static-files/cbb4c668-2613-4d5c-a7dc-98fe4592b5a5" target="_blank" style="display:flex;align-items:center;gap:14px;padding:14px 16px;">
-        <div style="width:36px;height:36px;border-radius:8px;background:rgba(0,118,206,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px">📊</div>
-        <div style="flex:1;min-width:0">
-          <div class="card-type" style="margin-bottom:2px">Dell Technologies · Investor Relations</div>
-          <div style="font-size:13px;font-weight:600;color:var(--text)" data-lang="pt">Resultados Financeiros Mais Recentes ↗</div>
-          <div style="font-size:13px;font-weight:600;color:var(--text)" data-lang="es">Resultados Financieros Más Recientes ↗</div>
+      
+      <a class="card" onclick="openArticle('customer-stories'); return false;" href="#">
+        <div class="card-img-wrap">
+          <img src="https://raw.githubusercontent.com/DellPR/repositorio/main/mclaren.jpg" onerror="this.parentElement.innerHTML='<span class=card-img-label>Customer Stories</span>'">
         </div>
+        <div class="card-body">
+          <div class="card-type" data-lang="pt">🏆 Casos de Sucesso</div>
+          <div class="card-type" data-lang="es">🏆 Casos de Éxito</div>
+          <div class="card-title" data-lang="pt">Customer Stories — McLaren, Memorial Sloan Kettering & Flexcompute</div>
+          <div class="card-title" data-lang="es">Customer Stories — McLaren, Memorial Sloan Kettering & Flexcompute</div>
+          <div class="card-desc" data-lang="pt">Como a Dell ajuda a ganhar corridas de F1, acelerar a cura do câncer e reinventar simulações de engenharia.</div>
+          <div class="card-desc" data-lang="es">Cómo Dell ayuda a ganar carreras de F1, acelerar la cura del cáncer y reinventar simulaciones de ingeniería.</div>
+        </div>
+        <div class="card-footer">
+          <span data-lang="pt">Ver histórias</span><span data-lang="es">Ver historias</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+      
+      <a href="https://investors.delltechnologies.com/static-files/cbb4c668-2613-4d5c-a7dc-98fe4592b5a5" target="_blank" class="card" style="display:flex;align-items:center;gap:12px;padding:10px 14px;">
+        <div style="width:32px;height:32px;border-radius:8px;background:var(--blue);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px">📊</div>
+        <div style="flex:1;min-width:0">
+          <div style="font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);font-family:var(--mono);margin-bottom:1px">Dell Technologies · Investor Relations</div>
+          <div style="font-size:12px;font-weight:700;color:var(--text)" data-lang="pt">Resultados Financeiros Mais Recentes ↗</div>
+          <div style="font-size:12px;font-weight:700;color:var(--text)" data-lang="es">Resultados Financieros Más Recientes ↗</div>
+        </div>
+        <div style="font-size:14px;color:var(--blue);flex-shrink:0">→</div>
       </a>
       </div>
 
 
-  </section>
+  
+
+    </section>
 
   <!-- ALIENWARE -->
   <section class="cat-section" id="alienware">
@@ -1083,6 +1115,271 @@ document.addEventListener('DOMContentLoaded', function() { setLang(currentLang);
         <a class="article-source-link" href="https://www.dell.com/en-us/blog/new-dell-pro-notebooks-bold-designs-for-every-business/" target="_blank">🔗 Dell Blog · Bold Designs for Every Business ↗</a>
       </div>
     </div>
+
+  </div>
+</div>
+
+
+<!-- ARTICLE: GB300 AGENTS -->
+<div class="article-overlay" id="article-gb300-agents">
+  <div class="article-topbar">
+    <button class="article-back" onclick="closeArticle('gb300-agents')">← <span data-lang="pt">Voltar</span><span data-lang="es">Volver</span></button>
+    <div class="header-sep"></div>
+    <div class="header-title">Dell Pro Max · GB300</div>
+  </div>
+  <div class="article-content">
+    <div class="article-cat" data-lang="pt">🤖 Press Release · 16 de Março de 2026</div>
+    <div class="article-cat" data-lang="es">🤖 Comunicado de Prensa · 16 de marzo de 2026</div>
+    <h1 class="article-title" data-lang="pt">Dell é a primeira a lançar desktop NVIDIA GB300 para agentes de IA autônomos com NVIDIA NemoClaw e NVIDIA OpenShell</h1>
+    <h1 class="article-title" data-lang="es">Dell es la primera en lanzar el desktop NVIDIA GB300 para agentes de IA autónomos con NVIDIA NemoClaw y NVIDIA OpenShell</h1>
+    <div class="article-date">SAN JOSE, Calif. — 16 de março de 2026</div>
+
+    <!-- PT -->
+    <div data-lang="pt">
+      <p class="article-lead">A Dell Technologies anuncia suporte ao NVIDIA NemoClaw e NVIDIA OpenShell, expandindo sua colaboração com a NVIDIA para avançar em agentes de IA seguros e autônomos. O Dell Pro Max com GB10 e GB300 fornecem plataformas desktop propositalmente construídas que permitem às empresas construir e executar agentes autônomos e auto-evolutivos localmente, com inteligência de nível frontier.</p>
+      <div class="article-body">
+
+        <div style="position:relative;width:100%;aspect-ratio:16/9;border-radius:12px;overflow:hidden;margin:20px 0;border:1px solid var(--border)">
+          <iframe src="https://www.youtube.com/embed/T-del6FlwnA"
+            title="Dell Pro Max GB300 — Autonomous AI Agents"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            style="position:absolute;inset:0;width:100%;height:100%"></iframe>
+        </div>
+        <h3>O contexto: a ascensão dos agentes autônomos</h3>
+        <p>O lançamento do OpenClaw em janeiro de 2026 demonstrou o poder dos agentes autônomos — sistemas de IA capazes de executar tarefas complexas e de múltiplas etapas por períodos prolongados. Com mais de 100.000 estrelas no GitHub na primeira semana, o OpenClaw mostrou que a próxima geração de IA requer agentes que possam escrever código, gerar sub-agentes especializados e aprender a usar ferramentas profissionais de forma autônoma.</p>
+
+        <p>No entanto, esse poder cria um desafio fundamental: agentes autônomos e auto-evolutivos precisam de acesso amplo a ferramentas e dados para serem produtivos, enquanto as empresas precisam de controles fortes de segurança e governança para implantá-los com segurança.</p>
+
+        <div style="background:linear-gradient(135deg,rgba(0,118,206,0.08),rgba(0,74,147,0.05));border:1px solid rgba(0,118,206,0.2);border-radius:12px;padding:16px 18px;margin:20px 0">
+          <div style="font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);margin-bottom:8px">A solução: NVIDIA OpenShell</div>
+          <p style="font-size:13px;color:#3A3A40;margin:0;line-height:1.65">O NVIDIA OpenShell resolve isso ao fornecer uma camada de infraestrutura que executa qualquer agente de codificação em seu sandbox isolado sem alterações de código. Os agentes iniciam com zero permissões, a inferência permanece privada por padrão e cada ação é aplicada por política na camada de infraestrutura.</p>
+        </div>
+
+        <h3>Dell Pro Max com GB300 — primeiro do mundo</h3>
+        <img src="https://raw.githubusercontent.com/DellPR/repositorio/main/gb300.jpg" style="width:100%;border-radius:10px;margin:16px 0;aspect-ratio:16/9;object-fit:cover;border:1px solid var(--border)" onerror="this.style.display='none'" alt="Dell Pro Max GB300">
+
+        <p>A Dell foi a <strong>primeira OEM do mundo a lançar um desktop com o chip NVIDIA GB300 Grace Blackwell Ultra</strong>. O sistema traz um solução de resfriamento revolucionária — o MaxCool — projetada pela Dell (não adquirida), que entrega até 5× mais eficiência de resfriamento, direcionando mais energia para a performance, não para o calor.</p>
+
+        <div style="background:var(--surface2);border-radius:12px;padding:4px 16px 4px;margin:16px 0;border:1px solid var(--border)"><div data-lang="pt"><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">Chip</span><span style="font-size:13px;font-weight:700;color:var(--blue)">NVIDIA GB300 Grace Blackwell Ultra</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">Memória unificada</span><span style="font-size:13px;font-weight:700;color:var(--blue)">784GB</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">CPU</span><span style="font-size:13px;font-weight:700;color:var(--blue)">496GB LPDDR5X</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">GPU</span><span style="font-size:13px;font-weight:700;color:var(--blue)">288GB HBMe3</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">Performance IA</span><span style="font-size:13px;font-weight:700;color:var(--blue)">20.000 TOPS FP4</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">Modelos suportados</span><span style="font-size:13px;font-weight:700;color:var(--blue)">Até 1 trilhão de parâmetros</span></div></div><div data-lang="es"><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">Chip</span><span style="font-size:13px;font-weight:700;color:var(--blue)">NVIDIA GB300 Grace Blackwell Ultra</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">Memoria unificada</span><span style="font-size:13px;font-weight:700;color:var(--blue)">784GB</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">CPU</span><span style="font-size:13px;font-weight:700;color:var(--blue)">496GB LPDDR5X</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">GPU</span><span style="font-size:13px;font-weight:700;color:var(--blue)">288GB HBMe3</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">Rendimiento IA</span><span style="font-size:13px;font-weight:700;color:var(--blue)">20.000 TOPS FP4</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">Modelos soportados</span><span style="font-size:13px;font-weight:700;color:var(--blue)">Hasta 1 billón de parámetros</span></div></div></div>
+
+        <p>O Dell Pro Max com GB300 e o Dell Pro Max com GB10 com suporte ao NVIDIA OpenShell estão disponíveis agora. Os sistemas Dell Pro Max com GB10 e GB300 entregam a potência computacional, a grande capacidade de memória e a confiabilidade sempre ativa que os agentes de longa duração exigem — executando por horas ou dias, usando ferramentas profissionais e aprendendo e se adaptando ao trabalhar, inteiramente de forma local.</p>
+
+        <h3>Dell Pro Max com GB10 — o ponto de entrada para IA local</h3>
+        <img src="https://raw.githubusercontent.com/DellPR/repositorio/main/gb10.avif" style="width:100%;border-radius:10px;margin:16px 0;aspect-ratio:16/9;object-fit:cover;border:1px solid var(--border)" onerror="this.style.display='none'" alt="Dell Pro Max GB10">
+
+        <div style="background:var(--surface2);border-radius:12px;padding:4px 16px 4px;margin:16px 0;border:1px solid var(--border)"><div data-lang="pt"><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">Chip</span><span style="font-size:13px;font-weight:700;color:var(--blue)">NVIDIA GB10 Grace Blackwell Superchip</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">Memória unificada</span><span style="font-size:13px;font-weight:700;color:var(--blue)">128GB LPDDR5x</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">Performance IA</span><span style="font-size:13px;font-weight:700;color:var(--blue)">1.000 TOPS FP4</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">Modelos suportados</span><span style="font-size:13px;font-weight:700;color:var(--blue)">Até 200Bi parâmetros</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">2 sistemas conectados</span><span style="font-size:13px;font-weight:700;color:var(--blue)">Até 400Bi parâmetros</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">OS</span><span style="font-size:13px;font-weight:700;color:var(--blue)">NVIDIA DGX OS</span></div></div><div data-lang="es"><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">Chip</span><span style="font-size:13px;font-weight:700;color:var(--blue)">NVIDIA GB10 Grace Blackwell Superchip</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">Memoria unificada</span><span style="font-size:13px;font-weight:700;color:var(--blue)">128GB LPDDR5x</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">Rendimiento IA</span><span style="font-size:13px;font-weight:700;color:var(--blue)">1.000 TOPS FP4</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">Modelos soportados</span><span style="font-size:13px;font-weight:700;color:var(--blue)">Hasta 200Bi parámetros</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">2 sistemas conectados</span><span style="font-size:13px;font-weight:700;color:var(--blue)">Hasta 400Bi parámetros</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">OS</span><span style="font-size:13px;font-weight:700;color:var(--blue)">NVIDIA DGX OS</span></div></div></div>
+
+        <p>Projetado para desenvolvedores de IA que precisam de modelos de até 200 bilhões de parâmetros em um dispositivo compacto (150×150×51mm, 1,3kg). Dois sistemas GB10 conectados operam como um único nó, suportando modelos de até 400 bilhões de parâmetros.</p>
+
+        <h3>NVIDIA NemoClaw e OpenShell — a nova arquitetura de segurança para agentes</h3>
+        <p>O NVIDIA NemoClaw é uma stack de referência open source que simplifica a execução de assistentes sempre ativos do OpenClaw, de forma mais segura, com um único comando. Como parte do NVIDIA Agent Toolkit, ele instala o NVIDIA OpenShell — um runtime open source que fornece um ambiente seguro e em sandbox para execução de agentes autônomos — e modelos open source como o NVIDIA Nemotron.</p>
+
+        <p>Para desenvolvedores trabalhando localmente, Dell e NVIDIA estão unidas no NVIDIA NemoClaw: agentes que executam por horas ou dias, usam ferramentas profissionais, e aprendem e se adaptam enquanto trabalham — inteiramente de forma local, com os dados permanecendo privados.</p>
+
+        <h3>Sobre a Dell Technologies</h3>
+        <p>A Dell Technologies (NYSE: DELL) ajuda organizações e indivíduos a construírem seu futuro digital e transformar como trabalham, vivem e se divertem. A empresa oferece aos clientes o portfólio de tecnologia e serviços mais amplo e inovador do setor para a era da IA.</p>
+
+      </div>
+      <p class="src-line">Fonte: <a href="https://www.dell.com/en-us/dt/corporate/newsroom/announcements/detailpage.press-releases~usa~2026~03~dell-technologies-first-to-ship-nvidia-gb300-desktop-for-autonomous-ai-agents-with-nvidia-openshell.htm" target="_blank">Dell · Press Release Oficial · Mar 2026 ↗</a></p>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-top:28px;">
+        <a class="article-source-link" href="https://www.dell.com/en-us/dt/corporate/newsroom/announcements/detailpage.press-releases~usa~2026~03~dell-technologies-first-to-ship-nvidia-gb300-desktop-for-autonomous-ai-agents-with-nvidia-openshell.htm" target="_blank">🔗 Press release oficial ↗</a>
+        <a class="article-source-link" href="https://www.dell.com/en-us/shop/desktop-computers/dell-pro-max-with-gb300/spd/dell-pro-max-fct6263-desktop" target="_blank">🔗 Dell Pro Max com GB300 — página do produto ↗</a>
+        <a class="article-source-link" href="https://www.dell.com/en-us/shop/desktop-computers/dell-pro-max-with-gb10/spd/dell-pro-max-fcm1253-micro" target="_blank">🔗 Dell Pro Max com GB10 — página do produto ↗</a>
+      </div>
+    </div>
+
+    <!-- ES -->
+    <div data-lang="es">
+      <p class="article-lead">Dell Technologies anuncia soporte para NVIDIA NemoClaw y NVIDIA OpenShell, ampliando su colaboración con NVIDIA para avanzar en agentes de IA seguros y autónomos. El Dell Pro Max con GB10 y GB300 proporcionan plataformas desktop especialmente diseñadas que permiten a las empresas construir y ejecutar agentes autónomos y auto-evolutivos localmente, con inteligencia de nivel frontier.</p>
+      <div class="article-body">
+
+        <div style="position:relative;width:100%;aspect-ratio:16/9;border-radius:12px;overflow:hidden;margin:20px 0;border:1px solid var(--border)">
+          <iframe src="https://www.youtube.com/embed/T-del6FlwnA"
+            title="Dell Pro Max GB300 — Autonomous AI Agents"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            style="position:absolute;inset:0;width:100%;height:100%"></iframe>
+        </div>
+        <h3>El contexto: el ascenso de los agentes autónomos</h3>
+        <p>El lanzamiento de OpenClaw en enero de 2026 demostró el poder de los agentes autónomos — sistemas de IA capaces de ejecutar tareas complejas y de múltiples pasos durante períodos prolongados. Con más de 100.000 estrellas en GitHub en la primera semana, OpenClaw mostró que la próxima generación de IA requiere agentes que puedan escribir código, generar sub-agentes especializados y aprender a usar herramientas profesionales de forma autónoma.</p>
+
+        <p>Sin embargo, este poder crea un desafío fundamental: los agentes autónomos y auto-evolutivos necesitan amplio acceso a herramientas y datos para ser productivos, mientras que las empresas necesitan controles fuertes de seguridad y gobernanza para implementarlos de forma segura.</p>
+
+        <div style="background:linear-gradient(135deg,rgba(0,118,206,0.08),rgba(0,74,147,0.05));border:1px solid rgba(0,118,206,0.2);border-radius:12px;padding:16px 18px;margin:20px 0">
+          <div style="font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);margin-bottom:8px">La solución: NVIDIA OpenShell</div>
+          <p style="font-size:13px;color:#3A3A40;margin:0;line-height:1.65">NVIDIA OpenShell resuelve esto al proporcionar una capa de infraestructura que ejecuta cualquier agente de codificación en su sandbox aislado sin cambios de código. Los agentes comienzan con cero permisos, la inferencia permanece privada por defecto y cada acción es aplicada por política en la capa de infraestructura.</p>
+        </div>
+
+        <h3>Dell Pro Max con GB300 — el primero del mundo</h3>
+        <img src="https://raw.githubusercontent.com/DellPR/repositorio/main/gb300.jpg" style="width:100%;border-radius:10px;margin:16px 0;aspect-ratio:16/9;object-fit:cover;border:1px solid var(--border)" onerror="this.style.display='none'" alt="Dell Pro Max GB300">
+
+        <p>Dell fue la <strong>primera OEM del mundo en lanzar un desktop con el chip NVIDIA GB300 Grace Blackwell Ultra</strong>. El sistema trae una solución de refrigeración revolucionaria — MaxCool — diseñada por Dell (no adquirida), que entrega hasta 5× más eficiencia de refrigeración, dirigiendo más energía al rendimiento, no al calor.</p>
+
+        <div style="background:var(--surface2);border-radius:12px;padding:4px 16px 4px;margin:16px 0;border:1px solid var(--border)"><div data-lang="pt"><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">Chip</span><span style="font-size:13px;font-weight:700;color:var(--blue)">NVIDIA GB300 Grace Blackwell Ultra</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">Memória unificada</span><span style="font-size:13px;font-weight:700;color:var(--blue)">784GB</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">CPU</span><span style="font-size:13px;font-weight:700;color:var(--blue)">496GB LPDDR5X</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">GPU</span><span style="font-size:13px;font-weight:700;color:var(--blue)">288GB HBMe3</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">Performance IA</span><span style="font-size:13px;font-weight:700;color:var(--blue)">20.000 TOPS FP4</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">Modelos suportados</span><span style="font-size:13px;font-weight:700;color:var(--blue)">Até 1 trilhão de parâmetros</span></div></div><div data-lang="es"><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">Chip</span><span style="font-size:13px;font-weight:700;color:var(--blue)">NVIDIA GB300 Grace Blackwell Ultra</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">Memoria unificada</span><span style="font-size:13px;font-weight:700;color:var(--blue)">784GB</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">CPU</span><span style="font-size:13px;font-weight:700;color:var(--blue)">496GB LPDDR5X</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">GPU</span><span style="font-size:13px;font-weight:700;color:var(--blue)">288GB HBMe3</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">Rendimiento IA</span><span style="font-size:13px;font-weight:700;color:var(--blue)">20.000 TOPS FP4</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">Modelos soportados</span><span style="font-size:13px;font-weight:700;color:var(--blue)">Hasta 1 billón de parámetros</span></div></div></div>
+
+        <p>El Dell Pro Max con GB300 y el Dell Pro Max con GB10 con soporte a NVIDIA OpenShell están disponibles ahora. Los sistemas Dell Pro Max con GB10 y GB300 entregan la potencia computacional, la gran capacidad de memoria y la confiabilidad siempre activa que los agentes de larga duración exigen — ejecutándose durante horas o días, usando herramientas profesionales y aprendiendo y adaptándose mientras trabajan, completamente de forma local.</p>
+
+        <h3>Dell Pro Max con GB10 — el punto de entrada para IA local</h3>
+        <img src="https://raw.githubusercontent.com/DellPR/repositorio/main/gb10.avif" style="width:100%;border-radius:10px;margin:16px 0;aspect-ratio:16/9;object-fit:cover;border:1px solid var(--border)" onerror="this.style.display='none'" alt="Dell Pro Max GB10">
+
+        <div style="background:var(--surface2);border-radius:12px;padding:4px 16px 4px;margin:16px 0;border:1px solid var(--border)"><div data-lang="pt"><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">Chip</span><span style="font-size:13px;font-weight:700;color:var(--blue)">NVIDIA GB10 Grace Blackwell Superchip</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">Memória unificada</span><span style="font-size:13px;font-weight:700;color:var(--blue)">128GB LPDDR5x</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">Performance IA</span><span style="font-size:13px;font-weight:700;color:var(--blue)">1.000 TOPS FP4</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">Modelos suportados</span><span style="font-size:13px;font-weight:700;color:var(--blue)">Até 200Bi parâmetros</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">2 sistemas conectados</span><span style="font-size:13px;font-weight:700;color:var(--blue)">Até 400Bi parâmetros</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">OS</span><span style="font-size:13px;font-weight:700;color:var(--blue)">NVIDIA DGX OS</span></div></div><div data-lang="es"><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">Chip</span><span style="font-size:13px;font-weight:700;color:var(--blue)">NVIDIA GB10 Grace Blackwell Superchip</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">Memoria unificada</span><span style="font-size:13px;font-weight:700;color:var(--blue)">128GB LPDDR5x</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">Rendimiento IA</span><span style="font-size:13px;font-weight:700;color:var(--blue)">1.000 TOPS FP4</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">Modelos soportados</span><span style="font-size:13px;font-weight:700;color:var(--blue)">Hasta 200Bi parámetros</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">2 sistemas conectados</span><span style="font-size:13px;font-weight:700;color:var(--blue)">Hasta 400Bi parámetros</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;color:var(--muted)">OS</span><span style="font-size:13px;font-weight:700;color:var(--blue)">NVIDIA DGX OS</span></div></div></div>
+
+        <p>Diseñado para desarrolladores de IA que necesitan modelos de hasta 200 mil millones de parámetros en un dispositivo compacto (150×150×51mm, 1,3kg). Dos sistemas GB10 conectados operan como un único nodo, soportando modelos de hasta 400 mil millones de parámetros.</p>
+
+        <h3>NVIDIA NemoClaw y OpenShell — la nueva arquitectura de seguridad para agentes</h3>
+        <p>NVIDIA NemoClaw es un stack de referencia open source que simplifica la ejecución de asistentes siempre activos de OpenClaw, de forma más segura, con un solo comando. Como parte del NVIDIA Agent Toolkit, instala NVIDIA OpenShell — un runtime open source que proporciona un entorno seguro y en sandbox para la ejecución de agentes autónomos — y modelos open source como NVIDIA Nemotron.</p>
+
+        <p>Para desarrolladores trabajando localmente, Dell y NVIDIA están unidas en NVIDIA NemoClaw: agentes que se ejecutan durante horas o días, usan herramientas profesionales, y aprenden y se adaptan mientras trabajan — completamente de forma local, con los datos permaneciendo privados.</p>
+
+        <h3>Sobre Dell Technologies</h3>
+        <p>Dell Technologies (NYSE: DELL) ayuda a organizaciones e individuos a construir su futuro digital y transformar cómo trabajan, viven y se divierten. La empresa ofrece a los clientes el portafolio de tecnología y servicios más amplio e innovador del sector para la era de la IA.</p>
+
+      </div>
+      <p class="src-line">Fuente: <a href="https://www.dell.com/en-us/dt/corporate/newsroom/announcements/detailpage.press-releases~usa~2026~03~dell-technologies-first-to-ship-nvidia-gb300-desktop-for-autonomous-ai-agents-with-nvidia-openshell.htm" target="_blank">Dell · Comunicado Oficial · Mar 2026 ↗</a></p>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-top:28px;">
+        <a class="article-source-link" href="https://www.dell.com/en-us/dt/corporate/newsroom/announcements/detailpage.press-releases~usa~2026~03~dell-technologies-first-to-ship-nvidia-gb300-desktop-for-autonomous-ai-agents-with-nvidia-openshell.htm" target="_blank">🔗 Comunicado de prensa oficial ↗</a>
+        <a class="article-source-link" href="https://www.dell.com/en-us/shop/desktop-computers/dell-pro-max-with-gb300/spd/dell-pro-max-fct6263-desktop" target="_blank">🔗 Dell Pro Max con GB300 — página del producto ↗</a>
+        <a class="article-source-link" href="https://www.dell.com/en-us/shop/desktop-computers/dell-pro-max-with-gb10/spd/dell-pro-max-fcm1253-micro" target="_blank">🔗 Dell Pro Max con GB10 — página del producto ↗</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ARTICLE: CUSTOMER STORIES -->
+<div class="article-overlay" id="article-customer-stories">
+  <div class="article-topbar">
+    <button class="article-back" onclick="closeArticle('customer-stories')">← <span data-lang="pt">Voltar</span><span data-lang="es">Volver</span></button>
+    <div class="header-sep"></div>
+    <div class="header-title">Customer Stories</div>
+  </div>
+  <div class="article-content">
+    <div class="article-cat" data-lang="pt">🏆 Casos de Sucesso · Dell Technologies</div>
+    <div class="article-cat" data-lang="es">🏆 Casos de Éxito · Dell Technologies</div>
+    <h1 class="article-title" data-lang="pt">Dell na prática — como clientes estão transformando seus setores com tecnologia Dell</h1>
+    <h1 class="article-title" data-lang="es">Dell en la práctica — cómo clientes están transformando sus sectores con tecnología Dell</h1>
+
+    <!-- PT -->
+    <div data-lang="pt">
+      <p class="article-lead">Da pista de Fórmula 1 aos laboratórios oncológicos mais avançados do mundo, passando por startups de engenharia que reinventam como aviões e carros elétricos são projetados, a Dell Technologies está no centro de decisões que se medem em milissegundos e em vidas.</p>
+      <div class="article-body">
+
+        <div style="border-left:4px solid var(--blue);padding:10px 16px;margin:28px 0 12px;background:var(--surface2);border-radius:0 8px 8px 0"><div style="font-size:16px;font-weight:800;color:var(--text)">🏎️ McLaren Formula 1® Team</div><div style="font-size:12px;color:var(--muted);margin-top:3px" data-lang="pt">Esporte · HPC · Storage · IA</div><div style="font-size:12px;color:var(--muted);margin-top:3px" data-lang="es">Deporte · HPC · Storage · IA</div></div>
+        <img src="https://raw.githubusercontent.com/DellPR/repositorio/main/mclaren.jpg" style="width:100%;border-radius:10px;margin:12px 0;aspect-ratio:16/9;object-fit:cover;border:1px solid var(--border)" onerror="this.style.display='none'" alt="McLaren Racing">
+
+        <p>No mundo de alta tecnologia e altamente competitivo da Fórmula 1, a McLaren Racing precisa se adaptar e evoluir instantaneamente, transformando dados em velocidade. Para analisar bilhões de pontos de dados diariamente, a equipe utiliza uma ampla gama de tecnologia Dell de alta performance — do PowerScale Storage aos servidores PowerEdge e workstations Precision móveis. Com as soluções Dell, a McLaren Racing consegue tomar decisões informadas em tempo real, realizando upgrades necessários nos carros a cada <strong>17 minutos em média</strong>.</p>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:18px 0"><div style="background:rgba(0,118,206,0.08);border:1px solid rgba(0,118,206,0.18);border-radius:8px;padding:10px 14px;text-align:center"><div style="font-size:11px;color:var(--muted);margin-bottom:4px;line-height:1.3">Upgrade no carro a cada</div><div style="font-size:18px;font-weight:800;color:var(--blue);font-family:var(--mono)">17 min</div></div><div style="background:rgba(0,118,206,0.08);border:1px solid rgba(0,118,206,0.18);border-radius:8px;padding:10px 14px;text-align:center"><div style="font-size:11px;color:var(--muted);margin-bottom:4px;line-height:1.3">Simulações aero por fim de semana</div><div style="font-size:18px;font-weight:800;color:var(--blue);font-family:var(--mono)">50 milhões+</div></div><div style="background:rgba(0,118,206,0.08);border:1px solid rgba(0,118,206,0.18);border-radius:8px;padding:10px 14px;text-align:center"><div style="font-size:11px;color:var(--muted);margin-bottom:4px;line-height:1.3">Tempo de design: redução de</div><div style="font-size:18px;font-weight:800;color:var(--blue);font-family:var(--mono)">90%</div></div><div style="background:rgba(0,118,206,0.08);border:1px solid rgba(0,118,206,0.18);border-radius:8px;padding:10px 14px;text-align:center"><div style="font-size:11px;color:var(--muted);margin-bottom:4px;line-height:1.3">Ciclos de decisão vs. análise manual</div><div style="font-size:18px;font-weight:800;color:var(--blue);font-family:var(--mono)">90% mais rápidos</div></div><div style="background:rgba(0,118,206,0.08);border:1px solid rgba(0,118,206,0.18);border-radius:8px;padding:10px 14px;text-align:center"><div style="font-size:11px;color:var(--muted);margin-bottom:4px;line-height:1.3">Atualizações de design entregues</div><div style="font-size:18px;font-weight:800;color:var(--blue);font-family:var(--mono)">30%</div></div><div style="background:rgba(0,118,206,0.08);border:1px solid rgba(0,118,206,0.18);border-radius:8px;padding:10px 14px;text-align:center"><div style="font-size:11px;color:var(--muted);margin-bottom:4px;line-height:1.3">Testes físicos reduzidos via digital twin</div><div style="font-size:18px;font-weight:800;color:var(--blue);font-family:var(--mono)">40%</div></div></div>
+
+        <div style="border-left:3px solid var(--blue);padding:12px 16px;margin:16px 0;background:var(--surface2);border-radius:0 8px 8px 0"><p style="font-size:13px;font-style:italic;color:var(--text);margin:0 0 8px">"Estamos numa competição de dados e velocidade, e é com grandes parceiros como a Dell Technologies que conseguimos ir mais rápido."</p><p style="font-size:11px;color:var(--muted);margin:0"><strong>McLaren Formula 1® Team</strong> — Parceiro Dell Technologies</p></div>
+
+        <p><strong>Produtos Dell utilizados:</strong> PowerScale Storage, PowerEdge Servers, Precision Workstations.</p>
+        <p><a href="https://www.dell.com/en-us/lp/dt/customer-stories-mclaren-racing" target="_blank" style="font-size:13px;font-weight:700;color:var(--blue);text-decoration:none">Ler história completa ↗</a></p>
+        <p class="src-line">Fonte: <a href="https://www.dell.com/en-us/lp/dt/customer-stories-mclaren-racing" target="_blank">Dell · McLaren Racing Customer Story ↗</a></p>
+
+        <div style="border-left:4px solid var(--blue);padding:10px 16px;margin:28px 0 12px;background:var(--surface2);border-radius:0 8px 8px 0"><div style="font-size:16px;font-weight:800;color:var(--text)">🏥 Memorial Sloan Kettering Cancer Center</div><div style="font-size:12px;color:var(--muted);margin-top:3px" data-lang="pt">Saúde · HPC · IA · Pesquisa oncológica</div><div style="font-size:12px;color:var(--muted);margin-top:3px" data-lang="es">Salud · HPC · IA · Investigación oncológica</div></div>
+
+        <p>No coração de Nova York, onde o espaço é escasso e a urgência é constante, o Memorial Sloan Kettering Cancer Center (MSK) está transformando o futuro do tratamento do câncer. Reconhecido globalmente por sua pesquisa oncológica pioneira, o MSK é movido por um único propósito: acabar com o câncer para sempre.</p>
+
+        <p>A nova infraestrutura do MSK, o <strong>IRIS — "Cluster of Discovery"</strong> — foi projetada para lidar com o aumento dos workloads de IA e volumes massivos de dados, com computação acelerada e armazenamento escalável. A infraestrutura do MSK está entre as <strong>top 10 do mundo no benchmark IO500</strong>. O MSK pode agora treinar modelos de IA mais rapidamente e analisar dados com precisão renovada, com modelagem preditiva integrada nos workflows.</p>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:18px 0"><div style="background:rgba(0,118,206,0.08);border:1px solid rgba(0,118,206,0.18);border-radius:8px;padding:10px 14px;text-align:center"><div style="font-size:11px;color:var(--muted);margin-bottom:4px;line-height:1.3">Redução nos cronogramas de pesquisa</div><div style="font-size:18px;font-weight:800;color:var(--blue);font-family:var(--mono)">30× mais rápidos</div></div><div style="background:rgba(0,118,206,0.08);border:1px solid rgba(0,118,206,0.18);border-radius:8px;padding:10px 14px;text-align:center"><div style="font-size:11px;color:var(--muted);margin-bottom:4px;line-height:1.3">Dados de imagem processados pelo IRIS</div><div style="font-size:18px;font-weight:800;color:var(--blue);font-family:var(--mono)">15+ petabytes</div></div><div style="background:rgba(0,118,206,0.08);border:1px solid rgba(0,118,206,0.18);border-radius:8px;padding:10px 14px;text-align:center"><div style="font-size:11px;color:var(--muted);margin-bottom:4px;line-height:1.3">Jobs computacionais por mês</div><div style="font-size:18px;font-weight:800;color:var(--blue);font-family:var(--mono)">6 milhões+</div></div><div style="background:rgba(0,118,206,0.08);border:1px solid rgba(0,118,206,0.18);border-radius:8px;padding:10px 14px;text-align:center"><div style="font-size:11px;color:var(--muted);margin-bottom:4px;line-height:1.3">Taxa de remissão no trial de cólon</div><div style="font-size:18px;font-weight:800;color:var(--blue);font-family:var(--mono)">100%</div></div><div style="background:rgba(0,118,206,0.08);border:1px solid rgba(0,118,206,0.18);border-radius:8px;padding:10px 14px;text-align:center"><div style="font-size:11px;color:var(--muted);margin-bottom:4px;line-height:1.3">Pacientes no trial histórico</div><div style="font-size:18px;font-weight:800;color:var(--blue);font-family:var(--mono)">42</div></div></div>
+
+        <p>Em um trial clínico para câncer colorretal, pesquisadores usando IA para identificar mutações e criar planos de tratamento personalizados alcançaram <strong>100% de taxa de remissão</strong> entre 42 pacientes. Três pacientes mais tarde tiveram bebês saudáveis — os novos tratamentos permitem aos médicos evitar opções tradicionais que podem causar danos duradouros, incluindo à fertilidade.</p>
+
+        <div style="border-left:3px solid var(--blue);padding:12px 16px;margin:16px 0;background:var(--surface2);border-radius:0 8px 8px 0"><p style="font-size:13px;font-style:italic;color:var(--text);margin:0 0 8px">"A velocidade com que processamos dados hoje é quase 30 vezes mais rápida com IA, o que abre possibilidades revolucionárias na pesquisa oncológica."</p><p style="font-size:11px;color:var(--muted);margin:0"><strong>Jessica Audette</strong> — Head of Research Technology Management, MSK</p></div>
+
+        <div style="border-left:3px solid var(--blue);padding:12px 16px;margin:16px 0;background:var(--surface2);border-radius:0 8px 8px 0"><p style="font-size:13px;font-style:italic;color:var(--text);margin:0 0 8px">"Não estamos apenas construindo um supercomputador. Estamos construindo uma poderosa ponte entre a pesquisa orientada por dados e o atendimento ao paciente que salva vidas."</p><p style="font-size:11px;color:var(--muted);margin:0"><strong>Jessica Audette</strong> — Head of Research Technology Management, MSK</p></div>
+
+        <div style="border-left:3px solid var(--blue);padding:12px 16px;margin:16px 0;background:var(--surface2);border-radius:0 8px 8px 0"><p style="font-size:13px;font-style:italic;color:var(--text);margin:0 0 8px">"Nossos parceiros de tecnologia nos dão a base confiável que precisamos para permanecer focados no que importa: nossos pacientes."</p><p style="font-size:11px;color:var(--muted);margin:0"><strong>Jessica Audette</strong> — Head of Research Technology Management, MSK</p></div>
+
+        <p><a href="https://www.dell.com/en-us/lp/customer-stories-memorial-sloan-kettering-cancer-center" target="_blank" style="font-size:13px;font-weight:700;color:var(--blue);text-decoration:none">Ler história completa ↗</a></p>
+        <p class="src-line">Fonte: <a href="https://www.delltechnologies.com/asset/en-us/products/servers/customer-stories-case-studies/memorial-sloan-kettering-cancer-center-case-study.pdf" target="_blank">Dell · Memorial Sloan Kettering Case Study PDF · Jan 2026 ↗</a></p>
+
+        <div style="border-left:4px solid var(--blue);padding:10px 16px;margin:28px 0 12px;background:var(--surface2);border-radius:0 8px 8px 0"><div style="font-size:16px;font-weight:800;color:var(--text)">⚙️ Flexcompute</div><div style="font-size:12px;color:var(--muted);margin-top:3px" data-lang="pt">Engenharia · Simulação · IA · Aeroespacial · EV</div><div style="font-size:12px;color:var(--muted);margin-top:3px" data-lang="es">Ingeniería · Simulación · IA · Aeroespacial · EV</div></div>
+
+        <p>A Flexcompute é uma provedora de software de engenharia como serviço que está transformando o setor com sua plataforma de <strong>física inteligente</strong> — uma combinação de simulação multi-física, raciocínio nativo de geometria e memória neural que aprende com cada simulação. Para setores como aeroespacial, automotivo e energia renovável, onde velocidade e precisão são críticas, a Flexcompute elimina as limitações das simulações tradicionais — lentas, caras e intensas em recursos.</p>
+
+        <p>Em parceria com a Dell Technologies e a NVIDIA, a Flexcompute utiliza <strong>Dell PowerEdge XE-Series Servers</strong> com computação acelerada NVIDIA, Dell PowerSwitch Ethernet e NVIDIA Quantum InfiniBand para reduzir prazos de projeto de horas para minutos, trazendo insights físicos próximos do tempo real.</p>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:18px 0"><div style="background:rgba(0,118,206,0.08);border:1px solid rgba(0,118,206,0.18);border-radius:8px;padding:10px 14px;text-align:center"><div style="font-size:11px;color:var(--muted);margin-bottom:4px;line-height:1.3">Simulações CFD/EM vs. abordagem tradicional</div><div style="font-size:18px;font-weight:800;color:var(--blue);font-family:var(--mono)">100× mais rápido</div></div><div style="background:rgba(0,118,206,0.08);border:1px solid rgba(0,118,206,0.18);border-radius:8px;padding:10px 14px;text-align:center"><div style="font-size:11px;color:var(--muted);margin-bottom:4px;line-height:1.3">Performance em ciclos de otimização</div><div style="font-size:18px;font-weight:800;color:var(--blue);font-family:var(--mono)">10× mais rápido</div></div><div style="background:rgba(0,118,206,0.08);border:1px solid rgba(0,118,206,0.18);border-radius:8px;padding:10px 14px;text-align:center"><div style="font-size:11px;color:var(--muted);margin-bottom:4px;line-height:1.3">Tempo de projeto: de dias a</div><div style="font-size:18px;font-weight:800;color:var(--blue);font-family:var(--mono)">minutos</div></div></div>
+
+        <p><strong>JetZero</strong>, startup aeroespacial que reinventa aeronaves com design de asa combinada, usa a plataforma da Flexcompute para construir um banco de dados aerodinâmico rico em apenas horas — explorando mais conceitos e reduzindo riscos no ciclo de desenvolvimento. <strong>NIO</strong>, líder global em veículos elétricos inteligentes, usa a plataforma como uma camada de inteligência aerodinâmica que aprende com cada simulação, testando ideias ousadas em minutos em vez de dias.</p>
+
+        <div style="border-left:3px solid var(--blue);padding:12px 16px;margin:16px 0;background:var(--surface2);border-radius:0 8px 8px 0"><p style="font-size:13px;font-style:italic;color:var(--text);margin:0 0 8px">"Com a Dell e a NVIDIA, estamos trazendo insights físicos próximos do tempo real e ajudando a projetar o futuro de forma mais rápida e melhor."</p><p style="font-size:11px;color:var(--muted);margin:0"><strong>Vera Yang</strong> — Co-fundadora e Presidente, Flexcompute</p></div>
+
+        <div style="border-left:3px solid var(--blue);padding:12px 16px;margin:16px 0;background:var(--surface2);border-radius:0 8px 8px 0"><p style="font-size:13px;font-style:italic;color:var(--text);margin:0 0 8px">"Para nós, a colaboração com a Dell e a NVIDIA é mais do que velocidade. É sobre habilitar inovação de hardware de forma segura, rápida e acessível em uma escala jamais imaginada."</p><p style="font-size:11px;color:var(--muted);margin:0"><strong>Vera Yang</strong> — Co-fundadora e Presidente, Flexcompute</p></div>
+
+        <div style="border-left:3px solid var(--blue);padding:12px 16px;margin:16px 0;background:var(--surface2);border-radius:0 8px 8px 0"><p style="font-size:13px;font-style:italic;color:var(--text);margin:0 0 8px">"Graças às nossas parcerias com a Dell e a NVIDIA, podemos rodar milhares de simulações em paralelo. Isso remove um dos maiores gargalos da inovação: a espera."</p><p style="font-size:11px;color:var(--muted);margin:0"><strong>Vera Yang</strong> — Co-fundadora e Presidente, Flexcompute</p></div>
+
+        <p><a href="https://www.dell.com/en-us/lp/dt/customer-stories-flexcompute" target="_blank" style="font-size:13px;font-weight:700;color:var(--blue);text-decoration:none">Ler história completa ↗</a></p>
+        <p class="src-line">Fonte: <a href="https://www.delltechnologies.com/asset/en-us/solutions/business-solutions/customer-stories-case-studies/flexcompute-case-study.pdf" target="_blank">Dell · Flexcompute Case Study PDF · Mar 2026 ↗</a></p>
+
+      </div>
+    </div>
+
+    <!-- ES -->
+    <div data-lang="es">
+      <p class="article-lead">Desde el circuito de la Fórmula 1 hasta los laboratorios oncológicos más avanzados del mundo, pasando por startups de ingeniería que reinventan cómo se diseñan aviones y autos eléctricos, Dell Technologies está en el centro de decisiones que se miden en milisegundos y en vidas.</p>
+      <div class="article-body">
+
+        <div style="border-left:4px solid var(--blue);padding:10px 16px;margin:28px 0 12px;background:var(--surface2);border-radius:0 8px 8px 0"><div style="font-size:16px;font-weight:800;color:var(--text)">🏎️ McLaren Formula 1® Team</div><div style="font-size:12px;color:var(--muted);margin-top:3px" data-lang="pt">Deporte · HPC · Storage · IA</div><div style="font-size:12px;color:var(--muted);margin-top:3px" data-lang="es">Deporte · HPC · Storage · IA</div></div>
+        <img src="https://raw.githubusercontent.com/DellPR/repositorio/main/mclaren.jpg" style="width:100%;border-radius:10px;margin:12px 0;aspect-ratio:16/9;object-fit:cover;border:1px solid var(--border)" onerror="this.style.display='none'" alt="McLaren Racing">
+
+        <p>En el mundo de alta tecnología y altamente competitivo de la Fórmula 1, McLaren Racing necesita adaptarse y evolucionar instantáneamente, transformando datos en velocidad. Para analizar miles de millones de puntos de datos diariamente, el equipo utiliza una amplia gama de tecnología Dell de alto rendimiento — desde PowerScale Storage hasta servidores PowerEdge y workstations Precision móviles. Con las soluciones Dell, McLaren Racing puede tomar decisiones informadas en tiempo real, realizando actualizaciones necesarias en los autos cada <strong>17 minutos en promedio</strong>.</p>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:18px 0"><div style="background:rgba(0,118,206,0.08);border:1px solid rgba(0,118,206,0.18);border-radius:8px;padding:10px 14px;text-align:center"><div style="font-size:11px;color:var(--muted);margin-bottom:4px;line-height:1.3">Actualización del auto cada</div><div style="font-size:18px;font-weight:800;color:var(--blue);font-family:var(--mono)">17 min</div></div><div style="background:rgba(0,118,206,0.08);border:1px solid rgba(0,118,206,0.18);border-radius:8px;padding:10px 14px;text-align:center"><div style="font-size:11px;color:var(--muted);margin-bottom:4px;line-height:1.3">Simulaciones aero por fin de semana</div><div style="font-size:18px;font-weight:800;color:var(--blue);font-family:var(--mono)">50 millones+</div></div><div style="background:rgba(0,118,206,0.08);border:1px solid rgba(0,118,206,0.18);border-radius:8px;padding:10px 14px;text-align:center"><div style="font-size:11px;color:var(--muted);margin-bottom:4px;line-height:1.3">Tiempo de diseño: reducción de</div><div style="font-size:18px;font-weight:800;color:var(--blue);font-family:var(--mono)">90%</div></div><div style="background:rgba(0,118,206,0.08);border:1px solid rgba(0,118,206,0.18);border-radius:8px;padding:10px 14px;text-align:center"><div style="font-size:11px;color:var(--muted);margin-bottom:4px;line-height:1.3">Ciclos de decisión vs. análisis manual</div><div style="font-size:18px;font-weight:800;color:var(--blue);font-family:var(--mono)">90% mais rápidos</div></div><div style="background:rgba(0,118,206,0.08);border:1px solid rgba(0,118,206,0.18);border-radius:8px;padding:10px 14px;text-align:center"><div style="font-size:11px;color:var(--muted);margin-bottom:4px;line-height:1.3">Actualizaciones de diseño entregadas</div><div style="font-size:18px;font-weight:800;color:var(--blue);font-family:var(--mono)">30%</div></div><div style="background:rgba(0,118,206,0.08);border:1px solid rgba(0,118,206,0.18);border-radius:8px;padding:10px 14px;text-align:center"><div style="font-size:11px;color:var(--muted);margin-bottom:4px;line-height:1.3">Pruebas físicas reducidas vía digital twin</div><div style="font-size:18px;font-weight:800;color:var(--blue);font-family:var(--mono)">40%</div></div></div>
+
+        <div style="border-left:3px solid var(--blue);padding:12px 16px;margin:16px 0;background:var(--surface2);border-radius:0 8px 8px 0"><p style="font-size:13px;font-style:italic;color:var(--text);margin:0 0 8px">"Estamos en una competencia de datos y velocidad, y son grandes socios como Dell Technologies los que nos ayudan a ir más rápido."</p><p style="font-size:11px;color:var(--muted);margin:0"><strong>McLaren Formula 1® Team</strong> — Socio Dell Technologies</p></div>
+
+        <p><strong>Productos Dell utilizados:</strong> PowerScale Storage, PowerEdge Servers, Precision Workstations.</p>
+        <p><a href="https://www.dell.com/en-us/lp/dt/customer-stories-mclaren-racing" target="_blank" style="font-size:13px;font-weight:700;color:var(--blue);text-decoration:none">Leer historia completa ↗</a></p>
+        <p class="src-line">Fuente: <a href="https://www.dell.com/en-us/lp/dt/customer-stories-mclaren-racing" target="_blank">Dell · McLaren Racing Customer Story ↗</a></p>
+
+        <div style="border-left:4px solid var(--blue);padding:10px 16px;margin:28px 0 12px;background:var(--surface2);border-radius:0 8px 8px 0"><div style="font-size:16px;font-weight:800;color:var(--text)">🏥 Memorial Sloan Kettering Cancer Center</div><div style="font-size:12px;color:var(--muted);margin-top:3px" data-lang="pt">Salud · HPC · IA · Investigación oncológica</div><div style="font-size:12px;color:var(--muted);margin-top:3px" data-lang="es">Salud · HPC · IA · Investigación oncológica</div></div>
+
+        <p>En el corazón de Nueva York, donde el espacio escasea y la urgencia es constante, el Memorial Sloan Kettering Cancer Center (MSK) está transformando el futuro del tratamiento del cáncer. Reconocido mundialmente por su investigación oncológica pionera, el MSK está impulsado por un único propósito: acabar con el cáncer para siempre.</p>
+
+        <p>La nueva infraestructura del MSK, el <strong>IRIS — "Cluster of Discovery"</strong> — fue diseñada para manejar el aumento de cargas de trabajo de IA y volúmenes masivos de datos, con computación acelerada y almacenamiento escalable. La infraestructura del MSK se ubica entre las <strong>top 10 del mundo en el benchmark IO500</strong>. El MSK ahora puede entrenar modelos de IA más rápidamente y analizar datos con precisión renovada, con modelado predictivo integrado en los flujos de trabajo.</p>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:18px 0"><div style="background:rgba(0,118,206,0.08);border:1px solid rgba(0,118,206,0.18);border-radius:8px;padding:10px 14px;text-align:center"><div style="font-size:11px;color:var(--muted);margin-bottom:4px;line-height:1.3">Reducción en cronogramas de investigación</div><div style="font-size:18px;font-weight:800;color:var(--blue);font-family:var(--mono)">30× más rápidos</div></div><div style="background:rgba(0,118,206,0.08);border:1px solid rgba(0,118,206,0.18);border-radius:8px;padding:10px 14px;text-align:center"><div style="font-size:11px;color:var(--muted);margin-bottom:4px;line-height:1.3">Datos de imagen procesados por IRIS</div><div style="font-size:18px;font-weight:800;color:var(--blue);font-family:var(--mono)">15+ petabytes</div></div><div style="background:rgba(0,118,206,0.08);border:1px solid rgba(0,118,206,0.18);border-radius:8px;padding:10px 14px;text-align:center"><div style="font-size:11px;color:var(--muted);margin-bottom:4px;line-height:1.3">Jobs computacionales por mes</div><div style="font-size:18px;font-weight:800;color:var(--blue);font-family:var(--mono)">6 milhões+</div></div><div style="background:rgba(0,118,206,0.08);border:1px solid rgba(0,118,206,0.18);border-radius:8px;padding:10px 14px;text-align:center"><div style="font-size:11px;color:var(--muted);margin-bottom:4px;line-height:1.3">Tasa de remisión en el trial de colon</div><div style="font-size:18px;font-weight:800;color:var(--blue);font-family:var(--mono)">100%</div></div><div style="background:rgba(0,118,206,0.08);border:1px solid rgba(0,118,206,0.18);border-radius:8px;padding:10px 14px;text-align:center"><div style="font-size:11px;color:var(--muted);margin-bottom:4px;line-height:1.3">Pacientes en el trial histórico</div><div style="font-size:18px;font-weight:800;color:var(--blue);font-family:var(--mono)">42</div></div></div>
+
+        <p>En un ensayo clínico para cáncer colorrectal, investigadores que usaron IA para identificar mutaciones y crear planes de tratamiento personalizados lograron una <strong>tasa de remisión del 100%</strong> entre 42 pacientes. Tres pacientes más tarde tuvieron bebés saludables — los nuevos tratamientos permiten a los médicos evitar opciones tradicionales que pueden causar daños duraderos, incluyendo a la fertilidad.</p>
+
+        <div style="border-left:3px solid var(--blue);padding:12px 16px;margin:16px 0;background:var(--surface2);border-radius:0 8px 8px 0"><p style="font-size:13px;font-style:italic;color:var(--text);margin:0 0 8px">"La velocidad a la que procesamos datos hoy es casi 30 veces más rápida con IA, lo que abre posibilidades revolucionarias en la investigación del cáncer."</p><p style="font-size:11px;color:var(--muted);margin:0"><strong>Jessica Audette</strong> — Head of Research Technology Management, MSK</p></div>
+
+        <div style="border-left:3px solid var(--blue);padding:12px 16px;margin:16px 0;background:var(--surface2);border-radius:0 8px 8px 0"><p style="font-size:13px;font-style:italic;color:var(--text);margin:0 0 8px">"No solo estamos construyendo un supercomputador. Estamos construyendo un poderoso puente entre la investigación basada en datos y la atención al paciente que salva vidas."</p><p style="font-size:11px;color:var(--muted);margin:0"><strong>Jessica Audette</strong> — Head of Research Technology Management, MSK</p></div>
+
+        <div style="border-left:3px solid var(--blue);padding:12px 16px;margin:16px 0;background:var(--surface2);border-radius:0 8px 8px 0"><p style="font-size:13px;font-style:italic;color:var(--text);margin:0 0 8px">"Nuestros socios tecnológicos nos dan la base confiable que necesitamos para mantenernos enfocados en lo que importa: nuestros pacientes."</p><p style="font-size:11px;color:var(--muted);margin:0"><strong>Jessica Audette</strong> — Head of Research Technology Management, MSK</p></div>
+
+        <p><a href="https://www.dell.com/en-us/lp/customer-stories-memorial-sloan-kettering-cancer-center" target="_blank" style="font-size:13px;font-weight:700;color:var(--blue);text-decoration:none">Leer historia completa ↗</a></p>
+        <p class="src-line">Fuente: <a href="https://www.delltechnologies.com/asset/en-us/products/servers/customer-stories-case-studies/memorial-sloan-kettering-cancer-center-case-study.pdf" target="_blank">Dell · Memorial Sloan Kettering Case Study PDF · Ene 2026 ↗</a></p>
+
+        <div style="border-left:4px solid var(--blue);padding:10px 16px;margin:28px 0 12px;background:var(--surface2);border-radius:0 8px 8px 0"><div style="font-size:16px;font-weight:800;color:var(--text)">⚙️ Flexcompute</div><div style="font-size:12px;color:var(--muted);margin-top:3px" data-lang="pt">Ingeniería · Simulación · IA · Aeroespacial · EV</div><div style="font-size:12px;color:var(--muted);margin-top:3px" data-lang="es">Ingeniería · Simulación · IA · Aeroespacial · EV</div></div>
+
+        <p>Flexcompute es un proveedor de software de ingeniería como servicio que está transformando el sector con su plataforma de <strong>física inteligente</strong> — una combinación de simulación multi-física, razonamiento nativo de geometría y memoria neural que aprende de cada simulación. Para sectores como el aeroespacial, automotriz y energía renovable, donde la velocidad y precisión son críticas, Flexcompute elimina las limitaciones de las simulaciones tradicionales — lentas, costosas e intensivas en recursos.</p>
+
+        <p>En asociación con Dell Technologies y NVIDIA, Flexcompute utiliza <strong>Dell PowerEdge XE-Series Servers</strong> con computación acelerada NVIDIA, Dell PowerSwitch Ethernet y NVIDIA Quantum InfiniBand para reducir plazos de proyectos de horas a minutos, acercando los insights físicos al tiempo real.</p>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:18px 0"><div style="background:rgba(0,118,206,0.08);border:1px solid rgba(0,118,206,0.18);border-radius:8px;padding:10px 14px;text-align:center"><div style="font-size:11px;color:var(--muted);margin-bottom:4px;line-height:1.3">Simulaciones CFD/EM vs. enfoque tradicional</div><div style="font-size:18px;font-weight:800;color:var(--blue);font-family:var(--mono)">100× mais rápido</div></div><div style="background:rgba(0,118,206,0.08);border:1px solid rgba(0,118,206,0.18);border-radius:8px;padding:10px 14px;text-align:center"><div style="font-size:11px;color:var(--muted);margin-bottom:4px;line-height:1.3">Rendimiento en ciclos de optimización</div><div style="font-size:18px;font-weight:800;color:var(--blue);font-family:var(--mono)">10× mais rápido</div></div><div style="background:rgba(0,118,206,0.08);border:1px solid rgba(0,118,206,0.18);border-radius:8px;padding:10px 14px;text-align:center"><div style="font-size:11px;color:var(--muted);margin-bottom:4px;line-height:1.3">Tiempo de proyecto: de días a</div><div style="font-size:18px;font-weight:800;color:var(--blue);font-family:var(--mono)">minutos</div></div></div>
+
+        <p><strong>JetZero</strong>, startup aeroespacial que reinventa aeronaves con diseño de ala combinada, usa la plataforma de Flexcompute para construir una rica base de datos aerodinámica en solo horas. <strong>NIO</strong>, líder global en vehículos eléctricos inteligentes, usa la plataforma como una capa de inteligencia aerodinámica que aprende de cada simulación, probando ideas audaces en minutos en lugar de días.</p>
+
+        <div style="border-left:3px solid var(--blue);padding:12px 16px;margin:16px 0;background:var(--surface2);border-radius:0 8px 8px 0"><p style="font-size:13px;font-style:italic;color:var(--text);margin:0 0 8px">"Con Dell y NVIDIA, estamos acercando los insights físicos al tiempo real y ayudando a diseñar el futuro de forma más rápida y mejor."</p><p style="font-size:11px;color:var(--muted);margin:0"><strong>Vera Yang</strong> — Co-fundadora y Presidenta, Flexcompute</p></div>
+
+        <div style="border-left:3px solid var(--blue);padding:12px 16px;margin:16px 0;background:var(--surface2);border-radius:0 8px 8px 0"><p style="font-size:13px;font-style:italic;color:var(--text);margin:0 0 8px">"Para nosotros, la colaboración con Dell y NVIDIA es más que velocidad. Se trata de habilitar la innovación de hardware de forma segura, rápida y accesible a una escala nunca antes imaginada."</p><p style="font-size:11px;color:var(--muted);margin:0"><strong>Vera Yang</strong> — Co-fundadora y Presidenta, Flexcompute</p></div>
+
+        <div style="border-left:3px solid var(--blue);padding:12px 16px;margin:16px 0;background:var(--surface2);border-radius:0 8px 8px 0"><p style="font-size:13px;font-style:italic;color:var(--text);margin:0 0 8px">"Gracias a nuestras alianzas con Dell y NVIDIA, podemos ejecutar miles de simulaciones en paralelo. Esto elimina uno de los mayores cuellos de botella en la innovación: la espera."</p><p style="font-size:11px;color:var(--muted);margin:0"><strong>Vera Yang</strong> — Co-fundadora y Presidenta, Flexcompute</p></div>
+
+        <p><a href="https://www.dell.com/en-us/lp/dt/customer-stories-flexcompute" target="_blank" style="font-size:13px;font-weight:700;color:var(--blue);text-decoration:none">Leer historia completa ↗</a></p>
+        <p class="src-line">Fuente: <a href="https://www.delltechnologies.com/asset/en-us/solutions/business-solutions/customer-stories-case-studies/flexcompute-case-study.pdf" target="_blank">Dell · Flexcompute Case Study PDF · Mar 2026 ↗</a></p>
+
+      </div>
+    </div>    </div>
 
   </div>
 </div>
